@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CHASKI — Radar de oportunidades</title>
+<meta name="description" content="Radar comercial de oportunidades públicas en electricidad, energía solar, pozos a tierra y mantenimiento en el Callejón de Huaylas, Áncash.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0e1116">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CHASKI">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="w">
+
+<header>
+  <div class="lg">⚡</div>
+  <div>
+    <h1>CHASKI</h1>
+    <div class="tag">El que trae la noticia primero</div>
+    <div class="sb" id="sb"></div>
+  </div>
+</header>
+
+<!-- ══════ VIGENTES ══════ -->
+<section class="pane on" id="p1">
+  <div class="box" id="avisoLocal" style="display:none">
+    <span class="h">📄 Estás viendo la copia guardada</span>
+    Los datos vienen dentro de este archivo. Publícalo en GitHub para que se actualice sola.
+  </div>
+
+  <div id="resumen"></div>
+
+  <div class="chips">
+    <button class="chip on" data-g="urg" data-v="todas">Todas</button>
+    <button class="chip" data-g="urg" data-v="accion">📋 Para hoy</button>
+    <button class="chip" data-g="urg" data-v="urgente">🔴 Urgentes</button>
+    <button class="chip" data-g="urg" data-v="semana">Esta semana</button>
+    <button class="chip" data-g="urg" data-v="alta">⭐ Buen encaje</button>
+    <button class="chip" data-g="urg" data-v="fav">Favoritas</button>
+  </div>
+  <div class="selrow">
+    <select id="fProv"></select>
+    <select id="fTipo"></select>
+    <select id="fEstado"></select>
+  </div>
+  <div class="cuenta" id="cuenta"></div>
+  <div id="lista"></div>
+</section>
+
+<!-- ══════ DESIERTAS ══════ -->
+<section class="pane" id="p5">
+  <div class="box gold"><span class="h">🏜️ Por qué esto es oro</span><div id="dPorque"></div></div>
+  <div class="box"><span class="h">⚖️ Qué pasa después del desierto</span><div id="dDespues"></div></div>
+  <div class="box"><span class="h">📞 La jugada</span><div id="dJugada"></div></div>
+  <h2>Candidatas a quedar desiertas</h2>
+  <div class="sbnote">Convocatorias que acaban de cerrar en distritos alejados. Llama y pregunta si hubo postores.</div>
+  <div id="dCand"></div>
+  <h2>Dónde cazarlos</h2>
+  <div id="dFuentes"></div>
+</section>
+
+<!-- ══════ JUGADAS ══════ -->
+<section class="pane" id="p2">
+  <h2>Jugadas que no caducan</h2>
+  <div id="perms"></div>
+</section>
+
+<!-- ══════ BUSCAR ══════ -->
+<section class="pane" id="p3">
+  <h2>Búsqueda manual por rubro</h2>
+  <div class="g2">
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22pozo+a+tierra%22+OR+%22puesta+a+tierra%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29+%28%22convocatoria%22+OR+%22orden+de+servicio%22+OR+%22requerimiento%22%29+-Junin+-Huancayo+-Lima&tbs=qdr:w"><span class="e">⚡</span><span class="n">Pozos a tierra</span><span class="d">Mantenimiento y certificación</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22terma+solar%22+OR+%22termas+solares%22+OR+%22calentador+solar%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Ancash%22%29+%28adquisicion+OR+instalacion+OR+mantenimiento%29+-Lima+-Arequipa&tbs=qdr:w"><span class="e">☀️</span><span class="n">Termas solares</span><span class="d">Venta e instalación</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22panel+solar%22+OR+%22paneles+solares%22+OR+%22electrificacion+rural%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29+%28licitacion+OR+convocatoria+OR+suministro%29&tbs=qdr:w"><span class="e">🔆</span><span class="n">Paneles solares</span><span class="d">Fotovoltaico y rural</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22redes+electricas%22+OR+%22alumbrado+publico%22+OR+subestacion%29+mantenimiento+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29&tbs=qdr:w"><span class="e">🔌</span><span class="n">Redes eléctricas</span><span class="d">Alumbrado, subestaciones</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22supervisor+de+obra%22+OR+%22especialista+electrico%22+OR+consultoria+OR+%22locacion+de+servicios%22%29+%28%22ingeniero+mecanico+electricista%22+OR+%22ingeniero+electricista%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29&tbs=qdr:w"><span class="e">📐</span><span class="n">Consultoría</span><span class="d">Supervisión y peritaje</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=mantenimiento+%28%22luces+de+emergencia%22+OR+%22sistema+contra+incendio%22+OR+%22grupo+electrogeno%22+OR+%22tablero+electrico%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22%29&tbs=qdr:w"><span class="e">🧰</span><span class="n">Mantenimiento</span><span class="d">Emergencia y tableros</span></a>
+  </div>
+
+  <h2>Fuentes en vivo</h2>
+  <div class="g2">
+    <a class="t hi" target="_blank" rel="noopener" href="https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"><span class="e">🏛️</span><span class="n">Buscador SEACE</span><span class="d">Fuente oficial</span></a>
+    <a class="t hi" target="_blank" rel="noopener" href="https://contratacionesabiertas.oece.gob.pe/"><span class="e">📊</span><span class="n">Contrataciones Abiertas</span><span class="d">Portal oficial OCDS</span></a>
+    <a class="t hi" target="_blank" rel="noopener" href="https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026"><span class="e">💰</span><span class="n">Menores 8 UIT</span><span class="d">Órdenes de servicio</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/licitaciones-peru/ancash/"><span class="e">📍</span><span class="n">Áncash vigentes</span><span class="d">Con plazo abierto</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/departamento/ancash.html"><span class="e">📋</span><span class="n">Convocatorias</span><span class="d">Con fecha límite</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://prod6.seace.gob.pe/auth-proveedor/"><span class="e">🔑</span><span class="n">SEACE 8 UIT</span><span class="d">Con tu RNP</span></a>
+  </div>
+  <button class="all" onclick="abrirTodas()">🔄 ABRIR TODAS LAS FUENTES<small>Las 6 páginas con lo vigente de hoy</small></button>
+
+  <h2>Entidades</h2>
+  <div class="g2">
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=SUNAT+%28%22Oficina+Zonal+Huaraz%22+OR+Ancash%29+%28mantenimiento+OR+%22pozo+a+tierra%22+OR+%22luces+de+emergencia%22%29+contratacion&tbs=qdr:m"><span class="e">🏢</span><span class="n">SUNAT</span><span class="d">Oficina Zonal Huaraz</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/ministerio-del-interior-pnp-ue-001-oga.html"><span class="e">🚔</span><span class="n">PNP · Mininter</span><span class="d">Comisarías</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28Lincuna+OR+%22Santa+Luisa%22+OR+Huanzala+OR+Contonga+OR+Pachapaqui%29+Ancash+%28contratista+OR+proveedor+OR+%22servicio+electrico%22%29&tbs=qdr:m"><span class="e">⛏️</span><span class="n">Mineras</span><span class="d">Lincuna, Santa Luisa</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/empresa-regional-de-servicio-publico-de-electricidad-electro-nor-medio-sa-hidrandina.html"><span class="e">💡</span><span class="n">Hidrandina</span><span class="d">Concesionaria</span></a>
+  </div>
+</section>
+
+<!-- ══════ MÁS ══════ -->
+<section class="pane" id="p4">
+  <h2>Tu app</h2>
+  <button id="inst">📲 Instalar CHASKI en este celular</button>
+  <div class="box gold" id="ayudaInst">
+    <span class="h">📲 Ponlo en tu pantalla de inicio</span>
+    <b>Android:</b> menú ⋮ → <b>Instalar aplicación</b>.<br>
+    <b>iPhone:</b> compartir ⬆️ → <b>Añadir a pantalla de inicio</b>.
+  </div>
+
+  <h2>Tu seguimiento</h2>
+  <div class="box">
+    <span class="h">💾 Dónde se guarda</span>
+    Los estados, notas y favoritos se guardan <b>en este dispositivo</b>, no en internet. Si abres CHASKI en otro equipo, no los verás allí. Usa los botones de abajo para llevarlos de un lado a otro.
+    <div class="acc" style="margin-top:12px">
+      <span class="bt2" onclick="exportarSeg()">⬇️ Exportar seguimiento</span>
+      <label class="bt2" style="display:inline-block">⬆️ Importar
+        <input type="file" accept="application/json" style="display:none" onchange="importarSeg(this)">
+      </label>
+    </div>
+  </div>
+
+  <h2>Cómo leer las etiquetas</h2>
+  <div class="box">
+    <span class="h">✓ Dato oficial</span>Sale de la fuente citada al pie de cada tarjeta. Entidad, plazo, tipo de proceso y nomenclatura.<br><br>
+    <span class="h">💡 Análisis CHASKI · Probable</span>Deducción con base sólida, por ejemplo que una supervisión de agua potable necesite un especialista electromecánico.<br><br>
+    <span class="h">💡 Análisis CHASKI · Hipótesis</span>Suposición razonable pero <b>sin confirmar en el expediente</b>. Verifícala antes de gastar tiempo o dinero.<br><br>
+    <span class="h">? Por verificar</span>Lo que hay que preguntar a la entidad. No lo tomes como parte de las bases.
+  </div>
+
+  <h2>Cómo se calcula el encaje</h2>
+  <div class="box">
+    Cada oportunidad suma hasta 100 puntos entre siete factores. Toca el número en cualquier tarjeta para ver el desglose completo. <b>Es una guía de priorización, no una garantía</b>: la puntuación la asigno yo con criterio comercial, no sale de una fórmula oficial.
+  </div>
+
+  <h2>Fuentes de las cifras</h2>
+  <div id="fuentes"></div>
+
+  <h2>Cobertura y actualización</h2>
+  <div class="box">
+    <span class="h">📍 Zona</span>
+    Provincias de <b>Huaraz, Recuay, Carhuaz, Yungay y Huaylas (Caraz)</b> con sus 51 distritos. Zona secundaria: San Marcos y Huari por el canon de Antamina, y Aija, Bolognesi y Huallanca por la minería.
+  </div>
+  <div class="box">
+    <span class="h">🔄 Actualización</span>
+    La lista vive en <b>oportunidades.json</b>. El barrido regenera el archivo y tú lo subes a GitHub: entrar al archivo, ✏️ editar, pegar y confirmar.<br><br>
+    La app calcula sola los días restantes y <b>oculta lo vencido</b>, aunque no actualices en una semana.
+  </div>
+
+  <footer>
+    CHASKI · Radar de oportunidades<br>
+    RyC Contratistas Generales · YACUSOL<br>
+    Ing. Rafael Zeña · Ingeniero Mecánico Electricista
+  </footer>
+</section>
+</div>
+
+<nav>
+  <button class="on" data-p="p1"><span class="i">📡</span>Vigentes<span class="bdg" id="bdg" style="display:none">0</span></button>
+  <button data-p="p5"><span class="i">🏜️</span>Desiertas</button>
+  <button data-p="p2"><span class="i">🎯</span>Jugadas</button>
+  <button data-p="p3"><span class="i">🔍</span>Buscar</button>
+  <button data-p="p4"><span class="i">⚙️</span>Más</button>
+</nav>
+
+<div id="toast"></div>
+
+<script>
+var DATOS_EMBEBIDOS = /*__DATOS__*/;
+/*__APP__*/
+</script>
+</body>
+</html>

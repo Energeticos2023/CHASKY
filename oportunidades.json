@@ -1,72 +1,340 @@
 {
   "actualizado": "2026-08-18",
+  "hora": "14:00",
   "zona": "Callejón de Huaylas y Áncash",
+  "metodo_encaje": {
+    "descripcion": "Cada oportunidad se puntúa sobre 100 sumando siete factores. La puntuación es una guía de priorización, no una garantía.",
+    "factores": [
+      {
+        "k": "afinidad",
+        "n": "Afinidad con lo que hace RyC",
+        "max": 20
+      },
+      {
+        "k": "distancia",
+        "n": "Cercanía al Callejón de Huaylas",
+        "max": 15
+      },
+      {
+        "k": "subcontrato",
+        "n": "Vía de entrada realista",
+        "max": 15
+      },
+      {
+        "k": "plazo",
+        "n": "Tiempo restante para actuar",
+        "max": 15
+      },
+      {
+        "k": "requisitos",
+        "n": "Requisitos que puedes acreditar",
+        "max": 15
+      },
+      {
+        "k": "competencia",
+        "n": "Competencia esperada (más alto = menos rivales)",
+        "max": 10
+      },
+      {
+        "k": "monto",
+        "n": "Atractivo económico estimado",
+        "max": 10
+      }
+    ]
+  },
+  "fuentes_citadas": [
+    {
+      "afirmacion": "El 15,9 % de los ítems convocados por el Estado queda desierto; 27 % sin participantes, 26 % sin ofertas presentadas y 45 % con todas las ofertas rechazadas.",
+      "fuente": "MEF — Estudio «¿Por qué razones un proceso de selección queda desierto?»",
+      "url": "https://www.mef.gob.pe/cont_estado/documentos/1_Estudio_desiertos.pdf"
+    },
+    {
+      "afirmacion": "El MINEM convocará en 2026 proyectos de electrificación rural por más de S/ 1 159 millones, con Áncash entre las regiones beneficiadas.",
+      "fuente": "Energiminas, 9 de febrero de 2026",
+      "url": "https://energiminas.com/2026/02/09/minem-convocara-en-2026-proyectos-de-electrificacion-rural-por-mas-de-s-1159-millones/"
+    },
+    {
+      "afirmacion": "Áncash registra 94 unidades mineras de exploración y producción.",
+      "fuente": "Rumbo Minero, citando al MINEM",
+      "url": "https://www.rumbominero.com/peru/noticias/mineria/ancash-registra-94-unidades-de-exploracion-y-produccion-segun-el-mem/"
+    },
+    {
+      "afirmacion": "Osinergmin contrata empresas supervisoras a través del sistema SICOES.",
+      "fuente": "Plataforma del Estado Peruano — gob.pe",
+      "url": "https://www.gob.pe/41294-acceder-al-sistema-de-registro-y-contratacion-de-empresas-supervisoras-sicoes"
+    },
+    {
+      "afirmacion": "Minera Lincuna alista cambios por US$ 135 millones en Huancapetí, Áncash.",
+      "fuente": "Diario Gestión",
+      "url": "https://gestion.pe/economia/empresas/ancash-los-ocho-cambios-por-us-135-millones-que-alista-minera-lincuna-en-huancapeti-noticia/"
+    }
+  ],
+  "buscadores_oficiales": {
+    "seace": "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml",
+    "ocds": "https://contratacionesabiertas.oece.gob.pe/"
+  },
   "oportunidades": [
     {
-      "titulo": "Supervisión de obra — mejoramiento de agua potable e instalación de desagüe",
-      "entidad": "Municipalidad Distrital de Ranrahirca",
-      "lugar": "Ranrahirca, Yungay",
-      "tipo": "Consultoría",
-      "modalidad": "Concurso Público · CUI 2305704",
-      "cierra": "2026-09-02",
-      "fuerza": "alta",
-      "encaje": "Vía directa como Ingeniero Mecánico Electricista colegiado. Toda planta de agua y desagüe necesita especialista electromecánico en el equipo de supervisión: bombeo, tableros, arrancadores y pozo a tierra. Si no vas como titular, postula como especialista integrante del equipo.",
-      "url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/"
+      "id": "rnr",
+      "titulo": "Supervisión de obra — agua potable y desagüe",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de Ranrahirca",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Consultoría",
+        "modalidad": "Concurso Público",
+        "provincia": "Yungay",
+        "distrito": "Ranrahirca",
+        "cierra": "2026-09-02",
+        "hora": null,
+        "cui": "2305704",
+        "monto": null,
+        "fuente": "PerúContrata",
+        "fuente_url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Es la única donde entras por la puerta principal, con tu título, sin depender de nadie.",
+        "detalle": "Toda planta de agua potable y desagüe tiene componente electromecánico: bombeo, tableros, arrancadores, protecciones y pozo a tierra. Los equipos de supervisión suelen exigir un especialista electromecánico además del sanitario. Si no calificas como jefe de supervisión, postula como especialista integrante del equipo de un consultor que sí tenga la experiencia en obras de saneamiento.",
+        "rubros": [
+          "consultoria",
+          "electrico"
+        ],
+        "via": "directa",
+        "certeza": "probable"
+      },
+      "porverificar": [
+        "Si las bases exigen especialista electromecánico y con qué experiencia mínima",
+        "Valor referencial y plazo de la consultoría",
+        "Si admiten consorcio, que sería tu vía más rápida"
+      ],
+      "encaje": {
+        "afinidad": 16,
+        "distancia": 14,
+        "monto": 5,
+        "subcontrato": 15,
+        "competencia": 6,
+        "plazo": 13,
+        "requisitos": 10
+      }
     },
     {
-      "titulo": "Mantenimiento del Dren Cascajal, Km 0+000 al Km 4+000",
-      "entidad": "GORE Áncash — Proyecto Especial CHINECAS",
-      "lugar": "Chimbote, Santa",
-      "tipo": "Servicio",
-      "modalidad": "Concurso Público · CP SER-SM-4-2026-P.E.CHINECAS-C-1",
-      "cierra": "2026-08-26",
-      "fuerza": "media",
-      "encaje": "Rubro hidráulico, no eléctrico. El valor está en identificar al ganador y ofrecerle el paquete de electricidad de obra: instalaciones provisionales, grupo electrógeno y pozo a tierra. GORE Áncash ya conoce a RyC.",
-      "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      "id": "tcp",
+      "titulo": "Cobertura de graderías del estadio municipal",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de Ticapampa",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública Abreviada",
+        "provincia": "Recuay",
+        "distrito": "Ticapampa",
+        "cierra": "2026-08-25",
+        "hora": null,
+        "cui": "2727791",
+        "monto": null,
+        "fuente": "PerúContrata",
+        "fuente_url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Distrito chico en Recuay, poca competencia. Ve por el subcontrato eléctrico con el que gane.",
+        "detalle": "Una cobertura de graderías normalmente trae iluminación deportiva, tablero de fuerza y protección contra descargas atmosféricas, además del pozo a tierra correspondiente. Ojo: esto es una inferencia por el tipo de obra, no está confirmado en el expediente. Ticapampa es un distrito pequeño donde el trato directo funciona mejor que el papeleo.",
+        "rubros": [
+          "electrico",
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente técnico incluye partidas de iluminación y pozo a tierra, o solo la estructura",
+        "Quiénes se registraron como participantes",
+        "Valor referencial de la obra"
+      ],
+      "encaje": {
+        "afinidad": 14,
+        "distancia": 15,
+        "monto": 5,
+        "subcontrato": 13,
+        "competencia": 8,
+        "plazo": 10,
+        "requisitos": 12
+      }
     },
     {
-      "titulo": "Construcción de cobertura en graderías del estadio municipal",
-      "entidad": "Municipalidad Distrital de Ticapampa",
-      "lugar": "Ticapampa, Recuay",
-      "tipo": "Obra",
-      "modalidad": "Licitación Pública Abreviada · CUI 2727791",
-      "cierra": "2026-08-25",
-      "fuerza": "alta",
-      "encaje": "La mejor de la lista para subcontrato. Cobertura de estadio implica iluminación deportiva, tableros, pararrayos y pozo a tierra. Distrito pequeño en Recuay, competencia baja y decisión rápida. Llama a la municipalidad, pregunta quiénes están postulando y ofréceles el paquete eléctrico.",
-      "url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/"
+      "id": "crz",
+      "titulo": "Movilidad urbana — Jr. La Esperanza, Jr. Señor de Chaucayán y Av. Machapay",
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "DRTC — Dirección Regional de Transportes y Comunicaciones",
+        "nomenclatura": "LP-SM-2-2026-GRA/GRI/DRTC/C-1",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública",
+        "provincia": "Carhuaz",
+        "distrito": "Carhuaz",
+        "cierra": "2026-08-20",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Está en Carhuaz, tu zona, pero cierra en dos días. Si vas, es hoy.",
+        "detalle": "Las obras de movilidad urbana suelen incluir alumbrado público, reubicación de postes y a veces semaforización. El GORE Áncash ya conoce a RyC por trabajos anteriores. Como el plazo está encima, la vía realista no es postular sino ubicar a los postores registrados y ofrecerles el paquete eléctrico para su propuesta.",
+        "rubros": [
+          "electrico",
+          "alumbrado"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente incluye partidas de alumbrado público o solo pavimento y veredas",
+        "Lista de participantes registrados en el SEACE",
+        "Valor referencial"
+      ],
+      "encaje": {
+        "afinidad": 15,
+        "distancia": 15,
+        "monto": 6,
+        "subcontrato": 13,
+        "competencia": 4,
+        "plazo": 4,
+        "requisitos": 11
+      }
     },
     {
+      "id": "pch",
+      "titulo": "Espacios públicos urbanos — Pichiu San Pedro",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública Abreviada",
+        "provincia": "Huari",
+        "distrito": "San Marcos",
+        "cierra": "2026-08-19",
+        "hora": null,
+        "cui": "2677790",
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Cierra mañana. Más que postular, sirve para entrar a la lista de proveedores de San Marcos.",
+        "detalle": "San Marcos concentra el canon de Antamina y es de los distritos con más presupuesto de Áncash: contrata seguido y paga. Los proyectos de espacios públicos suelen llevar alumbrado ornamental y tableros, aunque eso depende del expediente. Aunque no llegues a esta convocatoria, la visita a su área de infraestructura vale por sí sola.",
+        "rubros": [
+          "electrico",
+          "alumbrado"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente contempla alumbrado ornamental",
+        "Cómo inscribirse en su registro de proveedores",
+        "Qué obras tienen programadas para el resto del año"
+      ],
+      "encaje": {
+        "afinidad": 11,
+        "distancia": 7,
+        "monto": 6,
+        "subcontrato": 11,
+        "competencia": 7,
+        "plazo": 2,
+        "requisitos": 10
+      }
+    },
+    {
+      "id": "bcv",
       "titulo": "Mantenimiento correctivo de bocatoma — barraje móvil La Víbora",
-      "entidad": "GORE Áncash — Proyecto Especial CHINECAS",
-      "lugar": "Áncash",
-      "tipo": "Servicio",
-      "modalidad": "Concurso Público · CP SER-SM-3-2026-GRA-PE.CHINECAS-1",
-      "cierra": "2026-08-21",
-      "fuerza": "media",
-      "encaje": "Un barraje móvil funciona con compuertas motorizadas: tienen tableros, mando eléctrico y puesta a tierra. Consulta si el alcance incluye la parte electromecánica; si la incluye, es tuya. Si no, ofrécela al ganador como adicional.",
-      "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "Proyecto Especial CHINECAS",
+        "nomenclatura": "CP SER-SM-3-2026-GRA-PE.CHINECAS-1",
+        "tipo": "Servicio",
+        "modalidad": "Concurso Público",
+        "provincia": "Santa",
+        "distrito": "No verificado",
+        "cierra": "2026-08-21",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Un barraje móvil tiene compuertas motorizadas. Pregunta si el alcance incluye lo electromecánico.",
+        "detalle": "Los barrajes móviles operan con compuertas accionadas por motores, con tableros de mando, protecciones y puesta a tierra. Si el alcance del servicio incluye esa parte, es trabajo tuyo directo. Si el alcance es solo obra civil, queda como adicional que puedes ofrecer al ganador. Está en la zona de Chimbote, fuera del Callejón de Huaylas.",
+        "rubros": [
+          "electrico",
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Alcance exacto del servicio: ¿incluye compuertas y tableros?",
+        "Valor referencial",
+        "Si CHINECAS admite subcontratación"
+      ],
+      "encaje": {
+        "afinidad": 10,
+        "distancia": 5,
+        "monto": 6,
+        "subcontrato": 10,
+        "competencia": 6,
+        "plazo": 6,
+        "requisitos": 10
+      }
     },
     {
-      "titulo": "Mejoramiento y ampliación de movilidad urbana — Jr. La Esperanza, Jr. Señor de Chaucayán y Av. Machapay",
-      "entidad": "GORE Áncash — DRTC",
-      "lugar": "Carhuaz",
-      "tipo": "Obra",
-      "modalidad": "Licitación Pública · LP-SM-2-2026-GRA/GRI/DRTC/C-1",
-      "cierra": "2026-08-20",
-      "fuerza": "alta",
-      "encaje": "Movilidad urbana significa alumbrado público, redes eléctricas, semaforización y reubicación de postes. Está en Carhuaz, tu zona. Cierra en días: contacta hoy a los postores, porque el ganador va a subcontratar el paquete eléctrico completo.",
-      "url": "https://www.perulicitaciones.com/departamento/ancash.html"
-    },
-    {
-      "titulo": "Mejoramiento y ampliación de servicios de espacios públicos urbanos — Pichiu San Pedro",
-      "entidad": "Municipalidad Distrital de San Marcos",
-      "lugar": "San Marcos, Huari",
-      "tipo": "Obra",
-      "modalidad": "Licitación Pública Abreviada · CUI 2677790",
-      "cierra": "2026-08-19",
-      "fuerza": "media",
-      "encaje": "Espacios públicos urbanos casi siempre llevan alumbrado ornamental y tableros. San Marcos es el distrito con más canon minero de Áncash por Antamina: paga bien y contrata seguido. Aunque no llegues a esta, vale entrar a su lista de proveedores.",
-      "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      "id": "drn",
+      "titulo": "Mantenimiento del Dren Cascajal, Km 0+000 al Km 4+000",
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "Proyecto Especial CHINECAS",
+        "nomenclatura": "CP SER-SM-4-2026-P.E.CHINECAS-C-1",
+        "tipo": "Servicio",
+        "modalidad": "Concurso Público",
+        "provincia": "Santa",
+        "distrito": "Chimbote",
+        "cierra": "2026-08-26",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Rubro hidráulico, poco tuyo. Vale por el contacto con CHINECAS, no por el trabajo.",
+        "detalle": "Limpieza y mantenimiento de un dren: movimiento de tierras y maquinaria, sin componente eléctrico relevante. Lo único aprovechable sería la electricidad provisional de obra o un grupo electrógeno, que es marginal. Lo incluyo porque pediste ver todo sin filtrar por rubro y porque CHINECAS es una unidad ejecutora que contrata seguido en Áncash.",
+        "rubros": [
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si requieren energía provisional o grupo electrógeno en obra",
+        "Qué otros servicios tiene CHINECAS programados este año"
+      ],
+      "encaje": {
+        "afinidad": 5,
+        "distancia": 5,
+        "monto": 6,
+        "subcontrato": 8,
+        "competencia": 6,
+        "plazo": 11,
+        "requisitos": 9
+      }
     }
   ],
   "permanentes": [

@@ -31,6 +31,11 @@ Abre esa dirección en el celular.
 
 Queda el ícono en la pantalla de inicio y abre a pantalla completa, sin barra de navegador. Funciona también sin señal.
 
+## Sobre el nombre
+
+La marca visible es **CHASKI** (con i). Si tu repositorio se llama `CHASKY`, la dirección quedará con y.
+Para unificarlo: **Settings → Repository name → cambiar a `chaski` → Rename**. GitHub redirige la dirección antigua sola.
+
 ## Archivos
 
 | Archivo | Para qué sirve |
