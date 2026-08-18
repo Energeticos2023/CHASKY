@@ -112,5 +112,58 @@
       "prioridad": 6,
       "url": "https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
     }
-  ]
+  ],
+  "desiertos": {
+    "porque_importa": "El MEF estudió el fenómeno: el 15.9 % de todos los ítems convocados por el Estado queda desierto. De esos, el 27 % no tuvo ni un solo proveedor registrado y el 26 % tuvo registrados que no presentaron oferta. Es decir, en más de la mitad de los desiertos la entidad no compitió contra nadie: simplemente nadie apareció. Y el 45 % restante se declaró desierto porque todas las ofertas fueron rechazadas, en su mayoría por no acreditar bien los Requerimientos Técnicos Mínimos. Ahí está tu ventaja: no ganas por precio, ganas por presentar el expediente completo y bien documentado.",
+    "que_pasa_despues": "Declarar desierto no cancela la necesidad. La entidad tiene el presupuesto comprometido y la obligación de contratar. Puede volver a convocar, redefinir el requerimiento, ajustar el valor referencial o, tras desiertos sucesivos, pasar a un procedimiento no competitivo o a contratación directa justificada. En ese punto la entidad busca proveedor activamente en lugar de esperar postores.",
+    "jugada": "Cuando detectes un desierto, no esperes la nueva convocatoria. Llama al Órgano Encargado de las Contrataciones de la entidad, preséntate como proveedor del rubro y pregunta dos cosas: cuándo relanzan y por qué se cayó la primera vez. Si fue por falta de postores, tienes el campo libre. Si fue porque rechazaron las ofertas, pide ver los requisitos que nadie cumplió: casi siempre son de documentación, no de capacidad técnica.",
+    "candidatas": [
+      {
+        "titulo": "Mantenimiento de la infraestructura del Centro Cívico de San Marcos",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-18",
+        "senal": "Servicio de mantenimiento en distrito alejado, plazo corto. Los mantenimientos de infraestructura en distritos de sierra son de los que más quedan desiertos porque las empresas de Lima no viajan.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "titulo": "Creación de servicios de protección en riberas del río Mosna",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-18",
+        "senal": "Obra en zona rural de Huari. Si quedó desierta, San Marcos tiene canon de Antamina y presupuesto asegurado: la relanzan sí o sí.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "titulo": "Mejoramiento de espacios públicos urbanos — Pichiu San Pedro",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-19",
+        "senal": "Centro poblado pequeño, Licitación Pública Abreviada. Vale llamar el 20 de agosto para preguntar si hubo postores.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      }
+    ],
+    "donde_cazarlos": [
+      {
+        "nombre": "SEACE — Buscador Público, filtro Estado: Desierto",
+        "detalle": "La fuente oficial. En el buscador elige Departamento: Áncash y en Estado marca Desierto.",
+        "url": "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"
+      },
+      {
+        "nombre": "LicitacionesPerú — fase Desierto",
+        "detalle": "Muestra los procesos con el sello «Desierto — nadie ganó». Cambia el departamento en el filtro de la página.",
+        "url": "https://licitacionesperu.pe/licitaciones/?phase=Desierto&year=2026&sort=published_at+DESC"
+      },
+      {
+        "nombre": "PerúLicitaciones — Áncash",
+        "detalle": "Revisa el estado de cada proceso; los que no adjudicaron vuelven a salir.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "nombre": "Búsqueda abierta de desiertos en Áncash",
+        "detalle": "Rastreo en Google de declaratorias de desierto y segundas convocatorias del último mes.",
+        "url": "https://www.google.com/search?q=%28%22declarado+desierto%22+OR+%22declara+desierto%22+OR+%22segunda+convocatoria%22%29+%28%22Ancash%22+OR+%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22+OR+%22Huari%22%29+2026&tbs=qdr:m"
+      }
+    ]
+  }
 }
