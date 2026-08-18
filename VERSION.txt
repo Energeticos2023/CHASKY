@@ -1,0 +1,5 @@
+CHASKI V3
+Generado: 18/08/2026
+Repositorio: Energeticos2023/CHASKY
+Commit V3: b29ecc5ae1509cfe7bbf6926ad6752922bb4fa38
+Commit privadas.json: 90e23bf0ae5ca6936047cadd73c741ce8cd60de0

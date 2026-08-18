@@ -1,0 +1,31 @@
+CHASKI V3 - PAQUETE DE ACTUALIZACION
+Fecha: 18/08/2026
+
+ARCHIVOS INCLUIDOS
+1. chaski-v3.html  -> Version 3 para probar sin reemplazar la aplicacion principal.
+2. index.html      -> La misma Version 3, lista para convertirla en la aplicacion principal.
+3. privadas.json   -> Base inicial de oportunidades y canales de empresas privadas.
+
+IMPORTANTE
+- El archivo oportunidades.json NO se incluye en este ZIP porque ya existe en tu repositorio CHASKY y contiene la base de oportunidades publicas actual.
+- No lo borres ni lo reemplaces al subir esta Version 3.
+
+PARA PROBAR V3 SIN CAMBIAR LA APP PRINCIPAL
+- Sube chaski-v3.html y privadas.json a la raiz del repositorio.
+- Abre: https://energeticos2023.github.io/CHASKY/chaski-v3.html
+
+PARA HACER V3 LA VERSION PRINCIPAL
+- Conserva oportunidades.json en el repositorio.
+- Sube privadas.json.
+- Reemplaza el index.html actual por el index.html incluido en este ZIP.
+- La direccion principal sera: https://energeticos2023.github.io/CHASKY/
+
+CONTENIDO V3
+- Sector publico y privado.
+- Datos preparados para copiar y pegar en SEACE.
+- Copia individual de entidad, objeto, descripcion, fechas, nomenclatura y CUI.
+- Boton para copiar el paquete completo de busqueda.
+- Acceso rapido a busqueda/portal.
+- Base de oportunidades privadas y canales de proveedores.
+
+Repositorio: Energeticos2023/CHASKY
