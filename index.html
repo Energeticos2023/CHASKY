@@ -2,9 +2,9 @@
 <html lang="es-PE">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>CHASKI — Radar de oportunidades</title>
-<meta name="description" content="Oportunidades de negocio en electricidad, energía solar, pozos a tierra y mantenimiento en el Callejón de Huaylas, Áncash.">
+<meta name="description" content="Oportunidades de negocio vigentes en electricidad, energía solar, pozos a tierra y mantenimiento en el Callejón de Huaylas, Áncash.">
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0e1116">
@@ -18,67 +18,115 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --bg:#0e1116; --card:#161b23; --card2:#1d232d; --line:#2a323e;
-  --tx:#e8ecf2; --tx2:#9aa6b6; --tx3:#6b7889;
-  --acc:#f5a623; --acc2:#ffd166; --acc3:#e8570d;
+  --bg:#0e1116;--card:#161b23;--card2:#1d232d;--line:#2a323e;
+  --tx:#e8ecf2;--tx2:#9aa6b6;--tx3:#6b7889;
+  --acc:#f5a623;--acc2:#ffd166;--acc3:#e8570d;
+  --ok:#3ecf8e;--warn:#f5a623;--hot:#ff6b6b;--info:#5aa9f5;
 }
 html{background:var(--bg)}
-body{
-  background:var(--bg);color:var(--tx);
+body{background:var(--bg);color:var(--tx);
   font:16px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
-  padding:env(safe-area-inset-top) 0 calc(36px + env(safe-area-inset-bottom));
+  padding:env(safe-area-inset-top) 0 calc(88px + env(safe-area-inset-bottom));
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
-.w{max-width:660px;margin:0 auto;padding:0 16px}
+.w{max-width:680px;margin:0 auto;padding:0 15px}
 a{text-decoration:none;color:inherit}
 
 /* ── cabecera ── */
-header{text-align:center;padding:28px 0 20px;position:relative}
-.lg{width:60px;height:60px;border-radius:17px;background:linear-gradient(150deg,var(--acc),var(--acc3));
-  display:inline-flex;align-items:center;justify-content:center;font-size:31px;
-  box-shadow:0 8px 26px rgba(245,166,35,.32);margin-bottom:13px}
-h1{font-size:27px;font-weight:800;letter-spacing:2px}
-.tag{color:var(--acc2);font-size:12.5px;font-weight:600;margin-top:5px;letter-spacing:.3px}
-.sb{color:var(--tx3);font-size:12px;margin-top:9px;line-height:1.5}
+header{text-align:center;padding:22px 0 14px}
+.lg{width:52px;height:52px;border-radius:15px;background:linear-gradient(150deg,var(--acc),var(--acc3));
+  display:inline-flex;align-items:center;justify-content:center;font-size:27px;
+  box-shadow:0 7px 22px rgba(245,166,35,.3);margin-bottom:10px}
+h1{font-size:24px;font-weight:800;letter-spacing:2px}
+.tag{color:var(--acc2);font-size:12px;font-weight:600;margin-top:4px}
+.sb{color:var(--tx3);font-size:11.5px;margin-top:7px}
 
-/* ── títulos de sección ── */
-h2{font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
-  color:var(--tx3);margin:30px 0 12px;padding-left:3px;display:flex;align-items:center;gap:8px}
-h2::after{content:'';flex:1;height:1px;background:var(--line)}
+/* ── pestañas inferiores ── */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(14,17,22,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);display:flex;
+  padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+nav button{flex:1;background:none;border:none;color:var(--tx3);font:600 10.5px/1.3 inherit;
+  padding:6px 2px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px}
+nav button .i{font-size:20px;line-height:1}
+nav button.on{color:var(--acc)}
+nav button .bdg{position:absolute;transform:translate(15px,-4px);background:var(--hot);color:#fff;
+  font-size:9px;font-weight:800;min-width:16px;height:16px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;padding:0 4px}
 
-/* ── mosaicos ── */
-.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(min-width:540px){.g{grid-template-columns:1fr 1fr 1fr}}
-.t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 14px 14px;
-  display:flex;flex-direction:column;min-height:114px;transition:transform .1s ease,border-color .15s ease}
+/* ── filtros ── */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 4px;margin-bottom:14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;background:var(--card);border:1px solid var(--line);color:var(--tx2);
+  padding:7px 14px;border-radius:20px;font:600 12.5px inherit;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
+
+/* ── tarjeta de oportunidad ── */
+.op{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line);
+  border-radius:14px;padding:15px 16px;margin-bottom:11px}
+.op.g{border-left-color:var(--ok)} .op.y{border-left-color:var(--warn)} .op.r{border-left-color:var(--hot)}
+.op .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.op .ti{font-size:15px;font-weight:700;line-height:1.32;flex:1}
+.dias{flex:none;font:800 11px inherit;padding:5px 9px;border-radius:9px;text-align:center;
+  line-height:1.15;white-space:nowrap;min-width:52px}
+.dias.g{background:rgba(62,207,142,.16);color:var(--ok)}
+.dias.y{background:rgba(245,166,35,.16);color:var(--warn)}
+.dias.r{background:rgba(255,107,107,.16);color:var(--hot)}
+.dias b{display:block;font-size:16px;line-height:1.1}
+.op .ent{font-size:12.5px;color:var(--tx2);font-weight:600}
+.op .meta{font-size:11.5px;color:var(--tx3);margin-top:3px}
+.op .enc{background:var(--card2);border-radius:10px;padding:11px 12px;margin-top:11px;
+  font-size:12.8px;color:var(--tx2);line-height:1.55}
+.op .enc b{color:var(--acc2);font-weight:700;display:block;margin-bottom:3px;font-size:11px;
+  letter-spacing:.7px;text-transform:uppercase}
+.op .ver{display:inline-block;margin-top:11px;color:var(--info);font-size:12.5px;font-weight:600}
+
+/* ── acción permanente ── */
+.pm{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:11px}
+.pm.top1{border-color:rgba(245,166,35,.42);background:linear-gradient(160deg,rgba(245,166,35,.08),var(--card) 66%)}
+.pm .nu{width:23px;height:23px;border-radius:7px;background:var(--acc);color:#1a1108;
+  font:800 12px inherit;display:inline-flex;align-items:center;justify-content:center;margin-right:9px;vertical-align:2px}
+.pm .ti{font-size:15px;font-weight:700;display:inline;line-height:1.3}
+.pm .ent{font-size:11.5px;color:var(--tx3);margin-top:6px;margin-left:32px}
+.pm .pq{font-size:12.8px;color:var(--tx2);line-height:1.6;margin-top:9px}
+.pm .ver{display:inline-block;margin-top:10px;color:var(--info);font-size:12.5px;font-weight:600}
+
+/* ── mosaicos de búsqueda ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:560px){.g2{grid-template-columns:1fr 1fr 1fr}}
+.t{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 13px;
+  display:flex;flex-direction:column;min-height:104px;transition:transform .1s,border-color .15s}
 .t:active{transform:scale(.965);border-color:var(--acc)}
-.t .e{font-size:26px;line-height:1;margin-bottom:9px}
-.t .n{font-size:14.5px;font-weight:700;line-height:1.25}
-.t .d{font-size:11.5px;color:var(--tx3);margin-top:4px;line-height:1.35}
-.t.hi{border-color:rgba(245,166,35,.5);background:linear-gradient(158deg,rgba(245,166,35,.1),var(--card) 62%)}
+.t .e{font-size:24px;line-height:1;margin-bottom:8px}
+.t .n{font-size:14px;font-weight:700;line-height:1.25}
+.t .d{font-size:11px;color:var(--tx3);margin-top:3px;line-height:1.35}
+.t.hi{border-color:rgba(245,166,35,.5);background:linear-gradient(158deg,rgba(245,166,35,.09),var(--card) 62%)}
 .t.hi .n{color:var(--acc2)}
 
-/* ── botón grande ── */
-.all{display:block;width:100%;margin:14px 0 0;border:none;border-radius:16px;cursor:pointer;
-  background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;
-  padding:19px 16px;font:800 17px/1.2 inherit;letter-spacing:.2px;
-  box-shadow:0 8px 24px rgba(245,166,35,.26);transition:transform .1s}
-.all:active{transform:scale(.98)}
-.all small{display:block;font-size:11.5px;font-weight:600;opacity:.74;margin-top:6px;letter-spacing:0}
+h2{font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx3);
+  margin:26px 0 11px;display:flex;align-items:center;gap:8px}
+h2:first-child{margin-top:4px}
+h2::after{content:'';flex:1;height:1px;background:var(--line)}
 
-/* ── cajas ── */
-.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;
-  margin-top:12px;font-size:13.2px;color:var(--tx2);line-height:1.62}
-.box .h{color:var(--tx);font-weight:700;font-size:13.8px;display:block;margin-bottom:8px}
+.all{display:block;width:100%;margin:13px 0 0;border:none;border-radius:15px;cursor:pointer;
+  background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;padding:17px;
+  font:800 16px inherit;box-shadow:0 7px 20px rgba(245,166,35,.24)}
+.all:active{transform:scale(.98)}
+.all small{display:block;font-size:11px;font-weight:600;opacity:.74;margin-top:5px}
+
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px;
+  margin-top:12px;font-size:12.8px;color:var(--tx2);line-height:1.62}
+.box .h{color:var(--tx);font-weight:700;font-size:13.5px;display:block;margin-bottom:7px}
 .box b{color:var(--acc)}
 .box.gold{border-color:rgba(245,166,35,.34);background:linear-gradient(160deg,rgba(245,166,35,.07),var(--card) 70%)}
 
-/* ── botón instalar (Android) ── */
 #inst{display:none;width:100%;margin-top:12px;border:1px solid var(--acc);border-radius:14px;
   background:rgba(245,166,35,.1);color:var(--acc2);padding:15px;font:700 15px inherit;cursor:pointer}
-#inst:active{transform:scale(.98)}
 
-footer{text-align:center;color:#4d5766;font-size:11.5px;margin-top:30px;line-height:1.8;padding-top:20px;border-top:1px solid var(--line)}
-.hide{display:none !important}
+.vacio{text-align:center;color:var(--tx3);font-size:13.5px;padding:38px 20px;line-height:1.7}
+.vacio .em{font-size:38px;display:block;margin-bottom:12px}
+footer{text-align:center;color:#4d5766;font-size:11px;margin-top:26px;line-height:1.8;
+  padding-top:18px;border-top:1px solid var(--line)}
+.pane{display:none} .pane.on{display:block}
 </style>
 </head>
 <body>
@@ -88,146 +136,248 @@ footer{text-align:center;color:#4d5766;font-size:11.5px;margin-top:30px;line-hei
   <div class="lg">⚡</div>
   <h1>CHASKI</h1>
   <div class="tag">El que trae la noticia primero</div>
-  <div class="sb" id="hoy"></div>
+  <div class="sb" id="sb"></div>
 </header>
 
-<!-- ═════ RUBROS ═════ -->
-<h2>Buscar por rubro</h2>
-<div class="g">
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22pozo+a+tierra%22+OR+%22puesta+a+tierra%22+OR+%22sistema+de+puesta+a+tierra%22%29+%28Huaraz+OR+Recuay+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Ancash%29+%28convocatoria+OR+%22orden+de+servicio%22+OR+cotizacion+OR+requerimiento%29&tbs=qdr:w">
-    <span class="e">⚡</span><span class="n">Pozos a tierra</span><span class="d">Mantenimiento y certificación</span></a>
+<!-- ══════ OPORTUNIDADES ══════ -->
+<section class="pane on" id="p1">
+  <div class="chips">
+    <button class="chip on" data-f="todas">Todas</button>
+    <button class="chip" data-f="urgente">🔴 Urgentes</button>
+    <button class="chip" data-f="semana">Esta semana</button>
+    <button class="chip" data-f="alta">⭐ Mejor encaje</button>
+  </div>
+  <div id="lista"></div>
+</section>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22terma+solar%22+OR+%22termas+solares%22+OR+%22calentador+solar%22+OR+%22sistema+solar+termico%22%29+%28Ancash+OR+Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz%29+%28adquisicion+OR+instalacion+OR+mantenimiento+OR+convocatoria%29&tbs=qdr:w">
-    <span class="e">☀️</span><span class="n">Termas solares</span><span class="d">Venta, instalación, mantenimiento</span></a>
+<!-- ══════ ACCIONES ══════ -->
+<section class="pane" id="p2">
+  <h2>Jugadas que no caducan</h2>
+  <div id="perms"></div>
+</section>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22panel+solar%22+OR+%22paneles+solares%22+OR+fotovoltaico+OR+%22electrificacion+rural%22%29+%28Ancash+OR+Huaraz+OR+%22Callejon+de+Huaylas%22%29+%28licitacion+OR+convocatoria+OR+instalacion+OR+suministro%29&tbs=qdr:w">
-    <span class="e">🔆</span><span class="n">Paneles solares</span><span class="d">Fotovoltaico y electrificación rural</span></a>
+<!-- ══════ BUSCAR ══════ -->
+<section class="pane" id="p3">
+  <h2>Búsqueda manual por rubro</h2>
+  <div class="g2">
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22pozo+a+tierra%22+OR+%22puesta+a+tierra%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29+%28%22convocatoria%22+OR+%22orden+de+servicio%22+OR+%22requerimiento%22%29+-Junin+-Huancayo+-Lima&tbs=qdr:w">
+      <span class="e">⚡</span><span class="n">Pozos a tierra</span><span class="d">Mantenimiento y certificación</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22terma+solar%22+OR+%22termas+solares%22+OR+%22calentador+solar%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Ancash%22%29+%28adquisicion+OR+instalacion+OR+mantenimiento%29+-Lima+-Arequipa&tbs=qdr:w">
+      <span class="e">☀️</span><span class="n">Termas solares</span><span class="d">Venta e instalación</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22panel+solar%22+OR+%22paneles+solares%22+OR+%22electrificacion+rural%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29+%28licitacion+OR+convocatoria+OR+suministro%29&tbs=qdr:w">
+      <span class="e">🔆</span><span class="n">Paneles solares</span><span class="d">Fotovoltaico y rural</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22redes+electricas%22+OR+%22alumbrado+publico%22+OR+subestacion%29+mantenimiento+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29&tbs=qdr:w">
+      <span class="e">🔌</span><span class="n">Redes eléctricas</span><span class="d">Alumbrado, subestaciones</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22supervisor+de+obra%22+OR+%22especialista+electrico%22+OR+consultoria+OR+%22locacion+de+servicios%22%29+%28%22ingeniero+mecanico+electricista%22+OR+%22ingeniero+electricista%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29&tbs=qdr:w">
+      <span class="e">📐</span><span class="n">Consultoría</span><span class="d">Supervisión y peritaje</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=mantenimiento+%28%22luces+de+emergencia%22+OR+%22sistema+contra+incendio%22+OR+%22grupo+electrogeno%22+OR+%22tablero+electrico%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22%29&tbs=qdr:w">
+      <span class="e">🧰</span><span class="n">Mantenimiento</span><span class="d">Emergencia y tableros</span></a>
+  </div>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22instalaciones+electricas%22+OR+%22redes+electricas%22+OR+%22alumbrado+publico%22+OR+subestacion+OR+%22media+tension%22%29+mantenimiento+%28Huaraz+OR+Recuay+OR+Carhuaz+OR+Yungay+OR+Caraz%29&tbs=qdr:w">
-    <span class="e">🔌</span><span class="n">Redes eléctricas</span><span class="d">Alumbrado, subestaciones, MT/BT</span></a>
+  <h2>Fuentes en vivo</h2>
+  <div class="g2">
+    <a class="t hi" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/licitaciones-peru/ancash/">
+      <span class="e">📍</span><span class="n">Áncash vigentes</span><span class="d">Con plazo abierto</span></a>
+    <a class="t hi" target="_blank" rel="noopener" href="https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026">
+      <span class="e">💰</span><span class="n">Menores 8 UIT</span><span class="d">Órdenes de servicio</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/departamento/ancash.html">
+      <span class="e">📋</span><span class="n">Convocatorias</span><span class="d">Con fecha límite</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/boletin-licitaciones/">
+      <span class="e">📰</span><span class="n">Boletín diario</span><span class="d">Todo el Perú</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://prod6.seace.gob.pe/auth-proveedor/">
+      <span class="e">🏛️</span><span class="n">SEACE 8 UIT</span><span class="d">Con tu RNP</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml">
+      <span class="e">🔎</span><span class="n">Buscador SEACE</span><span class="d">Fuente oficial</span></a>
+  </div>
+  <button class="all" onclick="abrirTodas()">🔄 ABRIR TODAS LAS FUENTES<small>Las 6 páginas con lo vigente de hoy</small></button>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22instalacion+electrica%22+OR+%22instalaciones+electricas%22%29+%28domiciliaria+OR+comercial+OR+industrial+OR+interior%29+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay%29+%28servicio+OR+contratacion+OR+requerimiento%29&tbs=qdr:w">
-    <span class="e">🏠</span><span class="n">Instalaciones</span><span class="d">Domiciliaria, comercial, industrial</span></a>
+  <h2>Entidades</h2>
+  <div class="g2">
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=SUNAT+%28%22Oficina+Zonal+Huaraz%22+OR+Ancash%29+%28mantenimiento+OR+%22pozo+a+tierra%22+OR+%22luces+de+emergencia%22%29+contratacion&tbs=qdr:m">
+      <span class="e">🏢</span><span class="n">SUNAT</span><span class="d">Oficina Zonal Huaraz</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/ministerio-del-interior-pnp-ue-001-oga.html">
+      <span class="e">🚔</span><span class="n">PNP · Mininter</span><span class="d">Comisarías</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28Lincuna+OR+%22Santa+Luisa%22+OR+Huanzala+OR+Contonga+OR+Pachapaqui%29+Ancash+%28contratista+OR+proveedor+OR+%22servicio+electrico%22%29&tbs=qdr:m">
+      <span class="e">⛏️</span><span class="n">Mineras</span><span class="d">Lincuna, Santa Luisa</span></a>
+    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/empresa-regional-de-servicio-publico-de-electricidad-electro-nor-medio-sa-hidrandina.html">
+      <span class="e">💡</span><span class="n">Hidrandina</span><span class="d">Concesionaria</span></a>
+  </div>
+</section>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22supervisor+de+obra%22+OR+%22residente+de+obra%22+OR+%22especialista+electrico%22+OR+perito+OR+consultoria+OR+%22locacion+de+servicios%22%29+%28%22ingeniero+mecanico+electricista%22+OR+%22ingeniero+electricista%22%29+Ancash&tbs=qdr:w">
-    <span class="e">📐</span><span class="n">Consultoría</span><span class="d">Supervisión, residencia, peritaje</span></a>
+<!-- ══════ MÁS ══════ -->
+<section class="pane" id="p4">
+  <h2>Tu app</h2>
+  <button id="inst">📲 Instalar CHASKI en este celular</button>
+  <div class="box gold" id="ayudaInst">
+    <span class="h">📲 Ponlo en tu pantalla de inicio</span>
+    <b>Android:</b> menú ⋮ arriba a la derecha → <b>Instalar aplicación</b>.<br>
+    <b>iPhone:</b> botón compartir ⬆️ → <b>Añadir a pantalla de inicio</b>.<br><br>
+    Queda el ícono junto a WhatsApp, abre a pantalla completa y funciona sin señal.
+  </div>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=mantenimiento+%28%22luces+de+emergencia%22+OR+%22sistema+contra+incendio%22+OR+extintores+OR+%22grupo+electrogeno%22+OR+tablero+electrico%29+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay+OR+Ancash%29&tbs=qdr:w">
-    <span class="e">🧰</span><span class="n">Mantenimiento</span><span class="d">Emergencia, contra incendio, tableros</span></a>
+  <div class="box">
+    <span class="h">🔄 Cómo se actualiza la lista</span>
+    La lista de oportunidades vive en el archivo <b>oportunidades.json</b>. El barrido automático lo regenera y tú lo subes a GitHub: entras al archivo, ✏️ editar, pegas y confirmas. Tres clics.<br><br>
+    La app calcula <b>sola</b> los días que faltan. Una convocatoria vencida desaparece automáticamente, aunque no actualices en una semana.
+  </div>
 
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=site%3Afacebook.com+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay%29+%28electricista+OR+%22pozo+a+tierra%22+OR+%22terma+solar%22+OR+%22panel+solar%22%29+%28necesito+OR+busco+OR+requiero+OR+cotizar%29&tbs=qdr:w">
-    <span class="e">📱</span><span class="n">Redes sociales</span><span class="d">Pedidos y avisos en Facebook</span></a>
+  <div class="box">
+    <span class="h">🧠 Análisis con criterio</span>
+    Para saber cuál te conviene, cómo entrar y a quién llamar, escríbeme en Claude: <i>"actualiza el radar"</i>.
+  </div>
+
+  <div class="box">
+    <span class="h">📍 Zona de cobertura</span>
+    Provincias de <b>Huaraz, Recuay, Carhuaz, Yungay y Huaylas (Caraz)</b> con sus 51 distritos. Zona secundaria: San Marcos y Huari por el canon de Antamina, y Aija, Bolognesi y Huallanca por la minería.
+  </div>
+
+  <footer>
+    CHASKI · Radar de oportunidades<br>
+    RyC Contratistas Generales · YACUSOL<br>
+    Ing. Rafael Zeña · Ingeniero Mecánico Electricista
+  </footer>
+</section>
 </div>
 
-<!-- ═════ CONVOCATORIAS ═════ -->
-<h2>Convocatorias vigentes</h2>
-<div class="g">
-  <a class="t hi" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/licitaciones-peru/ancash/">
-    <span class="e">📍</span><span class="n">Áncash vigentes</span><span class="d">Solo con plazo abierto</span></a>
-  <a class="t hi" target="_blank" rel="noopener" href="https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026">
-    <span class="e">💰</span><span class="n">Menores a 8 UIT</span><span class="d">Órdenes de servicio</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/departamento/ancash.html">
-    <span class="e">📋</span><span class="n">Convocatorias Áncash</span><span class="d">Con fecha límite</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/boletin-licitaciones/">
-    <span class="e">📰</span><span class="n">Boletín diario</span><span class="d">Todo el Perú, cada día</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://prod6.seace.gob.pe/auth-proveedor/">
-    <span class="e">🏛️</span><span class="n">SEACE 8 UIT</span><span class="d">Oficial · entra con tu RNP</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml">
-    <span class="e">🔎</span><span class="n">Buscador SEACE</span><span class="d">La fuente oficial</span></a>
-</div>
-<button class="all" onclick="abrirTodas()">🔄 ABRIR TODAS LAS FUENTES<small>Las 6 páginas con lo vigente de hoy</small></button>
-
-<!-- ═════ ENTIDADES ═════ -->
-<h2>Entidades</h2>
-<div class="g">
-  <a class="t hi" target="_blank" rel="noopener" href="https://www.gob.pe/41294-acceder-al-sistema-de-registro-y-contratacion-de-empresas-supervisoras-sicoes">
-    <span class="e">🛡️</span><span class="n">Osinergmin SICOES</span><span class="d">Regístrate como supervisor</span></a>
-  <a class="t hi" target="_blank" rel="noopener" href="https://dger.minem.gob.pe/index2.html">
-    <span class="e">🏔️</span><span class="n">MINEM · DGER</span><span class="d">Electrificación rural S/ 1159 M</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=SUNAT+%28%22Oficina+Zonal+Huaraz%22+OR+Ancash%29+%28mantenimiento+OR+%22pozo+a+tierra%22+OR+electrico+OR+%22luces+de+emergencia%22%29+contratacion&tbs=qdr:m">
-    <span class="e">🏢</span><span class="n">SUNAT</span><span class="d">Oficina Zonal Huaraz</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/ministerio-del-interior-pnp-ue-001-oga.html">
-    <span class="e">🚔</span><span class="n">PNP · Mininter</span><span class="d">Comisarías de la zona</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://portalproveedores.asip.antamina.com/">
-    <span class="e">⛏️</span><span class="n">Antamina</span><span class="d">Portal de proveedores</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28Lincuna+OR+%22Santa+Luisa%22+OR+Huanzala+OR+Contonga+OR+Pachapaqui%29+Ancash+%28contratista+OR+proveedor+OR+%22servicio+electrico%22+OR+ampliacion%29&tbs=qdr:m">
-    <span class="e">⛏️</span><span class="n">Otras mineras</span><span class="d">Lincuna, Santa Luisa, Contonga</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/empresa-regional-de-servicio-publico-de-electricidad-electro-nor-medio-sa-hidrandina.html">
-    <span class="e">💡</span><span class="n">Hidrandina</span><span class="d">Concesionaria de Áncash</span></a>
-  <a class="t" target="_blank" rel="noopener" href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx">
-    <span class="e">📊</span><span class="n">Consulta MEF</span><span class="d">Presupuesto sin convocar</span></a>
-</div>
-
-<button id="inst">📲 Instalar CHASKI en este celular</button>
-
-<!-- ═════ AYUDA ═════ -->
-<div class="box gold" id="ayudaInst">
-  <span class="h">📲 Ponlo en tu pantalla de inicio</span>
-  <b>Android:</b> menú ⋮ arriba a la derecha → <b>Instalar aplicación</b> o <b>Agregar a pantalla principal</b>.<br>
-  <b>iPhone:</b> botón compartir ⬆️ abajo → <b>Añadir a pantalla de inicio</b>.<br><br>
-  Queda el ícono junto a WhatsApp y abre a pantalla completa, sin barra de navegador. Funciona aunque estés sin señal.
-</div>
-
-<div class="box">
-  <span class="h">🧠 Para el análisis con criterio</span>
-  Los botones te llevan a la información cruda. Para saber <b>cuál te conviene, cómo entrar y a quién llamar</b>, escríbeme en Claude: <i>"actualiza el radar"</i>.
-</div>
-
-<footer>
-  CHASKI · Radar de oportunidades<br>
-  RyC Contratistas Generales · YACUSOL<br>
-  Ing. Rafael Zeña · Ingeniero Mecánico Electricista
-</footer>
-</div>
+<nav>
+  <button class="on" data-p="p1"><span class="i">📡</span>Oportunidades<span class="bdg" id="bdg" style="display:none">0</span></button>
+  <button data-p="p2"><span class="i">🎯</span>Jugadas</button>
+  <button data-p="p3"><span class="i">🔍</span>Buscar</button>
+  <button data-p="p4"><span class="i">⚙️</span>Más</button>
+</nav>
 
 <script>
-/* ── fecha ── */
-var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
-var D=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
-var f=new Date();
-document.getElementById('hoy').textContent =
-  D[f.getDay()]+', '+f.getDate()+' de '+M[f.getMonth()]+' de '+f.getFullYear()
-  +' · Callejón de Huaylas, Áncash';
+/* ══ utilidades ══ */
+var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
+function hoy0(){var d=new Date();d.setHours(0,0,0,0);return d;}
+function parseF(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+function diasPara(s){return Math.round((parseF(s)-hoy0())/86400000);}
+function fmt(s){var d=parseF(s);return d.getDate()+' '+MES[d.getMonth()].slice(0,3)+'.';}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function nivel(d){return d<=2?'r':(d<=9?'y':'g');}
 
-/* ── abrir todas las fuentes ── */
+var DATA={oportunidades:[],permanentes:[]}, filtro='todas';
+
+/* ══ pintar oportunidades ══ */
+function pintar(){
+  var vivas=DATA.oportunidades
+    .map(function(o){o._d=diasPara(o.cierra);return o;})
+    .filter(function(o){return o._d>=0;})
+    .sort(function(a,b){return a._d-b._d;});
+
+  var f=vivas.filter(function(o){
+    if(filtro==='urgente') return o._d<=2;
+    if(filtro==='semana')  return o._d<=7;
+    if(filtro==='alta')    return o.fuerza==='alta';
+    return true;
+  });
+
+  var urg=vivas.filter(function(o){return o._d<=2;}).length;
+  var b=document.getElementById('bdg');
+  if(urg>0){b.textContent=urg;b.style.display='flex';}else{b.style.display='none';}
+
+  var el=document.getElementById('lista');
+  if(!f.length){
+    el.innerHTML='<div class="vacio"><span class="em">🌄</span>'+
+      (vivas.length? 'Nada en este filtro. Prueba con <b>Todas</b>.'
+                   : 'No hay convocatorias vigentes ahora mismo.<br>Revisa la pestaña <b>Buscar</b> o las <b>Jugadas</b>, que no caducan.')+
+      '</div>';
+    return;
+  }
+
+  el.innerHTML=f.map(function(o){
+    var n=nivel(o._d);
+    var txt=o._d===0?'<b>HOY</b>cierra':(o._d===1?'<b>1</b>día':'<b>'+o._d+'</b>días');
+    return '<div class="op '+n+'">'+
+      '<div class="top"><div class="ti">'+esc(o.titulo)+'</div>'+
+      '<div class="dias '+n+'">'+txt+'</div></div>'+
+      '<div class="ent">'+esc(o.entidad)+'</div>'+
+      '<div class="meta">📍 '+esc(o.lugar)+' · '+esc(o.tipo)+' · cierra '+fmt(o.cierra)+'</div>'+
+      '<div class="meta">'+esc(o.modalidad)+'</div>'+
+      '<div class="enc"><b>Cómo entras</b>'+esc(o.encaje)+'</div>'+
+      '<a class="ver" href="'+esc(o.url)+'" target="_blank" rel="noopener">Ver la convocatoria →</a>'+
+    '</div>';
+  }).join('');
+}
+
+/* ══ pintar jugadas ══ */
+function pintarPerms(){
+  document.getElementById('perms').innerHTML=DATA.permanentes
+    .sort(function(a,b){return a.prioridad-b.prioridad;})
+    .map(function(p,i){
+      return '<div class="pm'+(i===0?' top1':'')+'">'+
+        '<span class="nu">'+p.prioridad+'</span><span class="ti">'+esc(p.titulo)+'</span>'+
+        '<div class="ent">'+esc(p.entidad)+'</div>'+
+        '<div class="pq">'+esc(p.porque)+'</div>'+
+        '<a class="ver" href="'+esc(p.url)+'" target="_blank" rel="noopener">Abrir el portal →</a>'+
+      '</div>';
+    }).join('');
+}
+
+/* ══ cargar datos ══ */
+fetch('oportunidades.json?v='+Date.now())
+  .then(function(r){return r.json();})
+  .then(function(d){
+    DATA=d;
+    var f=parseF(d.actualizado);
+    document.getElementById('sb').textContent=
+      'Actualizado el '+f.getDate()+' de '+MES[f.getMonth()]+' · '+(d.zona||'Áncash');
+    pintar(); pintarPerms();
+  })
+  .catch(function(){
+    document.getElementById('lista').innerHTML=
+      '<div class="vacio"><span class="em">📴</span>No pude leer la lista.<br>'+
+      'Revisa que <b>oportunidades.json</b> esté subido junto a la app.</div>';
+  });
+
+/* ══ filtros ══ */
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');});
+    c.classList.add('on'); filtro=c.dataset.f; pintar();
+  });
+});
+
+/* ══ pestañas ══ */
+document.querySelectorAll('nav button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on');});
+    document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+    document.getElementById(b.dataset.p).classList.add('on');
+    window.scrollTo(0,0);
+  });
+});
+
+/* ══ abrir fuentes ══ */
 var FUENTES=[
  'https://www.perucontrata.com.pe/licitaciones-peru/ancash/',
  'https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026',
  'https://www.perulicitaciones.com/departamento/ancash.html',
  'https://www.perucontrata.com.pe/boletin-licitaciones/',
  'https://prod6.seace.gob.pe/auth-proveedor/',
- 'https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml'
-];
-function abrirTodas(){
-  for(var i=0;i<FUENTES.length;i++){ window.open(FUENTES[i],'_blank','noopener'); }
-}
+ 'https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml'];
+function abrirTodas(){for(var i=0;i<FUENTES.length;i++){window.open(FUENTES[i],'_blank','noopener');}}
 
-/* ── instalación en Android ── */
-var deferred=null;
-var btn=document.getElementById('inst');
-window.addEventListener('beforeinstallprompt', function(e){
-  e.preventDefault(); deferred=e;
-  btn.style.display='block';
-});
-btn.addEventListener('click', function(){
-  if(!deferred) return;
+/* ══ instalación ══ */
+var deferred=null,btn=document.getElementById('inst');
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.style.display='block';});
+btn.addEventListener('click',function(){
+  if(!deferred)return;
   deferred.prompt();
-  deferred.userChoice.then(function(){ deferred=null; btn.style.display='none'; });
+  deferred.userChoice.then(function(){deferred=null;btn.style.display='none';});
 });
-window.addEventListener('appinstalled', function(){
+window.addEventListener('appinstalled',function(){
   btn.style.display='none';
-  var a=document.getElementById('ayudaInst'); if(a) a.classList.add('hide');
+  var a=document.getElementById('ayudaInst'); if(a)a.style.display='none';
 });
-/* si ya está instalada, ocultamos la ayuda */
-if(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone){
-  var a=document.getElementById('ayudaInst'); if(a) a.classList.add('hide');
+if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){
+  var a=document.getElementById('ayudaInst'); if(a)a.style.display='none';
 }
 
-/* ── service worker ── */
+/* ══ service worker ══ */
 if('serviceWorker' in navigator){
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('sw.js').catch(function(){});
-  });
+  window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
 }
 </script>
 </body>

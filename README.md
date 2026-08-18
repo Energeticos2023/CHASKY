@@ -44,4 +44,4 @@ Queda el ícono en la pantalla de inicio y abre a pantalla completa, sin barra d
 
 ## Cómo actualizarlo
 
-Edita `index.html` desde GitHub (lápiz ✏️) y confirma el cambio. Si cambias algo, sube también el número de versión en `sw.js` (`chaski-v1` → `chaski-v2`) para que los celulares tomen la versión nueva.
+Para refrescar la lista, edita **`oportunidades.json`** desde GitHub (lápiz ✏️), pega la versión nueva y confirma. La app calcula sola los días restantes y oculta lo vencido.

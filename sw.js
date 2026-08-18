@@ -1,7 +1,9 @@
-/* CHASKI — service worker
-   Guarda la app en el celular para que abra al instante y funcione sin señal. */
+/* CHASKI — service worker v2
+   La app se guarda en el celular para abrir al instante y funcionar sin señal.
+   La lista de oportunidades se pide siempre a la red primero, para que
+   veas lo último apenas subas una actualización. */
 
-const CACHE = 'chaski-v1';
+const CACHE = 'chaski-v2';
 const SHELL = [
   './',
   './index.html',
@@ -29,10 +31,23 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
-  const url = new URL(req.url);
-  // Solo cacheamos lo propio de la app; los enlaces externos van siempre a la red.
-  if (url.origin !== self.location.origin) return;
 
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;   // enlaces externos: siempre a la red
+
+  // La lista: red primero, caché como respaldo si no hay señal.
+  if (url.pathname.endsWith('oportunidades.json')) {
+    e.respondWith(
+      fetch(req).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {});
+        return res;
+      }).catch(() => caches.match(req).then(hit => hit || caches.match('./oportunidades.json')))
+    );
+    return;
+  }
+
+  // El resto de la app: caché primero.
   e.respondWith(
     caches.match(req).then(hit => hit || fetch(req).then(res => {
       const copy = res.clone();
