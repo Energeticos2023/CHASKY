@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>CHASKI — Radar de oportunidades</title>
+<meta name="description" content="Oportunidades de negocio en electricidad, energía solar, pozos a tierra y mantenimiento en el Callejón de Huaylas, Áncash.">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0e1116">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CHASKI">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0e1116; --card:#161b23; --card2:#1d232d; --line:#2a323e;
+  --tx:#e8ecf2; --tx2:#9aa6b6; --tx3:#6b7889;
+  --acc:#f5a623; --acc2:#ffd166; --acc3:#e8570d;
+}
+html{background:var(--bg)}
+body{
+  background:var(--bg);color:var(--tx);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+  padding:env(safe-area-inset-top) 0 calc(36px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.w{max-width:660px;margin:0 auto;padding:0 16px}
+a{text-decoration:none;color:inherit}
+
+/* ── cabecera ── */
+header{text-align:center;padding:28px 0 20px;position:relative}
+.lg{width:60px;height:60px;border-radius:17px;background:linear-gradient(150deg,var(--acc),var(--acc3));
+  display:inline-flex;align-items:center;justify-content:center;font-size:31px;
+  box-shadow:0 8px 26px rgba(245,166,35,.32);margin-bottom:13px}
+h1{font-size:27px;font-weight:800;letter-spacing:2px}
+.tag{color:var(--acc2);font-size:12.5px;font-weight:600;margin-top:5px;letter-spacing:.3px}
+.sb{color:var(--tx3);font-size:12px;margin-top:9px;line-height:1.5}
+
+/* ── títulos de sección ── */
+h2{font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--tx3);margin:30px 0 12px;padding-left:3px;display:flex;align-items:center;gap:8px}
+h2::after{content:'';flex:1;height:1px;background:var(--line)}
+
+/* ── mosaicos ── */
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:540px){.g{grid-template-columns:1fr 1fr 1fr}}
+.t{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 14px 14px;
+  display:flex;flex-direction:column;min-height:114px;transition:transform .1s ease,border-color .15s ease}
+.t:active{transform:scale(.965);border-color:var(--acc)}
+.t .e{font-size:26px;line-height:1;margin-bottom:9px}
+.t .n{font-size:14.5px;font-weight:700;line-height:1.25}
+.t .d{font-size:11.5px;color:var(--tx3);margin-top:4px;line-height:1.35}
+.t.hi{border-color:rgba(245,166,35,.5);background:linear-gradient(158deg,rgba(245,166,35,.1),var(--card) 62%)}
+.t.hi .n{color:var(--acc2)}
+
+/* ── botón grande ── */
+.all{display:block;width:100%;margin:14px 0 0;border:none;border-radius:16px;cursor:pointer;
+  background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;
+  padding:19px 16px;font:800 17px/1.2 inherit;letter-spacing:.2px;
+  box-shadow:0 8px 24px rgba(245,166,35,.26);transition:transform .1s}
+.all:active{transform:scale(.98)}
+.all small{display:block;font-size:11.5px;font-weight:600;opacity:.74;margin-top:6px;letter-spacing:0}
+
+/* ── cajas ── */
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+  margin-top:12px;font-size:13.2px;color:var(--tx2);line-height:1.62}
+.box .h{color:var(--tx);font-weight:700;font-size:13.8px;display:block;margin-bottom:8px}
+.box b{color:var(--acc)}
+.box.gold{border-color:rgba(245,166,35,.34);background:linear-gradient(160deg,rgba(245,166,35,.07),var(--card) 70%)}
+
+/* ── botón instalar (Android) ── */
+#inst{display:none;width:100%;margin-top:12px;border:1px solid var(--acc);border-radius:14px;
+  background:rgba(245,166,35,.1);color:var(--acc2);padding:15px;font:700 15px inherit;cursor:pointer}
+#inst:active{transform:scale(.98)}
+
+footer{text-align:center;color:#4d5766;font-size:11.5px;margin-top:30px;line-height:1.8;padding-top:20px;border-top:1px solid var(--line)}
+.hide{display:none !important}
+</style>
+</head>
+<body>
+<div class="w">
+
+<header>
+  <div class="lg">⚡</div>
+  <h1>CHASKI</h1>
+  <div class="tag">El que trae la noticia primero</div>
+  <div class="sb" id="hoy"></div>
+</header>
+
+<!-- ═════ RUBROS ═════ -->
+<h2>Buscar por rubro</h2>
+<div class="g">
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22pozo+a+tierra%22+OR+%22puesta+a+tierra%22+OR+%22sistema+de+puesta+a+tierra%22%29+%28Huaraz+OR+Recuay+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Ancash%29+%28convocatoria+OR+%22orden+de+servicio%22+OR+cotizacion+OR+requerimiento%29&tbs=qdr:w">
+    <span class="e">⚡</span><span class="n">Pozos a tierra</span><span class="d">Mantenimiento y certificación</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22terma+solar%22+OR+%22termas+solares%22+OR+%22calentador+solar%22+OR+%22sistema+solar+termico%22%29+%28Ancash+OR+Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz%29+%28adquisicion+OR+instalacion+OR+mantenimiento+OR+convocatoria%29&tbs=qdr:w">
+    <span class="e">☀️</span><span class="n">Termas solares</span><span class="d">Venta, instalación, mantenimiento</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22panel+solar%22+OR+%22paneles+solares%22+OR+fotovoltaico+OR+%22electrificacion+rural%22%29+%28Ancash+OR+Huaraz+OR+%22Callejon+de+Huaylas%22%29+%28licitacion+OR+convocatoria+OR+instalacion+OR+suministro%29&tbs=qdr:w">
+    <span class="e">🔆</span><span class="n">Paneles solares</span><span class="d">Fotovoltaico y electrificación rural</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22instalaciones+electricas%22+OR+%22redes+electricas%22+OR+%22alumbrado+publico%22+OR+subestacion+OR+%22media+tension%22%29+mantenimiento+%28Huaraz+OR+Recuay+OR+Carhuaz+OR+Yungay+OR+Caraz%29&tbs=qdr:w">
+    <span class="e">🔌</span><span class="n">Redes eléctricas</span><span class="d">Alumbrado, subestaciones, MT/BT</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22instalacion+electrica%22+OR+%22instalaciones+electricas%22%29+%28domiciliaria+OR+comercial+OR+industrial+OR+interior%29+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay%29+%28servicio+OR+contratacion+OR+requerimiento%29&tbs=qdr:w">
+    <span class="e">🏠</span><span class="n">Instalaciones</span><span class="d">Domiciliaria, comercial, industrial</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22supervisor+de+obra%22+OR+%22residente+de+obra%22+OR+%22especialista+electrico%22+OR+perito+OR+consultoria+OR+%22locacion+de+servicios%22%29+%28%22ingeniero+mecanico+electricista%22+OR+%22ingeniero+electricista%22%29+Ancash&tbs=qdr:w">
+    <span class="e">📐</span><span class="n">Consultoría</span><span class="d">Supervisión, residencia, peritaje</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=mantenimiento+%28%22luces+de+emergencia%22+OR+%22sistema+contra+incendio%22+OR+extintores+OR+%22grupo+electrogeno%22+OR+tablero+electrico%29+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay+OR+Ancash%29&tbs=qdr:w">
+    <span class="e">🧰</span><span class="n">Mantenimiento</span><span class="d">Emergencia, contra incendio, tableros</span></a>
+
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=site%3Afacebook.com+%28Huaraz+OR+Carhuaz+OR+Yungay+OR+Caraz+OR+Recuay%29+%28electricista+OR+%22pozo+a+tierra%22+OR+%22terma+solar%22+OR+%22panel+solar%22%29+%28necesito+OR+busco+OR+requiero+OR+cotizar%29&tbs=qdr:w">
+    <span class="e">📱</span><span class="n">Redes sociales</span><span class="d">Pedidos y avisos en Facebook</span></a>
+</div>
+
+<!-- ═════ CONVOCATORIAS ═════ -->
+<h2>Convocatorias vigentes</h2>
+<div class="g">
+  <a class="t hi" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/licitaciones-peru/ancash/">
+    <span class="e">📍</span><span class="n">Áncash vigentes</span><span class="d">Solo con plazo abierto</span></a>
+  <a class="t hi" target="_blank" rel="noopener" href="https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026">
+    <span class="e">💰</span><span class="n">Menores a 8 UIT</span><span class="d">Órdenes de servicio</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/departamento/ancash.html">
+    <span class="e">📋</span><span class="n">Convocatorias Áncash</span><span class="d">Con fecha límite</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/boletin-licitaciones/">
+    <span class="e">📰</span><span class="n">Boletín diario</span><span class="d">Todo el Perú, cada día</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://prod6.seace.gob.pe/auth-proveedor/">
+    <span class="e">🏛️</span><span class="n">SEACE 8 UIT</span><span class="d">Oficial · entra con tu RNP</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml">
+    <span class="e">🔎</span><span class="n">Buscador SEACE</span><span class="d">La fuente oficial</span></a>
+</div>
+<button class="all" onclick="abrirTodas()">🔄 ABRIR TODAS LAS FUENTES<small>Las 6 páginas con lo vigente de hoy</small></button>
+
+<!-- ═════ ENTIDADES ═════ -->
+<h2>Entidades</h2>
+<div class="g">
+  <a class="t hi" target="_blank" rel="noopener" href="https://www.gob.pe/41294-acceder-al-sistema-de-registro-y-contratacion-de-empresas-supervisoras-sicoes">
+    <span class="e">🛡️</span><span class="n">Osinergmin SICOES</span><span class="d">Regístrate como supervisor</span></a>
+  <a class="t hi" target="_blank" rel="noopener" href="https://dger.minem.gob.pe/index2.html">
+    <span class="e">🏔️</span><span class="n">MINEM · DGER</span><span class="d">Electrificación rural S/ 1159 M</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=SUNAT+%28%22Oficina+Zonal+Huaraz%22+OR+Ancash%29+%28mantenimiento+OR+%22pozo+a+tierra%22+OR+electrico+OR+%22luces+de+emergencia%22%29+contratacion&tbs=qdr:m">
+    <span class="e">🏢</span><span class="n">SUNAT</span><span class="d">Oficina Zonal Huaraz</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/ministerio-del-interior-pnp-ue-001-oga.html">
+    <span class="e">🚔</span><span class="n">PNP · Mininter</span><span class="d">Comisarías de la zona</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://portalproveedores.asip.antamina.com/">
+    <span class="e">⛏️</span><span class="n">Antamina</span><span class="d">Portal de proveedores</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28Lincuna+OR+%22Santa+Luisa%22+OR+Huanzala+OR+Contonga+OR+Pachapaqui%29+Ancash+%28contratista+OR+proveedor+OR+%22servicio+electrico%22+OR+ampliacion%29&tbs=qdr:m">
+    <span class="e">⛏️</span><span class="n">Otras mineras</span><span class="d">Lincuna, Santa Luisa, Contonga</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/empresa-regional-de-servicio-publico-de-electricidad-electro-nor-medio-sa-hidrandina.html">
+    <span class="e">💡</span><span class="n">Hidrandina</span><span class="d">Concesionaria de Áncash</span></a>
+  <a class="t" target="_blank" rel="noopener" href="https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx">
+    <span class="e">📊</span><span class="n">Consulta MEF</span><span class="d">Presupuesto sin convocar</span></a>
+</div>
+
+<button id="inst">📲 Instalar CHASKI en este celular</button>
+
+<!-- ═════ AYUDA ═════ -->
+<div class="box gold" id="ayudaInst">
+  <span class="h">📲 Ponlo en tu pantalla de inicio</span>
+  <b>Android:</b> menú ⋮ arriba a la derecha → <b>Instalar aplicación</b> o <b>Agregar a pantalla principal</b>.<br>
+  <b>iPhone:</b> botón compartir ⬆️ abajo → <b>Añadir a pantalla de inicio</b>.<br><br>
+  Queda el ícono junto a WhatsApp y abre a pantalla completa, sin barra de navegador. Funciona aunque estés sin señal.
+</div>
+
+<div class="box">
+  <span class="h">🧠 Para el análisis con criterio</span>
+  Los botones te llevan a la información cruda. Para saber <b>cuál te conviene, cómo entrar y a quién llamar</b>, escríbeme en Claude: <i>"actualiza el radar"</i>.
+</div>
+
+<footer>
+  CHASKI · Radar de oportunidades<br>
+  RyC Contratistas Generales · YACUSOL<br>
+  Ing. Rafael Zeña · Ingeniero Mecánico Electricista
+</footer>
+</div>
+
+<script>
+/* ── fecha ── */
+var M=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
+var D=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+var f=new Date();
+document.getElementById('hoy').textContent =
+  D[f.getDay()]+', '+f.getDate()+' de '+M[f.getMonth()]+' de '+f.getFullYear()
+  +' · Callejón de Huaylas, Áncash';
+
+/* ── abrir todas las fuentes ── */
+var FUENTES=[
+ 'https://www.perucontrata.com.pe/licitaciones-peru/ancash/',
+ 'https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026',
+ 'https://www.perulicitaciones.com/departamento/ancash.html',
+ 'https://www.perucontrata.com.pe/boletin-licitaciones/',
+ 'https://prod6.seace.gob.pe/auth-proveedor/',
+ 'https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml'
+];
+function abrirTodas(){
+  for(var i=0;i<FUENTES.length;i++){ window.open(FUENTES[i],'_blank','noopener'); }
+}
+
+/* ── instalación en Android ── */
+var deferred=null;
+var btn=document.getElementById('inst');
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault(); deferred=e;
+  btn.style.display='block';
+});
+btn.addEventListener('click', function(){
+  if(!deferred) return;
+  deferred.prompt();
+  deferred.userChoice.then(function(){ deferred=null; btn.style.display='none'; });
+});
+window.addEventListener('appinstalled', function(){
+  btn.style.display='none';
+  var a=document.getElementById('ayudaInst'); if(a) a.classList.add('hide');
+});
+/* si ya está instalada, ocultamos la ayuda */
+if(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone){
+  var a=document.getElementById('ayudaInst'); if(a) a.classList.add('hide');
+}
+
+/* ── service worker ── */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
