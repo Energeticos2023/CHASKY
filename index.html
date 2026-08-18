@@ -32,7 +32,7 @@ var CORRECCIONES={
     }
   }
 };
-function e(s){return String(s==null?'':s).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
+function e(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function n(s){return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
 function t(m){var x=document.getElementById('toast');x.textContent=m;x.classList.add('on');clearTimeout(window.tt);window.tt=setTimeout(function(){x.classList.remove('on')},1800)}
 function cp(v,msg){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v||'').then(function(){t(msg||'Copiado')})}else{var a=document.createElement('textarea');a.value=v||'';document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);t(msg||'Copiado')}}

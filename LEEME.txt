@@ -1,31 +1,13 @@
-CHASKI V3 - PAQUETE DE ACTUALIZACION
-Fecha: 18/08/2026
+CHASKI V3.2 - ACTUALIZACIÓN PARA GITHUB
 
-ARCHIVOS INCLUIDOS
-1. chaski-v3.html  -> Version 3 para probar sin reemplazar la aplicacion principal.
-2. index.html      -> La misma Version 3, lista para convertirla en la aplicacion principal.
-3. privadas.json   -> Base inicial de oportunidades y canales de empresas privadas.
+1. Descomprime este ZIP.
+2. En GitHub abre el repositorio Energeticos2023/CHASKY.
+3. Reemplaza SOLO el archivo index.html por el index.html incluido aquí.
+4. No elimines oportunidades.json ni privadas.json, porque CHASKI los utiliza para cargar los datos.
+5. Confirma el commit en la rama main.
+6. Espera unos minutos y abre:
+   https://energeticos2023.github.io/CHASKY/
+7. Presiona Ctrl + F5 para forzar la actualización.
 
-IMPORTANTE
-- El archivo oportunidades.json NO se incluye en este ZIP porque ya existe en tu repositorio CHASKY y contiene la base de oportunidades publicas actual.
-- No lo borres ni lo reemplaces al subir esta Version 3.
-
-PARA PROBAR V3 SIN CAMBIAR LA APP PRINCIPAL
-- Sube chaski-v3.html y privadas.json a la raiz del repositorio.
-- Abre: https://energeticos2023.github.io/CHASKY/chaski-v3.html
-
-PARA HACER V3 LA VERSION PRINCIPAL
-- Conserva oportunidades.json en el repositorio.
-- Sube privadas.json.
-- Reemplaza el index.html actual por el index.html incluido en este ZIP.
-- La direccion principal sera: https://energeticos2023.github.io/CHASKY/
-
-CONTENIDO V3
-- Sector publico y privado.
-- Datos preparados para copiar y pegar en SEACE.
-- Copia individual de entidad, objeto, descripcion, fechas, nomenclatura y CUI.
-- Boton para copiar el paquete completo de busqueda.
-- Acceso rapido a busqueda/portal.
-- Base de oportunidades privadas y canales de proveedores.
-
-Repositorio: Energeticos2023/CHASKY
+Versión: CHASKI V3.2
+Actualización principal: acceso directo a SEACE Proveedor y datos listos para copiar.
