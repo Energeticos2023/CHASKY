@@ -78,7 +78,7 @@ var RUBROS=[
 var VENTANAS=[{k:'d',n:'24 horas'},{k:'w',n:'Semana'},{k:'m',n:'Mes'},{k:'y',n:'Año'},{k:'',n:'Sin límite'}];
 
 /* ── estado ── */
-var B={rubro:null,region:'Áncash',prov:'',dist:'',ambito:'publico',ventana:'m',excluir:'',exacta:false};
+var B={rubro:null,tipoObj:'',region:'Áncash',prov:'',dist:'',ambito:'publico',ventana:'m',excluir:'',exacta:false};
 
 function g(q,v){
   var u='https://www.google.com/search?q='+encodeURIComponent(q);
@@ -228,7 +228,7 @@ function borrarGuardada(i,ev){
 /* ══ ejecutar ══ */
 function buscar(){
   if(!consulta()){aviso('Escribe algo o elige un rubro.');return;}
-  pintarResultados();
+  pintarMotor(); pintarResultados();
   var r=document.getElementById('bResult');
   if(r&&r.scrollIntoView)r.scrollIntoView({behavior:'smooth',block:'start'});
 }
@@ -314,6 +314,8 @@ function pintarBuscador(){
          opciones(regs,B.region,'Todo el Perú')+'</select></div>'+
        '<div class="gc"><label>Provincia</label><select onchange="setProv(this.value)"'+
          (provs.length?'':' disabled')+'>'+opciones(provs,B.prov,provs.length?'Toda la región':'—')+'</select></div>'+
+       '<div class="gc"><label>Tipo</label><select onchange="B.tipoObj=this.value;pintarMotor()">'+
+         opciones(['Obra','Servicio','Bien','Consultoría'],B.tipoObj||'','Todos')+'</select></div>'+
        '<div class="gc"><label>Distrito</label><select onchange="setDist(this.value)"'+
          (dists.length?'':' disabled')+'>'+opciones(dists,B.dist,dists.length?'Toda la provincia':'—')+'</select></div>'+
      '</div>'+
@@ -338,10 +340,16 @@ function pintarBuscador(){
      '<div class="avr">'+
        '<label class="chk" onclick="toggleExacta()"><span class="bx'+(B.exacta?' on':'')+'">'+(B.exacta?'✓':'')+'</span>Frase exacta</label>'+
        '<input class="exc" type="text" value="'+esc(B.excluir)+'" placeholder="Excluir palabras: lima arequipa" '+
-         'onchange="B.excluir=this.value;pintarResultados()">'+
+         'onchange="B.excluir=this.value;pintarMotor();pintarResultados()">'+
      '</div>'+
    '</div>'+
 
+   '<div class="motorcab"><span class="mt">⚡ Resultados del motor CHASKI</span>'+
+     '<span class="ms">busca dentro de la app, sin salir</span></div>'+
+   '<div id="mResult"></div>'+
+
+   '<div class="motorcab web"><span class="mt">🌐 Buscar en la web</span>'+
+     '<span class="ms">abre las fuentes completas en otra pestaña</span></div>'+
    '<div id="bResult"></div>'+
 
    /* guardadas */
@@ -355,6 +363,7 @@ function pintarBuscador(){
    '<div class="rubros">'+chipsRubros()+'</div>';
 
   var i=document.getElementById('bTexto'); if(i)i.value=txt;
+  pintarMotor();
   if(consulta())pintarResultados();
 }
 

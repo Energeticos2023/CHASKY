@@ -3,7 +3,7 @@
    La lista de oportunidades se pide siempre a la red primero, para que
    veas lo último apenas subas una actualización. */
 
-const CACHE = 'chaski-v7';
+const CACHE = 'chaski-v8';
 const SHELL = [
   './',
   './index.html',
@@ -11,7 +11,8 @@ const SHELL = [
   './icon-192.png',
   './icon-512.png',
   './apple-touch-icon.png',
-  './favicon.png'
+  './favicon.png',
+  './indice.json'
 ];
 
 self.addEventListener('install', e => {
@@ -36,7 +37,7 @@ self.addEventListener('fetch', e => {
   if (url.origin !== self.location.origin) return;   // enlaces externos: siempre a la red
 
   // La lista: red primero, caché como respaldo si no hay señal.
-  if (url.pathname.endsWith('oportunidades.json')) {
+  if (url.pathname.endsWith('oportunidades.json')||url.pathname.endsWith('indice.json')) {
     e.respondWith(
       fetch(req).then(res => {
         const copy = res.clone();

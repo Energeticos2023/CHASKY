@@ -272,3 +272,32 @@ nav button .bdg{position:absolute;top:0;right:50%;transform:translateX(20px);
 .rb.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
 .rb:active{transform:scale(.96)}
 .t .mn{font-size:9.5px;color:var(--acc2);margin-top:5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+
+/* ══ RESULTADOS DEL MOTOR ══ */
+.motorcab{display:flex;flex-direction:column;gap:2px;margin:22px 0 11px;padding:12px 15px;
+  background:linear-gradient(160deg,rgba(245,166,35,.13),var(--card) 72%);
+  border:1px solid rgba(245,166,35,.34);border-radius:13px}
+.motorcab.web{background:var(--card);border-color:var(--line);margin-top:26px}
+.motorcab .mt{font:800 13px inherit;color:var(--acc2)}
+.motorcab.web .mt{color:var(--tx2)}
+.motorcab .ms{font-size:11px;color:var(--tx3)}
+
+.mcab{font-size:12px;color:var(--tx3);margin-bottom:10px}
+.mcab .mn2{color:var(--acc2);font-weight:800;font-size:15px}
+.mcab .mfe{font-size:10.5px}
+
+.mr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line);
+  border-radius:13px;padding:13px 15px;margin-bottom:9px}
+.mr.g{border-left-color:var(--ok)}.mr.y{border-left-color:var(--warn)}.mr.r{border-left-color:var(--hot)}
+.mrt{font-size:14.5px;font-weight:700;line-height:1.35}
+.mre{font-size:12.5px;color:var(--tx2);margin-top:4px}
+.mrm{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:9px;font-size:11.5px;color:var(--tx3)}
+.mp{background:var(--card3);color:var(--tx2);padding:3px 9px;border-radius:7px;font-weight:700;font-size:10.5px}
+.md{padding:3px 9px;border-radius:7px;font-weight:800;font-size:10.5px}
+.md.g{background:rgba(62,207,142,.16);color:var(--ok)}
+.md.y{background:rgba(245,166,35,.16);color:var(--warn)}
+.md.r{background:rgba(255,123,123,.16);color:var(--hot)}
+.mrf{font-size:11px;color:var(--tx3);margin-top:9px;padding-top:8px;border-top:1px solid var(--line)}
+.mrf a{color:var(--info);font-weight:600}
+mark{background:rgba(245,166,35,.3);color:var(--acc2);border-radius:3px;padding:0 2px}
+.mmas{text-align:center;font-size:12px;color:var(--tx3);padding:12px}

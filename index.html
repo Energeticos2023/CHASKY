@@ -287,6 +287,35 @@ nav button .bdg{position:absolute;top:0;right:50%;transform:translateX(20px);
 .rb.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
 .rb:active{transform:scale(.96)}
 .t .mn{font-size:9.5px;color:var(--acc2);margin-top:5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+
+/* ══ RESULTADOS DEL MOTOR ══ */
+.motorcab{display:flex;flex-direction:column;gap:2px;margin:22px 0 11px;padding:12px 15px;
+  background:linear-gradient(160deg,rgba(245,166,35,.13),var(--card) 72%);
+  border:1px solid rgba(245,166,35,.34);border-radius:13px}
+.motorcab.web{background:var(--card);border-color:var(--line);margin-top:26px}
+.motorcab .mt{font:800 13px inherit;color:var(--acc2)}
+.motorcab.web .mt{color:var(--tx2)}
+.motorcab .ms{font-size:11px;color:var(--tx3)}
+
+.mcab{font-size:12px;color:var(--tx3);margin-bottom:10px}
+.mcab .mn2{color:var(--acc2);font-weight:800;font-size:15px}
+.mcab .mfe{font-size:10.5px}
+
+.mr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line);
+  border-radius:13px;padding:13px 15px;margin-bottom:9px}
+.mr.g{border-left-color:var(--ok)}.mr.y{border-left-color:var(--warn)}.mr.r{border-left-color:var(--hot)}
+.mrt{font-size:14.5px;font-weight:700;line-height:1.35}
+.mre{font-size:12.5px;color:var(--tx2);margin-top:4px}
+.mrm{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:9px;font-size:11.5px;color:var(--tx3)}
+.mp{background:var(--card3);color:var(--tx2);padding:3px 9px;border-radius:7px;font-weight:700;font-size:10.5px}
+.md{padding:3px 9px;border-radius:7px;font-weight:800;font-size:10.5px}
+.md.g{background:rgba(62,207,142,.16);color:var(--ok)}
+.md.y{background:rgba(245,166,35,.16);color:var(--warn)}
+.md.r{background:rgba(255,123,123,.16);color:var(--hot)}
+.mrf{font-size:11px;color:var(--tx3);margin-top:9px;padding-top:8px;border-top:1px solid var(--line)}
+.mrf a{color:var(--info);font-weight:600}
+mark{background:rgba(245,166,35,.3);color:var(--acc2);border-radius:3px;padding:0 2px}
+.mmas{text-align:center;font-size:12px;color:var(--tx3);padding:12px}
 </style>
 </head>
 <body>
@@ -866,6 +895,181 @@ var DATOS_EMBEBIDOS = {
 };
 var UBIGEO={"Amazonas":{"Bagua":["Aramango","Bagua","Copallin","El Parco","Imaza","La Peca"],"Bongará":["Chisquilla","Churuja","Corosha","Cuispes","Florida","Jazan","Jumbilla","Recta","San Carlos","Shipasbamba","Valera","Yambrasbamba"],"Chachapoyas":["Asunción","Balsas","Chachapoyas","Cheto","Chiliquin","Chuquibamba","Granada","Huancas","La Jalca","Leimebamba","Levanto","Magdalena","Mariscal Castilla","Molinopampa","Montevideo","Olleros","Quinjalca","San Francisco de Daguas","San Isidro de Maino","Soloco","Sonche"],"Condorcanqui":["El Cenepa","Nieva","Rio Santiago"],"Luya":["Camporredondo","Cocabamba","Colcamar","Conila","Inguilpata","Lamud","Longuita","Lonya Chico","Luya","Luya Viejo","Maria","Ocalli","Ocumal","Pisuquia","Providencia","San Cristóbal","San Francisco del Yeso","San Jerónimo","San Juan de Lopecancha","Santa Catalina","Santo Tomas","Tingo","Trita"],"Rodríguez de Mendoza":["Chirimoto","Cochamal","Huambo","Limabamba","Longar","Mariscal Benavides","Milpuc","Omia","San Nicolas","Santa Rosa","Totora","Vista Alegre"],"Utcubamba":["Bagua Grande","Cajaruro","Cumba","El Milagro","Jamalca","Lonya Grande","Yamon"]},"Áncash":{"Aija":["Aija","Coris","Huacllan","La Merced","Succha"],"Antonio Raymondi":["Aczo","Chaccho","Chingas","Llamellin","Mirgas","San Juan de Rontoy"],"Asunción":["Acochaca","Chacas"],"Bolognesi":["Abelardo Pardo Lezameta","Antonio Raymondi","Aquia","Cajacay","Canis","Chiquian","Colquioc","Huallanca","Huasta","Huayllacayan","La Primavera","Mangas","Pacllon","San Miguel de Corpanqui","Ticllos"],"Carhuaz":["Acopampa","Amashca","Anta","Ataquero","Carhuaz","Marcara","Pariahuanca","San Miguel de Aco","Shilla","Tinco","Yungar"],"Carlos Fermín Fitzcarral":["San Luis","San Nicolas","Yauya"],"Casma":["Buena Vista Alta","Casma","Comandante Noel","Yautan"],"Corongo":["Aco","Bambas","Corongo","Cusca","La Pampa","Yanac","Yupan"],"Huaraz":["Cochabamba","Colcabamba","Huanchay","Huaraz","Independencia","Jangas","La Libertad","Olleros","Pampas","Pariacoto","Pira","Tarica"],"Huari":["Anra","Cajay","Chavin de Huantar","Huacachi","Huacchis","Huachis","Huantar","Huari","Masin","Paucas","Ponto","Rahuapampa","Rapayan","San Marcos","San Pedro de Chana","Uco"],"Huarmey":["Cochapeti","Culebras","Huarmey","Huayan","Malvas"],"Huaylas":["Caraz","Huallanca","Huata","Huaylas","Mato","Pamparomas","Pueblo Libre","Santa Cruz","Santo Toribio","Yuracmarca"],"Mariscal Luzuriaga":["Casca","Eleazar Guzmán Barron","Fidel Olivas Escudero","Llama","Llumpa","Lucma","Musga","Piscobamba"],"Ocros":["Acas","Cajamarquilla","Carhuapampa","Cochas","Congas","Llipa","Ocros","San Cristóbal de Rajan","San Pedro","Santiago de Chilcas"],"Pallasca":["Bolognesi","Cabana","Conchucos","Huacaschuque","Huandoval","Lacabamba","Llapo","Pallasca","Pampas","Santa Rosa","Tauca"],"Pomabamba":["Huayllan","Parobamba","Pomabamba","Quinuabamba"],"Recuay":["Catac","Cotaparaco","Huayllapampa","Llacllin","Marca","Pampas Chico","Pararin","Recuay","Tapacocha","Ticapampa"],"Santa":["Cáceres del Perú","Chimbote","Coishco","Macate","Moro","Nepeña","Nuevo Chimbote","Samanco","Santa"],"Sihuas":["Acobamba","Alfonso Ugarte","Cashapampa","Chingalpo","Huayllabamba","Quiches","Ragash","San Juan","Sicsibamba","Sihuas"],"Yungay":["Cascapara","Mancos","Matacoto","Quillo","Ranrahirca","Shupluy","Yanama","Yungay"]},"Apurímac":{"Abancay":["Abancay","Chacoche","Circa","Curahuasi","Huanipaca","Lambrama","Pichirhua","San Pedro de Cachora","Tamburco"],"Andahuaylas":["Andahuaylas","Andarapa","Chiara","Huancarama","Huancaray","Huayana","José María Arguedas","Kaquiabamba","Kishuara","Pacobamba","Pacucha","Pampachiri","Pomacocha","San Antonio de Cachi","San Jerónimo","San Miguel de Chaccrampa","Santa Maria de Chicmo","Talavera","Tumay Huaraca","Turpo"],"Antabamba":["Antabamba","El Oro","Huaquirca","Juan Espinoza Medrano","Oropesa","Pachaconas","Sabaino"],"Aymaraes":["Capaya","Caraybamba","Chalhuanca","Chapimarca","Colcabamba","Cotaruse","Huayllo","Justo Apu Sahuaraura","Lucre","Pocohuanca","San Juan de Chacña","Sañayca","Soraya","Tapairihua","Tintay","Toraya","Yanaca"],"Chincheros":["Anco Huallo","Chincheros","Cocharcas","El Porvenir","Huaccana","Los Chankas","Ocobamba","Ongoy","Ranracancha","Rocchacc","Uranmarca"],"Cotabambas":["Challhuahuacho","Cotabambas","Coyllurqui","Haquira","Mara","Tambobamba"],"Grau":["Chuquibambilla","Curasco","Curpahuasi","Gamarra","Huayllati","Mamara","Micaela Bastidas","Pataypampa","Progreso","San Antonio","Santa Rosa","Turpay","Vilcabamba","Virundo"]},"Arequipa":{"Arequipa":["Alto Selva Alegre","Arequipa","Cayma","Cerro Colorado","Characato","Chiguata","Jacobo Hunter","Jose Luis Bustamante y Rivero","La Joya","Mariano Melgar","Miraflores","Mollebaya","Paucarpata","Pocsi","Polobaya","Quequeña","Sabandia","Sachaca","San Juan de Siguas","San Juan de Tarucani","Santa Isabel de Siguas","Santa Rita de Siguas","Socabaya","Tiabaya","Uchumayo","Vitor","Yanahuara","Yarabamba","Yura"],"Camaná":["Camaná","Jose Maria Quimper","Mariano Nicolas Valcárcel","Mariscal Cáceres","Nicolas de Pierola","Ocoña","Quilca","Samuel Pastor"],"Caravelí":["Acarí","Atico","Atiquipa","Bella Union","Cahuacho","Caravelí","Chala","Chaparra","Huanuhuanu","Jaqui","Lomas","Quicacha","Yauca"],"Castilla":["Andagua","Aplao","Ayo","Chachas","Chilcaymarca","Choco","Huancarqui","Machaguay","Orcopampa","Pampacolca","Tipan","Uñon","Uraca","Viraco"],"Caylloma":["Achoma","Cabanaconde","Callalli","Caylloma","Chivay","Coporaque","Huambo","Huanca","Ichupampa","Lari","Lluta","Maca","Madrigal","Majes","San Antonio de Chuca","Sibayo","Tapay","Tisco","Tuti","Yanque"],"Condesuyos":["Andaray","Cayarani","Chichas","Chuquibamba","Iray","Rio Grande","Salamanca","Yanaquihua"],"Islay":["Cocachacra","Dean Valdivia","Islay","Mejia","Mollendo","Punta de Bombón"],"La Union":["Alca","Charcana","Cotahuasi","Huaynacotas","Pampamarca","Puyca","Quechualla","Sayla","Tauria","Tomepampa","Toro"]},"Ayacucho":{"Cangallo":["Cangallo","Chuschi","Los Morochucos","Maria Parado de Bellido","Paras","Totos"],"Huamanga":["Acocro","Acos Vinchos","Andrés Avelino Cáceres Dorregaray","Ayacucho","Carmen Alto","Chiara","Jesus Nazareno","Ocros","Pacaycasa","Quinua","San Jose de Ticllas","San Juan Bautista","Santiago de Pischa","Socos","Tambillo","Vinchos"],"Huanca Sancos":["Carapo","Sacsamarca","Sancos","Santiago de Lucanamarca"],"Huanta":["Ayahuanco","Canayre","Chaca","Huamanguilla","Huanta","Iguain","Llochegua","Luricocha","Pucacolpa","Santillana","Sivia","Uchuraccay"],"La Mar":["Anchihuay","Anco","Ayna","Chilcas","Chungui","Luis Carranza","Oronccoy","Samugari","San Miguel","Santa Rosa","Tambo"],"Lucanas":["Aucara","Cabana","Carmen Salcedo","Chaviña","Chipao","Huac-Huas","Laramate","Leoncio Prado","Llauta","Lucanas","Ocaña","Otoca","Puquio","Saisa","San Cristóbal","San Juan","San Pedro","San Pedro de Palco","Sancos","Santa Ana de Huaycahuacho","Santa Lucia"],"Parinacochas":["Chumpi","Coracora","Coronel Castañeda","Pacapausa","Pullo","Puyusca","San Francisco de Ravacayco","Upahuacho"],"Paucar del Sara Sara":["Colta","Corculla","Lampa","Marcabamba","Oyolo","Pararca","Pausa","San Javier de Alpabamba","San Jose de Ushua","Sara Sara"],"Sucre":["Belén","Chalcos","Chilcayoc","Huacaña","Morcolla","Paico","Querobamba","San Pedro de Larcay","San Salvador de Quije","Santiago de Paucaray","Soras"],"Victor Fajardo":["Alcamenca","Apongo","Asquipata","Canaria","Cayara","Colca","Huamanquiquia","Huancapi","Huancaraylla","Huaya","Sarhua","Vilcanchos"],"Vilcas Huaman":["Accomarca","Carhuanca","Concepcion","Huambalpa","Independencia","Saurama","Vilcas Huaman","Vischongo"]},"Cajamarca":{"Cajabamba":["Cachachi","Cajabamba","Condebamba","Sitacocha"],"Cajamarca":["Asunción","Cajamarca","Chetilla","Cospan","Encañada","Jesus","Llacanora","Los Baños del Inca","Magdalena","Matara","Namora","San Juan"],"Celendín":["Celendín","Chumuch","Cortegana","Huasmin","Jorge Chávez","Jose Gálvez","La Libertad de Pallan","Miguel Iglesias","Oxamarca","Sorochuco","Sucre","Utco"],"Chota":["Anguia","Chadin","Chalamarca","Chiguirip","Chimban","Choropampa","Chota","Cochabamba","Conchan","Huambos","Lajas","Llama","Miracosta","Paccha","Pion","Querocoto","San Juan de Licupis","Tacabamba","Tocmoche"],"Contumaza":["Chilete","Contumaza","Cupisnique","Guzmango","San Benito","Santa Cruz de Toled","Tantarica","Yonan"],"Cutervo":["Callayuc","Choros","Cujillo","Cutervo","La Ramada","Pimpingos","Querocotillo","San Andrés de Cutervo","San Juan de Cutervo","San Luis de Lucma","Santa Cruz","Santo Domingo de La Capilla","Santo Tomas","Socota","Toribio Casanova"],"Hualgayoc":["Bambamarca","Chugur","Hualgayoc"],"Jaén":["Bellavista","Chontali","Colasay","Huabal","Jaén","Las Pirias","Pomahuaca","Pucara","Sallique","San Felipe","San Jose del Alto","Santa Rosa"],"San Ignacio":["Chirinos","Huarango","La Coipa","Namballe","San Ignacio","San Jose de Lourdes","Tabaconas"],"San Marcos":["Chancay","Eduardo Villanueva","Gregorio Pita","Ichocan","Jose Manuel Quiroz","Jose Sabogal","Pedro Gálvez"],"San Miguel":["Bolivar","Calquis","Catilluc","El Prado","La Florida","Llapa","Nanchoc","Niepos","San Gregorio","San Miguel","San Silvestre de Cochan","Tongod","Union Agua Blanca"],"San Pablo":["San Bernardino","San Luis","San Pablo","Tumbaden"],"Santa Cruz":["Andabamba","Catache","Chancaybaños","La Esperanza","Ninabamba","Pulan","Santa Cruz","Saucepampa","Sexi","Uticyacu","Yauyucan"]},"Callao":{"Callao":["Bellavista","Callao","Carmen de La Legua","La Perla","La Punta","Mi Perú","Ventanilla"]},"Cusco":{"Acomayo":["Acomayo","Acopia","Acos","Mosoc Llacta","Pomacanchi","Rondocan","Sangarara"],"Anta":["Ancahuasi","Anta","Cachimayo","Chinchaypujio","Huarocondo","Limatambo","Mollepata","Pucyura","Zurite"],"Calca":["Calca","Coya","Lamay","Lares","Pisac","San Salvador","Taray","Yanatile"],"Canas":["Checca","Kunturkanki","Langui","Layo","Pampamarca","Quehue","Tupac Amaru","Yanaoca"],"Canchis":["Checacupe","Combapata","Marangani","Pitumarca","San Pablo","San Pedro","Sicuani","Tinta"],"Chumbivilcas":["Capacmarca","Chamaca","Colquemarca","Livitaca","Llusco","Quiñota","Santo Tomas","Velille"],"Cusco":["Ccorca","Cusco","Poroy","San Jerónimo","San Sebastian","Santiago","Saylla","Wanchaq"],"Espinar":["Alto Pichigua","Condoroma","Coporaque","Espinar","Ocoruro","Pallpata","Pichigua","Suyckutambo"],"La Convención":["Echarate","Huayopata","Inkawasi","Kimbiri","Maranura","Megantoni","Ocobamba","Pichari","Quellouno","Santa Ana","Santa Teresa","Vilcabamba","Villa Kintiarina","Villa Virgen"],"Paruro":["Accha","Ccapi","Colcha","Huanoquite","Omacha","Paccaritambo","Paruro","Pillpinto","Yaurisque"],"Paucartambo":["Caicay","Challabamba","Colquepata","Huancarani","Kosñipata","Paucartambo"],"Quispicanchi":["Andahuaylillas","Camanti","Ccarhuayo","Ccatca","Cusipata","Huaro","Lucre","Marcapata","Ocongate","Oropesa","Quiquijana","Urcos"],"Urubamba":["Chinchero","Huayllabamba","Machupicchu","Maras","Ollantaytambo","Urubamba","Yucay"]},"Huancavelica":{"Acobamba":["Acobamba","Andabamba","Anta","Caja","Marcas","Paucara","Pomacocha","Rosario"],"Angaraes":["Anchonga","Callanmarca","Ccochaccasa","Chincho","Congalla","Huanca-Huanca","Huayllay Grande","Julcamarca","Lircay","San Antonio de Antaparco","Santo Tomas de Pata","Secclla"],"Castrovirreyna":["Arma","Aurahua","Capillas","Castrovirreyna","Chupamarca","Cocas","Huachos","Huamatambo","Mollepampa","San Juan","Santa Ana","Tantara","Ticrapo"],"Churcampa":["Anco","Chinchihuasi","Churcampa","Cosme","El Carmen","La Merced","Locroja","Pachamarca","Paucarbamba","San Miguel de Mayocc","San Pedro de Coris"],"Huancavelica":["Acobambilla","Acoria","Ascensión","Conayca","Cuenca","Huachocolpa","Huancavelica","Huando","Huayllahuara","Izcuchaca","Laria","Manta","Mariscal Cáceres","Moya","Nuevo Occoro","Palca","Pilchaca","Vilca","Yauli"],"Huaytara":["Ayavi","Córdova","Huayacundo Arma","Huaytara","Laramarca","Ocoyo","Pilpichaca","Querco","Quito-Arma","San Antonio de Cusicancha","San Francisco de Sangayaico","San Isidro","Santiago de Chocorvos","Santiago de Quirahuara","Santo Domingo de Capillas","Tambo"],"Tayacaja":["Acostambo","Acraquia","Ahuaycha","Andaymarca","Colcabamba","Daniel Hernández","Huachocolpa","Huaribamba","Ñahuimpuquio","Pampas","Pazos","Pichos","Quichuas","Quishuar","Roble","Salcabamba","Salcahuasi","San Marcos de Rocchac","Santiago de Tucuma","Surcubamba","Tintay Puncu"]},"Huánuco":{"Ambo":["Ambo","Cayna","Colpas","Conchamarca","Huacar","San Francisco","San Rafael","Tomay Kichwa"],"Dos de Mayo":["Chuquis","La Union","Marías","Pachas","Quivilla","Ripan","Shunqui","Sillapata","Yanas"],"Huacaybamba":["Canchabamba","Cochabamba","Huacaybamba","Pinra"],"Huamalíes":["Arancay","Chavin de Pariarca","Jacas Grande","Jircan","Llata","Miraflores","Monzón","Punchao","Puños","Singa","Tantamayo"],"Huanuco":["Amarilis","Chinchao","Churubamba","Huanuco","Margos","Pillco Marca","Quisqui","San Francisco de Cayran","San Pablo de Pillao","San Pedro de Chaulan","Santa Maria del Valle","Yacus","Yarumayo"],"Lauricocha":["Baños","Jesus","Jivia","Queropalca","Rondos","San Francisco de Asís","San Miguel de Cauri"],"Leoncio Prado":["Castillo Grande","Daniel Alomias Robles","Hermílio Valdizan","Jose Crespo y Castillo","Luyando","Mariano Damaso Beraun","Pucayacu","Pueblo Nuevo","Rupa-Rupa","Santo Domingo de Anda"],"Marañon":["Cholon","Huacrachuco","La Morada","San Buenaventura","Santa Rosa de Alto Yanajanca"],"Pachitea":["Chaglla","Molino","Panao","Umari"],"Puerto Inca":["Codo del Pozuzo","Honoria","Puerto Inca","Tournavista","Yuyapichis"],"Yarowilca":["Aparicio Pomares","Cahuac","Chacabamba","Chavinillo","Choras","Jacas Chico","Obas","Pampamarca"]},"Ica":{"Chincha":["Alto Laran","Chavin","Chincha Alta","Chincha Baja","El Carmen","Grocio Prado","Pueblo Nuevo","San Juan de Yanac","San Pedro de Huacarpana","Sunampe","Tambo de Mora"],"Ica":["Ica","La Tinguiña","Los Aquijes","Ocucaje","Pachacutec","Parcona","Pueblo Nuevo","Salas","San Jose de los Molinos","San Juan Bautista","Santiago","Subtanjalla","Tate","Yauca del Rosario"],"Nazca":["Changuillo","El Ingenio","Marcona","Nazca","Vista Alegre"],"Palpa":["Llipata","Palpa","Rio Grande","Santa Cruz","Tibillo"],"Pisco":["Huancano","Humay","Independencia","Paracas","Pisco","San Andrés","San Clemente","Tupac Amaru Inca"]},"Junín":{"Chanchamayo":["Chanchamayo","Perene","Pichanaqui","San Luis de Shuaro","San Ramón","Vitoc"],"Chupaca":["Ahuac","Chongos Bajo","Chupaca","Huachac","Huamancaca Chico","San Juan de Jarpa","San Juan de Yscos","Tres de Diciembre","Yanacancha"],"Concepcion":["Aco","Andamarca","Chambara","Cochas","Comas","Concepcion","Heroínas Toledo","Manzanares","Mariscal Castilla","Matahuasi","Mito","Nueve de Julio","Orcotuna","San Jose de Quero","Santa Rosa de Ocopa"],"Huancayo":["Carhuacallanga","Chacapampa","Chicche","Chilca","Chongos Alto","Chupuro","Colca","Cullhuas","El Tambo","Huacrapuquio","Hualhuas","Huancan","Huancayo","Huasicancha","Huayucachi","Ingenio","Pariahuanca","Pilcomayo","Pucara","Quichuay","Quilcas","San Agustín","San Jerónimo de Tunan","Santo Domingo de Acobamba","Saño","Sapallanga","Sicaya","Viques"],"Jauja":["Acolla","Apata","Ataura","Canchayllo","Curicaca","El Mantaro","Huamali","Huaripampa","Huertas","Janjaillo","Jauja","Julcan","Leonor Ordóñez","Llocllapampa","Marco","Masma","Masma Chicche","Molinos","Monobamba","Muqui","Muquiyauyo","Paca","Paccha","Pancan","Parco","Pomacancha","Ricran","San Lorenzo","San Pedro de Chunan","Sausa","Sincos","Tunan Marca","Yauli","Yauyos"],"Junín":["Carhuamayo","Junín","Ondores","Ulcumayo"],"Satipo":["Coviriali","Llaylla","Mazamari","Pampa Hermosa","Pangoa","Rio Negro","Rio Tambo","Satipo","Vizcatan del Ene"],"Tarma":["Acobamba","Huaricolca","Huasahuasi","La Union","Palca","Palcamayo","San Pedro de Cajas","Tapo","Tarma"],"Yauli":["Chacapalpa","Huay-Huay","La Oroya","Marcapomacocha","Morococha","Paccha","Santa Barbara de Carhuacayan","Santa Rosa de Sacco","Suitucancha","Yauli"]},"La Libertad":{"Ascope":["Ascope","Casa Grande","Chicama","Chocope","Magdalena de Cao","Paijan","Rázuri","Santiago de Cao"],"Bolivar":["Bambamarca","Bolivar","Condormarca","Longotea","Uchumarca","Ucuncha"],"Chepén":["Chepén","Pacanga","Pueblo Nuevo"],"Gran Chimú":["Cascas","Compin","Lucma","Sayapullo"],"Julcan":["Calamarca","Carabamba","Huaso","Julcan"],"Otuzco":["Agallpampa","Charat","Huaranchal","La Cuesta","Mache","Otuzco","Paranday","Salpo","Sinsicap","Usquil"],"Pacasmayo":["Guadalupe","Jequetepeque","Pacasmayo","San Jose","San Pedro de Lloc"],"Pataz":["Buldibuyo","Chillia","Huancaspata","Huaylillas","Huayo","Ongon","Parcoy","Pataz","Pias","Santiago de Challas","Taurija","Tayabamba","Urpay"],"Sánchez Carrión":["Chugay","Cochorco","Curgos","Huamachuco","Marcabal","Sanagoran","Sarin","Sartimbamba"],"Santiago de Chuco":["Angasmarca","Cachicadan","Mollebamba","Mollepata","Quiruvilca","Santa Cruz de Chuca","Santiago de Chuco","Sitabamba"],"Trujillo":["El Porvenir","Florencia de Mora","Huanchaco","La Esperanza","Laredo","Moche","Poroto","Salaverry","Simbal","Trujillo","Victor Larco Herrera"],"Virú":["Chao","Guadalupito","Virú"]},"Lambayeque":{"Chiclayo":["Cayalti","Chiclayo","Chongoyape","Eten","Eten Puerto","Jose Leonardo Ortiz","La Victoria","Lagunas","Monsefu","Nueva Arica","Oyotun","Patapo","Picsi","Pimentel","Pomalca","Pucala","Reque","Santa Rosa","Saña","Tuman"],"Ferreñafe":["Cañaris","Ferreñafe","Incahuasi","Manuel Antonio Mesones Muro","Pitipo","Pueblo Nuevo"],"Lambayeque":["Chochope","Illimo","Jayanca","Lambayeque","Mochumi","Morrope","Motupe","Olmos","Pacora","Salas","San Jose","Tucume"]},"Lima":{"Barranca":["Barranca","Paramonga","Pativilca","Supe","Supe Puerto"],"Cajatambo":["Cajatambo","Copa","Gorgor","Huancapon","Manas"],"Canta":["Arahuay","Canta","Huamantanga","Huaros","Lachaqui","San Buenaventura","Santa Rosa de Quives"],"Cañete":["Asia","Calango","Cerro Azul","Chilca","Coayllo","Imperial","Lunahuana","Mala","Nuevo Imperial","Pacaran","Quilmana","San Antonio","San Luis","San Vicente de Cañete","Santa Cruz de Flores","Zúñiga"],"Huaral":["Atavillos Alto","Atavillos Bajo","Aucallama","Chancay","Huaral","Ihuari","Lampian","Pacaraos","San Miguel de Acos","Santa Cruz de Andamarca","Sumbilca","Veintisiete de Noviembre"],"Huarochiri":["Antioquia","Callahuanca","Carampoma","Chicla","Cuenca","Huachupampa","Huanza","Huarochiri","Lahuaytambo","Langa","Laraos","Mariatana","Matucana","Ricardo Palma","San Andrés de Tupicocha","San Antonio","San Bartolomé","San Damian","San Juan de Iris","San Juan de Tantaranche","San Lorenzo de Quinti","San Mateo","San Mateo de Otao","San Pedro de Casta","San Pedro de Huancayre","Sangallaya","Santa Cruz de Cocachacra","Santa Eulalia","Santiago de Anchucaya","Santiago de Tuna","Santo Domingo de los Olleros","Surco"],"Huaura":["Ambar","Caleta de Carquin","Checras","Huacho","Hualmay","Huaura","Leoncio Prado","Paccho","Santa Leonor","Santa Maria","Sayan","Vegueta"],"Lima":["Ancón","Ate","Barranco","Breña","Carabayllo","Chaclacayo","Chorrillos","Cieneguilla","Comas","El Agustino","Independencia","Jesus Maria","La Molina","La Victoria","Lima","Lince","Los Olivos","Lurigancho","Lurin","Magdalena del Mar","Miraflores","Pachacamac","Pucusana","Pueblo Libre","Puente Piedra","Punta Hermosa","Punta Negra","Rímac","San Bartolo","San Borja","San Isidro","San Juan de Lurigancho","San Juan de Miraflores","San Luis","San Martín de Porres","San Miguel","Santa Anita","Santa Maria del Mar","Santa Rosa","Santiago de Surco","Surquillo","Villa El Salvador","Villa Maria del Triunfo"],"Oyon":["Andajes","Caujul","Cochamarca","Navan","Oyon","Pachangara"],"Yauyos":["Alis","Ayauca","Ayaviri","Azángaro","Cacra","Carania","Catahuasi","Chocos","Cochas","Colonia","Hongos","Huampara","Huancaya","Huangascar","Huantan","Huañec","Laraos","Lincha","Madean","Miraflores","Omas","Putinza","Quinches","Quinocay","San Joaquín","San Pedro de Pilas","Tanta","Tauripampa","Tomas","Tupe","Viñac","Vitis","Yauyos"]},"Loreto":{"Alto Amazonas":["Balsapuerto","Jeberos","Lagunas","Santa Cruz","Teniente Cesar López Rojas","Yurimaguas"],"Datem del Marañon":["Andoas","Barranca","Cahuapanas","Manseriche","Morona","Pastaza"],"Loreto":["Nauta","Parinari","Tigre","Trompeteros","Urarinas"],"Mariscal Ramón Castilla":["Pebas","Ramón Castilla","San Pablo","Yavari"],"Maynas":["Alto Nanay","Belén","Fernando Lores","Indiana","Iquitos","Las Amazonas","Mazan","Napo","Punchana","Putumayo","Rosa Panduro","San Juan Bautista","Teniente Manuel Clavero","Torres Causana","Yaguas"],"Requena":["Alto Tapiche","Capelo","Emilio San Martín","Jenaro Herrera","Maquia","Puinahua","Requena","Saquena","Soplin","Tapiche","Yaquerana"],"Ucayali":["Contamana","Inahuaya","Padre Marquez","Pampa Hermosa","Sarayacu","Vargas Guerra"]},"Madre de Dios":{"Manu":["Fitzcarrald","Huepetuhe","Madre de Dios","Manu"],"Tahuamanu":["Iberia","Iñapari","Tahuamanu"],"Tambopata":["Inambari","Laberinto","Las Piedras","Tambopata"]},"Moquegua":{"General Sánchez Cerro":["Chojata","Coalaque","Ichuña","La Capilla","Lloque","Matalaque","Omate","Puquina","Quinistaquillas","Ubinas","Yunga"],"Ilo":["El Algarrobal","Ilo","Pacocha"],"Mariscal Nieto":["Carumas","Cuchumbaya","Moquegua","Samegua","San Cristóbal","Torata"]},"Pasco":{"Daniel Alcides Carrión":["Chacayan","Goyllarisquizga","Paucar","San Pedro de Pillao","Santa Ana de Tusi","Tapuc","Vilcabamba","Yanahuanca"],"Oxapampa":["Chontabamba","Constitución","Huancabamba","Oxapampa","Palcazu","Pozuzo","Puerto Bermúdez","Villa Rica"],"Pasco":["Chaupimarca","Huachon","Huariaca","Huayllay","Ninacaca","Pallanchacra","Paucartambo","San Francisco de Asís de Yarusyacan","Simon Bolivar","Ticlacayan","Tinyahuarco","Vicco","Yanacancha"]},"Piura":{"Ayabaca":["Ayabaca","Frias","Jilili","Lagunas","Montero","Pacaipampa","Paimas","Sapillica","Sicchez","Suyo"],"Huancabamba":["Canchaque","El Carmen de La Frontera","Huancabamba","Huarmaca","Lalaquiz","San Miguel de El Faique","Sondor","Sondorillo"],"Morropon":["Buenos Aires","Chalaco","Chulucanas","La Matanza","Morropon","Salitral","San Juan de Bigote","Santa Catalina de Mossa","Santo Domingo","Yamango"],"Paita":["Amotape","Arenal","Colan","La Huaca","Paita","Tamarindo","Vichayal"],"Piura":["26 de Octubre","Castilla","Catacaos","Cura Mori","El Tallan","La Arena","La Union","Las Lomas","Piura","Tambo Grande"],"Sechura":["Bellavista de La Union","Bernal","Cristo Nos Valga","Rinconada Llicuar","Sechura","Vice"],"Sullana":["Bellavista","Ignacio Escudero","Lancones","Marcavelica","Miguel Checa","Querecotillo","Salitral","Sullana"],"Talara":["El Alto","La Brea","Lobitos","Los Organos","Mancora","Pariñas"]},"Puno":{"Azángaro":["Achaya","Arapa","Asillo","Azángaro","Caminaca","Chupa","Jose Domingo Choquehuanca","Muñani","Potoni","Saman","San Anton","San Jose","San Juan de Salinas","Santiago de Pupuja","Tirapata"],"Carabaya":["Ajoyani","Ayapata","Coasa","Corani","Crucero","Ituata","Macusani","Ollachea","San Gaban","Usicayos"],"Chucuito":["Desaguadero","Huacullani","Juli","Kelluyo","Pisacoma","Pomata","Zepita"],"El Collao":["Capazo","Conduriri","Ilave","Pilcuyo","Santa Rosa"],"Huancane":["Cojata","Huancane","Huatasani","Inchupalla","Pusi","Rosaspata","Taraco","Vilque Chico"],"Lampa":["Cabanilla","Calapuja","Lampa","Nicasio","Ocuviri","Palca","Paratia","Pucara","Santa Lucia","Vilavila"],"Melgar":["Antauta","Ayaviri","Cupi","Llalli","Macari","Nuñoa","Orurillo","Santa Rosa","Umachiri"],"Moho":["Conima","Huayrapata","Moho","Tilali"],"Puno":["Acora","Amantani","Atuncolla","Capachica","Chucuito","Coata","Huata","Mañazo","Paucarcolla","Pichacani","Plateria","Puno","San Antonio","Tiquillaca","Vilque"],"San Antonio de Putina":["Ananea","Pedro Vilca Apaza","Putina","Quilcapuncu","Sina"],"San Román":["Cabana","Cabanillas","Caracoto","Juliaca","San Miguel"],"Sandia":["Alto Inambari","Cuyocuyo","Limbani","Patambuco","Phara","Quiaca","San Juan del Oro","San Pedro de Putina Punco","Sandia","Yanahuaya"],"Yunguyo":["Anapia","Copani","Cuturapi","Ollaraya","Tinicachi","Unicachi","Yunguyo"]},"San Martín":{"El Dorado":["Agua Blanca","San Jose de Sisa","San Martín","Santa Rosa","Shatoja"],"Huallaga":["Alto Saposoa","El Eslabón","Piscoyacu","Sacanche","Saposoa","Tingo de Saposoa"],"Lamas":["Alonso de Alvarado","Barranquita","Caynarachi","Cuñumbuqui","Lamas","Pinto Recodo","Rumisapa","San Roque de Cumbaza","Shanao","Tabalosos","Zapatero"],"Mariscal Cáceres":["Campanilla","Huicungo","Juanjuí","Pachiza","Pajarillo"],"Moyobamba":["Calzada","Habana","Jepelacio","Moyobamba","Soritor","Yantalo"],"Picota":["Buenos Aires","Caspisapa","Picota","Pilluana","Pucacaca","San Cristóbal","San Hilarión","Shamboyacu","Tingo de Ponasa","Tres Unidos"],"Rioja":["Awajun","Elías Soplin Vargas","Nueva Cajamarca","Pardo Miguel","Posic","Rioja","San Fernando","Yorongos","Yuracyacu"],"San Martín":["Alberto Leveau","Alto Biavo","Bajo Biavo","Bellavista","Cacatachi","Chazuta","Chipurana","El Porvenir","Huallaga","Huimbayoc","Juan Guerra","La Banda de Shilcayo","Morales","Papaplaya","San Antonio","San Pablo","San Rafael","Sauce","Shapaja","Tarapoto"],"Tocache":["Nuevo Progreso","Polvora","Shunte","Tocache","Uchiza"]},"Tacna":{"Candarave":["Cairani","Camilaca","Candarave","Curibaya","Huanuara","Quilahuani"],"Jorge Basadre":["Ilabaya","Ite","Locumba"],"Tacna":["Alto de La Alianza","Calana","Ciudad Nueva","Coronel Gregorio Albarracín Lanchipa","Inclan","La Yarada-Los Palos","Pachia","Palca","Pocollay","Sama","Tacna"],"Tarata":["Estique","Estique-Pampa","Héroes Albarracín","Sitajara","Susapaya","Tarata","Tarucachi","Ticaco"]},"Tumbes":{"Contralmirante Villa":["Canoas de Punta Sal","Casitas","Zorritos"],"Tumbes":["Corrales","La Cruz","Pampas de Hospital","San Jacinto","San Juan de La Virgen","Tumbes"],"Zarumilla":["Aguas Verdes","Matapalo","Papayal","Zarumilla"]},"Ucayali":{"Atalaya":["Raymondi","Sepahua","Tahuania","Yurua"],"Coronel Portillo":["Calleria","Campoverde","Iparia","Manantay","Masisea","Nueva Requena","Yarinacocha"],"Padre Abad":["Alexander Von Humboldt","Curimana","Irazola","Neshuya","Padre Abad"],"Purús":["Purús"]}};
 
+var INDICE_EMBEBIDO={"generado":"2026-08-19","total":17,"nota":"Índice local de procesos verificados. Se amplía con cada barrido.","registros":[{"id":"a1","titulo":"Supervisión de obra — mejoramiento de agua potable e instalación de desagüe","entidad":"Municipalidad Distrital de Ranrahirca","tipo":"Consultoría","region":"Áncash","provincia":"Yungay","distrito":"Ranrahirca","convocada":"2026-08-03","cierra":"2026-09-02","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/licitaciones-peru/ancash/","objeto":"supervisión agua potable desagüe saneamiento electromecánico bombeo"},{"id":"a2","titulo":"Mantenimiento del Dren Cascajal, Km 0+000 al Km 4+000","entidad":"GORE Áncash — Proyecto Especial CHINECAS","tipo":"Servicio","region":"Áncash","provincia":"Santa","distrito":"Chimbote","convocada":"2026-07-18","cierra":"2026-08-26","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"mantenimiento dren limpieza hidráulica canal"},{"id":"a3","titulo":"Construcción de cobertura en graderías del estadio municipal","entidad":"Municipalidad Distrital de Ticapampa","tipo":"Obra","region":"Áncash","provincia":"Recuay","distrito":"Ticapampa","convocada":"2026-08-14","cierra":"2026-08-25","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/licitaciones-peru/ancash/","objeto":"cobertura graderías estadio estructura metálica iluminación deportiva"},{"id":"a4","titulo":"Mantenimiento correctivo de bocatoma — barraje móvil La Víbora","entidad":"GORE Áncash — Proyecto Especial CHINECAS","tipo":"Servicio","region":"Áncash","provincia":"Santa","distrito":"Chimbote","convocada":"2026-07-16","cierra":"2026-08-21","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"bocatoma barraje móvil compuertas electromecánico tablero"},{"id":"a5","titulo":"Mejoramiento y ampliación del servicio de movilidad urbana — Jr. La Esperanza y Av. Machapay","entidad":"GORE Áncash — DRTC","tipo":"Obra","region":"Áncash","provincia":"Carhuaz","distrito":"Carhuaz","convocada":"2026-07-15","cierra":"2026-08-20","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"movilidad urbana pavimento veredas alumbrado público postes"},{"id":"a6","titulo":"Mejoramiento y ampliación de servicios de espacios públicos urbanos — Pichiu San Pedro","entidad":"Municipalidad Distrital de San Marcos","tipo":"Obra","region":"Áncash","provincia":"Huari","distrito":"San Marcos","convocada":"2026-08-11","cierra":"2026-08-19","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"espacios públicos urbanos parque alumbrado ornamental"},{"id":"a7","titulo":"Creación de servicios de protección en riberas del río Mosna","entidad":"Municipalidad Distrital de San Marcos","tipo":"Obra","region":"Áncash","provincia":"Huari","distrito":"San Marcos","convocada":"2026-07-14","cierra":"2026-08-18","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"protección riberas río defensa ribereña gaviones"},{"id":"a8","titulo":"Mantenimiento de la infraestructura del Centro Cívico de San Marcos","entidad":"Municipalidad Distrital de San Marcos","tipo":"Servicio","region":"Áncash","provincia":"Huari","distrito":"San Marcos","convocada":"2026-07-14","cierra":"2026-08-18","fuente":"PerúLicitaciones","url":"https://www.perulicitaciones.com/departamento/ancash.html","objeto":"mantenimiento infraestructura centro cívico edificio"},{"id":"n1","titulo":"Creación del servicio de educación inicial — I.E. Siempre Adelante","entidad":"Municipalidad de Atalaya","tipo":"Obra","region":"Ucayali","provincia":"Atalaya","distrito":"Raymondi","convocada":"2026-08-13","cierra":"2026-08-23","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"educación inicial institución educativa aula construcción"},{"id":"n2","titulo":"Supervisión del mantenimiento de la vía departamental IC-102","entidad":"Gobierno Regional de Ica","tipo":"Servicio","region":"Ica","provincia":"Ica","distrito":"Ica","convocada":"2026-08-14","cierra":"2026-08-25","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"supervisión mantenimiento vía departamental carretera"},{"id":"n3","titulo":"Consultoría para supervisión del puente Caserío San Andrés","entidad":"Gobierno Regional de Ucayali","tipo":"Consultoría","region":"Ucayali","provincia":"Coronel Portillo","distrito":"Calleria","convocada":"2026-08-05","cierra":"2026-09-06","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"consultoría supervisión puente estructura"},{"id":"n4","titulo":"Consultoría — supervisión de ampliación de agua y alcantarillado","entidad":"Gobierno Regional de San Martín","tipo":"Consultoría","region":"San Martín","provincia":"Moyobamba","distrito":"Moyobamba","convocada":"2026-08-10","cierra":"2026-08-20","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"supervisión agua alcantarillado saneamiento"},{"id":"n5","titulo":"Construcción de aula de educación — I.E. 1594","entidad":"Municipalidad de Cajamarca","tipo":"Obra","region":"Cajamarca","provincia":"Cajamarca","distrito":"Cajamarca","convocada":"2026-08-10","cierra":"2026-08-20","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"construcción aula institución educativa"},{"id":"n6","titulo":"Adquisición de planta de producción de pellets de alimentos","entidad":"Gobierno Regional de Lambayeque","tipo":"Bien","region":"Lambayeque","provincia":"Chiclayo","distrito":"Chiclayo","convocada":"2026-08-13","cierra":"2026-08-23","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"planta producción pellets alimento balanceado maquinaria"},{"id":"n7","titulo":"Operación y mantenimiento de plantas de tratamiento","entidad":"Gobierno Regional de Loreto","tipo":"Servicio","region":"Loreto","provincia":"Maynas","distrito":"Iquitos","convocada":"2026-08-11","cierra":"2026-08-19","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"operación mantenimiento planta tratamiento agua bombeo eléctrico"},{"id":"n8","titulo":"Consultoría — mejoramiento del servicio de suministro eléctrico","entidad":"Gobierno Regional de Puno","tipo":"Consultoría","region":"Puno","provincia":"Puno","distrito":"Puno","convocada":"2026-08-05","cierra":"2026-08-24","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"suministro eléctrico redes electrificación consultoría expediente"},{"id":"n9","titulo":"Mantenimiento de transitabilidad vehicular — Jr. Mariátegui","entidad":"Municipalidad de La Libertad","tipo":"Servicio","region":"La Libertad","provincia":"Trujillo","distrito":"Trujillo","convocada":"2026-08-12","cierra":"2026-09-10","fuente":"PerúContrata","url":"https://www.perucontrata.com.pe/boletin-licitaciones/","objeto":"mantenimiento transitabilidad vehicular vía pavimento"}]};
+
+/* ══════════════════════════════════════════════════════════════
+   CHASKI · MOTOR DE BÚSQUEDA
+   Busca dentro de la app sobre un índice local.
+   Sin depender de Google. Sin salir a otra pestaña.
+   ══════════════════════════════════════════════════════════════ */
+
+var INDICE={registros:[],generado:'',total:0};
+
+/* ── normalización: minúsculas y sin tildes ── */
+function nm(s){
+  return String(s==null?'':s).toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^\w\s"-]/g,' ').replace(/\s+/g,' ').trim();
+}
+
+/* ── analiza la consulta: frases exactas, exclusiones, términos sueltos ── */
+function analizar(txt){
+  var q={frases:[],mas:[],menos:[]};
+  var t=String(txt||'');
+  t.replace(/"([^"]+)"/g,function(_,f){q.frases.push(nm(f));return ' ';});
+  t=t.replace(/"[^"]*"/g,' ');
+  nm(t).split(' ').forEach(function(w){
+    if(!w)return;
+    if(w.charAt(0)==='-'){ if(w.length>1)q.menos.push(w.slice(1)); }
+    else q.mas.push(w);
+  });
+  return q;
+}
+
+/* ── texto indexado de un registro, con pesos ── */
+function campos(r){
+  return [
+    {t:nm(r.titulo),  p:10},
+    {t:nm(r.objeto),  p:6},
+    {t:nm(r.entidad), p:5},
+    {t:nm(r.distrito+' '+r.provincia+' '+r.region), p:4},
+    {t:nm(r.tipo),    p:3}
+  ];
+}
+
+/* ── puntúa un registro contra la consulta ── */
+function puntuar(r,q){
+  var cs=campos(r), todo=cs.map(function(c){return c.t;}).join(' ');
+
+  for(var i=0;i<q.menos.length;i++) if(todo.indexOf(q.menos[i])>=0) return -1;
+  for(var j=0;j<q.frases.length;j++) if(todo.indexOf(q.frases[j])<0) return -1;
+
+  var pts=0, encontrados=0;
+  q.frases.forEach(function(f){
+    cs.forEach(function(c){ if(c.t.indexOf(f)>=0) pts+=c.p*3; });
+    encontrados++;
+  });
+  q.mas.forEach(function(w){
+    var hit=false;
+    cs.forEach(function(c){
+      var k=c.t.indexOf(w);
+      if(k<0) return;
+      hit=true;
+      var exacto=new RegExp('(^| )'+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'( |$)').test(c.t);
+      pts+=c.p*(exacto?2:1);
+    });
+    if(hit)encontrados++;
+  });
+
+  var total=q.frases.length+q.mas.length;
+  if(total>0 && encontrados===0) return -1;
+  if(total>0) pts=pts*(encontrados/total);   // premia cubrir más términos
+
+  /* recencia: lo que cierra pronto pesa más */
+  var d=diasPara(r.cierra);
+  if(d>=0) pts+= d<=3?9: d<=7?6: d<=15?3:1;
+  return pts;
+}
+function diasPara(f){
+  var p=String(f).split('-'), h=new Date(); h.setHours(0,0,0,0);
+  return Math.round((new Date(+p[0],+p[1]-1,+p[2])-h)/86400000);
+}
+
+/* ── búsqueda ── */
+function motorBuscar(texto,filtros){
+  var q=analizar(texto), F=filtros||{};
+  var res=[];
+  INDICE.registros.forEach(function(r){
+    if(F.region && r.region!==F.region) return;
+    if(F.prov   && r.provincia!==F.prov) return;
+    if(F.dist   && r.distrito!==F.dist) return;
+    if(F.tipo   && r.tipo!==F.tipo) return;
+    var d=diasPara(r.cierra);
+    if(!F.vencidas && d<0) return;
+    if(F.maxDias!=null && d>F.maxDias) return;
+    var p=puntuar(r,q);
+    if(p<0) return;
+    res.push({r:r,p:p,d:d});
+  });
+  res.sort(function(a,b){return b.p-a.p || a.d-b.d;});
+  return res;
+}
+
+/* ── sugerencias mientras escribe ── */
+function sugerir(txt){
+  var t=nm(txt); if(t.length<2) return [];
+  var voc={};
+  INDICE.registros.forEach(function(r){
+    nm(r.titulo+' '+r.objeto+' '+r.entidad).split(' ').forEach(function(w){
+      if(w.length>3 && w.indexOf(t)===0) voc[w]=(voc[w]||0)+1;
+    });
+  });
+  return Object.keys(voc).sort(function(a,b){return voc[b]-voc[a];}).slice(0,6);
+}
+
+/* ── resaltar coincidencias ── */
+function marcar(txt,q){
+  var out=esc(txt);
+  var terms=q.frases.concat(q.mas).filter(function(w){return w.length>2;});
+  terms.forEach(function(w){
+    try{
+      var re=new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      out=out.replace(re,'<mark>$1</mark>');
+    }catch(e){}
+  });
+  return out;
+}
+
+/* ── pintar resultados del motor ── */
+function pintarMotor(){
+  var el=document.getElementById('mResult'); if(!el)return;
+  var txt=((document.getElementById('bTexto')||{}).value||'').trim();
+  var base=txt||(B.rubro!==null?RUBROS[B.rubro].q.replace(/ OR /g,' '):'');
+  if(B.excluir) base+=' '+B.excluir.split(/[\s,]+/).filter(Boolean).map(function(w){return '-'+w;}).join(' ');
+
+  var F={region:B.region||'',prov:B.prov||'',dist:B.dist||'',tipo:B.tipoObj||''};
+  var res=motorBuscar(base,F);
+
+  var cab='<div class="mcab"><span class="mn2">'+res.length+'</span> '+
+    (res.length===1?'resultado':'resultados')+' en el índice'+
+    ' · <span class="mfe">'+INDICE.total+' procesos · actualizado '+esc(INDICE.generado)+'</span></div>';
+
+  if(!res.length){
+    el.innerHTML=cab+'<div class="vacio"><span class="em">🔍</span>'+
+      'Nada en el índice local con esos criterios.<br>'+
+      'El índice tiene <b>'+INDICE.total+'</b> procesos verificados; crece con cada barrido.<br><br>'+
+      'Usa <b>Buscar en la web</b> más abajo para ir a las fuentes completas.</div>';
+    return;
+  }
+  var q=analizar(base);
+  el.innerHTML=cab+res.slice(0,40).map(function(x){
+    var r=x.r,d=x.d,n=d<=2?'r':(d<=9?'y':'g');
+    var et=d<0?'cerrada':(d===0?'HOY':d+(d===1?' día':' días'));
+    return '<div class="mr '+n+'">'+
+      '<div class="mrt">'+marcar(r.titulo,q)+'</div>'+
+      '<div class="mre">'+marcar(r.entidad,q)+'</div>'+
+      '<div class="mrm">'+
+        '<span class="mp">'+esc(r.tipo)+'</span>'+
+        '<span>📍 '+esc(r.distrito+', '+r.provincia+', '+r.region)+'</span>'+
+        '<span class="md '+n+'">'+esc(et)+'</span>'+
+      '</div>'+
+      '<div class="mrf">Cierra '+esc(r.cierra)+' · fuente: '+esc(r.fuente)+
+        ' · <a href="'+esc(r.url)+'" target="_blank" rel="noopener">ver ficha →</a></div>'+
+    '</div>';
+  }).join('')+(res.length>40?'<div class="mmas">… y '+(res.length-40)+' más. Afina la búsqueda.</div>':'');
+}
+
+/* ── carga del índice ── */
+function cargarIndice(){
+  if(typeof INDICE_EMBEBIDO!=='undefined') INDICE=INDICE_EMBEBIDO;
+  fetch('indice.json?v='+Date.now())
+    .then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(d){ if(d&&d.registros&&d.registros.length>=INDICE.registros.length){
+      INDICE=d; if(document.getElementById('mResult')) pintarMotor(); } })
+    .catch(function(){});
+}
+
+
 /* ══════════════════════════════════════════════════════════════
    CHASKI · MOTOR DE BÚSQUEDA
    Región → Provincia → Distrito · 1 874 distritos del Perú
@@ -946,7 +1150,7 @@ var RUBROS=[
 var VENTANAS=[{k:'d',n:'24 horas'},{k:'w',n:'Semana'},{k:'m',n:'Mes'},{k:'y',n:'Año'},{k:'',n:'Sin límite'}];
 
 /* ── estado ── */
-var B={rubro:null,region:'Áncash',prov:'',dist:'',ambito:'publico',ventana:'m',excluir:'',exacta:false};
+var B={rubro:null,tipoObj:'',region:'Áncash',prov:'',dist:'',ambito:'publico',ventana:'m',excluir:'',exacta:false};
 
 function g(q,v){
   var u='https://www.google.com/search?q='+encodeURIComponent(q);
@@ -1096,7 +1300,7 @@ function borrarGuardada(i,ev){
 /* ══ ejecutar ══ */
 function buscar(){
   if(!consulta()){aviso('Escribe algo o elige un rubro.');return;}
-  pintarResultados();
+  pintarMotor(); pintarResultados();
   var r=document.getElementById('bResult');
   if(r&&r.scrollIntoView)r.scrollIntoView({behavior:'smooth',block:'start'});
 }
@@ -1182,6 +1386,8 @@ function pintarBuscador(){
          opciones(regs,B.region,'Todo el Perú')+'</select></div>'+
        '<div class="gc"><label>Provincia</label><select onchange="setProv(this.value)"'+
          (provs.length?'':' disabled')+'>'+opciones(provs,B.prov,provs.length?'Toda la región':'—')+'</select></div>'+
+       '<div class="gc"><label>Tipo</label><select onchange="B.tipoObj=this.value;pintarMotor()">'+
+         opciones(['Obra','Servicio','Bien','Consultoría'],B.tipoObj||'','Todos')+'</select></div>'+
        '<div class="gc"><label>Distrito</label><select onchange="setDist(this.value)"'+
          (dists.length?'':' disabled')+'>'+opciones(dists,B.dist,dists.length?'Toda la provincia':'—')+'</select></div>'+
      '</div>'+
@@ -1206,10 +1412,16 @@ function pintarBuscador(){
      '<div class="avr">'+
        '<label class="chk" onclick="toggleExacta()"><span class="bx'+(B.exacta?' on':'')+'">'+(B.exacta?'✓':'')+'</span>Frase exacta</label>'+
        '<input class="exc" type="text" value="'+esc(B.excluir)+'" placeholder="Excluir palabras: lima arequipa" '+
-         'onchange="B.excluir=this.value;pintarResultados()">'+
+         'onchange="B.excluir=this.value;pintarMotor();pintarResultados()">'+
      '</div>'+
    '</div>'+
 
+   '<div class="motorcab"><span class="mt">⚡ Resultados del motor CHASKI</span>'+
+     '<span class="ms">busca dentro de la app, sin salir</span></div>'+
+   '<div id="mResult"></div>'+
+
+   '<div class="motorcab web"><span class="mt">🌐 Buscar en la web</span>'+
+     '<span class="ms">abre las fuentes completas en otra pestaña</span></div>'+
    '<div id="bResult"></div>'+
 
    /* guardadas */
@@ -1223,6 +1435,7 @@ function pintarBuscador(){
    '<div class="rubros">'+chipsRubros()+'</div>';
 
   var i=document.getElementById('bTexto'); if(i)i.value=txt;
+  pintarMotor();
   if(consulta())pintarResultados();
 }
 
@@ -1622,6 +1835,8 @@ if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.sta
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
 }
+
+cargarIndice();
 
 </script>
 </body>
