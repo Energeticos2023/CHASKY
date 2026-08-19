@@ -1,0 +1,25 @@
+CHASKI V4 - BUSCADOR UNIVERSAL DE OPORTUNIDADES
+Fecha: 2026-08-19
+
+ARCHIVO PRINCIPAL
+- index.html
+
+COMO ACTUALIZAR EN GITHUB
+1. Abre el repositorio Energeticos2023/CHASKY.
+2. Reemplaza el archivo index.html por el index.html de este paquete.
+3. NO elimines oportunidades.json ni privadas.json. CHASKI V4 los usa como radar local complementario.
+4. Haz commit en la rama main.
+5. Espera la actualización de GitHub Pages.
+6. Abre https://energeticos2023.github.io/CHASKY/ y presiona Ctrl+F5.
+
+QUE CAMBIA EN V4
+- Buscador UNIVERSAL sin catálogo cerrado de rubros.
+- Opción ESTADO: OECE, SEACE público, SEACE proveedor, contratos menores, Cotizador y PERÚ COMPRAS.
+- Opción PRIVADAS: búsquedas de RFQ/RFP, compras, abastecimiento, sourcing, portales de proveedores, LinkedIn, SAP Business Network Discovery, Achilles y eBIZ.
+- Opción UNIVERSAL: combina Estado + privadas.
+- Opción RADAR: muestra los datos ya cargados en oportunidades.json y privadas.json.
+- Las oportunidades públicas cargadas dejan de presentarse como oficiales si no han sido verificadas directamente en SEACE.
+- Búsqueda por cualquier texto: producto, servicio, obra, consultoría, profesión, especialidad, material o necesidad.
+
+LIMITACION TECNICA IMPORTANTE
+GitHub Pages es una aplicación estática. SEACE usa sesión, formularios dinámicos y autenticación; por ello CHASKI no puede consultar ni rellenar automáticamente la sesión privada del proveedor desde otro dominio. V4 abre la fuente correcta y prepara búsquedas universales. Para mostrar resultados SEACE en tiempo real dentro de CHASKI se requerirá una fase posterior con backend/indexador o una API oficial disponible para ese fin.
