@@ -3,93 +3,1495 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>CHASKI V4 — Buscador universal de oportunidades</title>
-<meta name="description" content="Buscador universal de oportunidades públicas y privadas para proveedores en Perú.">
-<meta name="theme-color" content="#07101d">
-<style>
-*{box-sizing:border-box}
-:root{--bg:#07101d;--card:#111e30;--card2:#17273c;--line:#26384f;--tx:#f5f8fc;--tx2:#b9c6d8;--mut:#8090a6;--gold:#ffb020;--gold2:#ffd166;--green:#35d39a;--blue:#69b7ff;--red:#ff7070}
-html{background:var(--bg)}body{margin:0;background:linear-gradient(180deg,#091525 0,#07101d 35%);color:var(--tx);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;padding-bottom:80px}button,input,select{font:inherit}button,a{touch-action:manipulation}a{text-decoration:none;color:inherit}.wrap{width:min(100%,980px);margin:auto;padding:0 14px}.top{position:sticky;top:0;z-index:20;background:rgba(7,16,29,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}.head{display:flex;align-items:center;gap:11px;padding:12px 0 9px}.brand{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:23px;background:linear-gradient(145deg,var(--gold2),#ef7600);box-shadow:0 8px 24px rgba(255,176,32,.18)}.ttl{font-weight:950;letter-spacing:1px;font-size:19px}.sub{font-size:11px;color:var(--mut)}.searchbox{display:grid;grid-template-columns:2fr 1fr auto;gap:7px;padding-bottom:10px}.searchbox input{min-width:0;background:#fff;color:#142033;border:0;border-radius:12px;padding:12px 13px;outline:none}.searchbox button{border:0;border-radius:12px;background:var(--gold);color:#241606;font-weight:950;padding:0 16px;cursor:pointer}.tabs{display:flex;gap:7px;overflow:auto;padding:13px 0 9px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{flex:none;border:1px solid var(--line);background:var(--card);color:var(--tx2);border-radius:999px;padding:8px 13px;font-weight:850;cursor:pointer}.tab.on{background:var(--gold);border-color:var(--gold);color:#241606}.hero{background:linear-gradient(145deg,rgba(255,176,32,.12),var(--card));border:1px solid rgba(255,176,32,.3);border-radius:16px;padding:14px;margin-bottom:12px}.hero b{color:var(--gold2)}.hero p{margin:4px 0 0;color:var(--tx2);font-size:12.5px}.notice{background:#0d1a2a;border:1px solid #28405c;border-radius:13px;padding:11px 12px;color:var(--tx2);font-size:12px;margin-bottom:12px}.notice strong{color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}.source{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px;display:flex;flex-direction:column;min-height:142px}.source.public{border-left:4px solid var(--gold)}.source.private{border-left:4px solid var(--green)}.source h3{font-size:14px;margin:0 0 4px}.source p{font-size:11.5px;color:var(--tx2);margin:0 0 10px;flex:1}.badge{display:inline-block;width:max-content;border-radius:999px;padding:4px 7px;font-size:9.5px;font-weight:900;margin-bottom:8px;background:var(--card2);color:var(--tx2)}.badge.off{color:var(--gold2);background:#342611}.badge.web{color:var(--green);background:#113227}.actions{display:grid;grid-template-columns:1fr auto;gap:7px}.go{border:0;border-radius:10px;background:var(--card2);color:var(--tx);font-weight:900;padding:10px;cursor:pointer}.go.primary{background:linear-gradient(135deg,var(--gold2),#ef8b00);color:#241606}.mini{border:1px solid var(--line);border-radius:10px;background:#102238;color:var(--blue);font-weight:900;padding:10px;cursor:pointer}.pack{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:13px}.pack h3{font-size:13px;margin:0 0 8px;color:var(--gold2)}.row{display:grid;grid-template-columns:150px 1fr auto;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #203149}.row:last-child{border-bottom:0}.row .k{font-size:10px;color:var(--mut);text-transform:uppercase}.row .v{font-size:12px;word-break:break-word}.copy{border:1px solid #315070;background:#102238;color:var(--blue);border-radius:8px;padding:6px 8px;font-size:10px;font-weight:900;cursor:pointer}.section-title{display:flex;align-items:center;gap:8px;margin:16px 2px 9px;font-size:13px;font-weight:900}.section-title span{color:var(--mut);font-size:11px;font-weight:600}.radar-card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:10px}.radar-card.pub{border-left:4px solid var(--gold)}.radar-card.pri{border-left:4px solid var(--green)}.rtitle{font-weight:900;font-size:14px}.rmeta{color:var(--tx2);font-size:11.5px;margin-top:4px}.rdesc{color:var(--tx2);font-size:12px;margin:9px 0}.rbuttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}.rbuttons button,.rbuttons a{display:grid;place-items:center;border:0;border-radius:10px;background:var(--card2);color:var(--tx);padding:9px;font-weight:850;font-size:11px;cursor:pointer}.empty{text-align:center;color:var(--mut);padding:30px 15px;background:var(--card);border:1px dashed var(--line);border-radius:14px}.hidden{display:none!important}.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%) translateY(10px);background:#eef6ff;color:#0e1a29;padding:10px 14px;border-radius:10px;opacity:0;pointer-events:none;transition:.2s;z-index:99;font-weight:850;font-size:12px}.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(8,17,29,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom)}nav button{border:0;background:transparent;color:var(--mut);padding:9px 4px 8px;font-size:10px;font-weight:800;cursor:pointer}nav button span{display:block;font-size:18px}nav button.on{color:var(--gold2)}footer{text-align:center;color:var(--mut);font-size:10px;padding:24px 6px}@media(max-width:680px){.searchbox{grid-template-columns:1fr auto}.searchbox input:nth-child(2){grid-column:1/-1;grid-row:2}.grid{grid-template-columns:1fr}.row{grid-template-columns:100px 1fr auto}.rbuttons{grid-template-columns:1fr}.ttl{font-size:17px}} 
+<title>CHASKI — Radar de oportunidades</title>
+<meta name="description" content="Radar comercial de oportunidades públicas en electricidad, energía solar, pozos a tierra y mantenimiento en el Callejón de Huaylas, Áncash.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0e1116">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CHASKI">
+<style>*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0e1116;--card:#161b23;--card2:#1d232d;--card3:#232b36;--line:#2f3846;
+  --tx:#eef2f7;--tx2:#b3bece;--tx3:#8593a6;
+  --acc:#f5a623;--acc2:#ffd166;--acc3:#e8570d;
+  --ok:#3ecf8e;--warn:#f5a623;--hot:#ff7b7b;--info:#6db4ff;--pur:#b78cf7;
+}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--tx);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;
+  padding:env(safe-area-inset-top) 0 calc(92px + env(safe-area-inset-bottom));
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.w{max-width:820px;margin:0 auto;padding:0 15px}
+@media(min-width:900px){.w{max-width:980px}}
+a{text-decoration:none;color:inherit}
+
+/* ── cabecera compacta ── */
+header{display:flex;align-items:center;gap:12px;padding:16px 0 12px}
+.lg{width:40px;height:40px;border-radius:12px;background:linear-gradient(150deg,var(--acc),var(--acc3));
+  display:flex;align-items:center;justify-content:center;font-size:21px;flex:none;
+  box-shadow:0 5px 16px rgba(245,166,35,.28)}
+h1{font-size:19px;font-weight:800;letter-spacing:1.6px;line-height:1.1}
+.tag{color:var(--acc2);font-size:11px;font-weight:600}
+.sb{color:var(--tx3);font-size:11px;margin-top:2px}
+.ver2{color:var(--ok)}
+
+/* ── vista ejecutiva ── */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:11px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 8px;text-align:center}
+.kpi .n{font-size:23px;font-weight:800;line-height:1}
+.kpi .l{font-size:9.5px;color:var(--tx3);margin-top:5px;text-transform:uppercase;letter-spacing:.4px;line-height:1.25}
+.kpi.r .n{color:var(--hot)}.kpi.a .n{color:var(--acc)}.kpi.b .n{color:var(--info)}.kpi.v .n{color:var(--ok)}
+.prox{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--acc);
+  border-radius:13px;padding:13px 15px;margin-bottom:11px}
+.prox .l{display:block;font-size:9.5px;color:var(--tx3);text-transform:uppercase;letter-spacing:.7px}
+.prox .v{display:block;font-size:15px;font-weight:700;color:var(--acc2);margin-top:3px}
+.prox .q{display:block;font-size:12px;color:var(--tx2);margin-top:3px}
+.minota{font-size:12px;color:var(--tx3);margin-top:9px;text-align:center}
+
+/* ── filtros ── */
+.chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 4px;margin:16px 0 9px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;background:var(--card);border:1px solid var(--line);color:var(--tx2);
+  padding:7px 14px;border-radius:20px;font:600 12.5px inherit;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
+.selrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.selrow select{flex:1;min-width:130px;background:var(--card);border:1px solid var(--line);
+  color:var(--tx2);border-radius:11px;padding:9px 11px;font:600 12.5px inherit;cursor:pointer}
+.cuenta{font-size:11.5px;color:var(--tx3);margin-bottom:12px}
+
+/* ── tarjeta ── */
+.op{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--line);
+  border-radius:15px;padding:15px 16px;margin-bottom:12px}
+.op.g{border-left-color:var(--ok)}.op.y{border-left-color:var(--warn)}.op.r{border-left-color:var(--hot)}
+.op.fav{box-shadow:0 0 0 1px rgba(245,166,35,.32)}
+.op .top{display:flex;justify-content:space-between;gap:11px;align-items:flex-start}
+.op .ti{font-size:15.5px;font-weight:700;line-height:1.34;flex:1}
+.dias{flex:none;font:800 10.5px inherit;padding:6px 9px;border-radius:9px;text-align:center;
+  line-height:1.15;white-space:nowrap;min-width:50px;opacity:.92}
+.dias b{display:block;font-size:15px;line-height:1.1}
+.dias.peq{font-size:10px;padding:5px 8px}
+.dias.g{background:rgba(62,207,142,.15);color:var(--ok)}
+.dias.y{background:rgba(245,166,35,.15);color:var(--warn)}
+.dias.r{background:rgba(255,123,123,.15);color:var(--hot)}
+.op .sub{font-size:12px;color:var(--tx2);margin-top:5px}
+
+.fila{display:flex;align-items:center;gap:8px;margin-top:11px;flex-wrap:wrap}
+.sc{font:800 11.5px inherit;padding:5px 10px;border-radius:8px;cursor:pointer}
+.sc.alto{background:rgba(62,207,142,.15);color:var(--ok)}
+.sc.medio{background:rgba(245,166,35,.15);color:var(--warn)}
+.sc.bajo{background:var(--card3);color:var(--tx3)}
+.fv{margin-left:auto;font-size:19px;cursor:pointer;line-height:1}
+.et{font:700 9.5px inherit;padding:3px 8px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase}
+.et.pro{background:rgba(109,180,255,.16);color:var(--info)}
+.et.hip{background:rgba(183,140,247,.16);color:var(--pur)}
+.et.est{background:var(--card3);color:var(--tx2);text-transform:none;font-size:10.5px;letter-spacing:0}
+.et.est.contactada{background:rgba(109,180,255,.16);color:var(--info)}
+.et.est.evaluando{background:rgba(245,166,35,.16);color:var(--warn)}
+.et.est.descartada{background:var(--card3);color:var(--tx3);text-decoration:line-through}
+.et.est.ganada{background:rgba(62,207,142,.16);color:var(--ok)}
+
+/* ── desglose de encaje ── */
+.desglose{display:none;background:var(--card2);border-radius:11px;padding:13px 14px;margin-top:9px}
+.desglose.on{display:block}
+.fa{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.fn{font-size:11.5px;color:var(--tx2);flex:1.5}
+.bar{flex:1;height:6px;background:var(--card3);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc3),var(--acc));border-radius:4px}
+.fv2{font:700 10.5px inherit;color:var(--tx3);min-width:38px;text-align:right}
+.nota2{font-size:10.5px;color:var(--tx3);margin-top:9px;line-height:1.5;font-style:italic}
+
+/* ── bloques ── */
+.blq{border-radius:12px;padding:12px 14px;margin-top:11px}
+.blq .bt{font:800 10px inherit;letter-spacing:.9px;text-transform:uppercase;margin-bottom:9px;
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.blq.of{background:var(--card2);border:1px solid rgba(62,207,142,.2)}
+.blq.of .bt{color:var(--ok)}
+.blq.an{background:var(--card2);border:1px solid rgba(245,166,35,.2)}
+.blq.an .bt{color:var(--acc2)}
+.blq.pv{background:var(--card2);border:1px solid rgba(183,140,247,.2)}
+.blq.pv .bt{color:var(--pur)}
+.blq.pv ul{margin:0 0 0 17px}
+.blq.pv li{font-size:12.2px;color:var(--tx2);margin-bottom:4px;line-height:1.5}
+.ln{display:flex;gap:10px;font-size:12.3px;margin-bottom:5px;align-items:baseline}
+.ln .k{color:var(--tx3);min-width:104px;flex:none;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+.ln .v{color:var(--tx);flex:1;word-break:break-word}
+.cp{color:var(--info);font-size:10.5px;cursor:pointer;border:1px solid rgba(109,180,255,.34);
+  padding:1px 7px;border-radius:6px;margin-left:5px;white-space:nowrap}
+.fnt{font-size:10.5px;color:var(--tx3);margin-top:9px;padding-top:8px;border-top:1px solid var(--line)}
+.res{font-size:13px;color:var(--tx);line-height:1.55}
+.det{display:none;font-size:12.5px;color:var(--tx2);line-height:1.62;margin-top:9px}
+.det.on{display:block}
+.mas{display:inline-block;margin-top:8px;color:var(--info);font-size:11.5px;font-weight:600;cursor:pointer}
+
+/* ── acciones ── */
+.acc{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.bt2{background:var(--card2);border:1px solid var(--line);color:var(--tx2);
+  padding:9px 12px;border-radius:10px;font:600 11.5px inherit;cursor:pointer;white-space:nowrap}
+.bt2:active{transform:scale(.96)}
+.bt2.sg{border-color:rgba(245,166,35,.4);color:var(--acc2)}
+
+/* ── seguimiento ── */
+.seg{display:none;background:var(--card2);border-radius:12px;padding:14px;margin-top:11px}
+.seg.on{display:block}
+.seg label{display:block;font-size:10px;color:var(--tx3);text-transform:uppercase;
+  letter-spacing:.7px;margin:9px 0 5px;font-weight:700}
+.seg label:first-child{margin-top:0}
+.seg select,.seg input,.seg textarea{width:100%;background:var(--card);border:1px solid var(--line);
+  color:var(--tx);border-radius:9px;padding:10px 11px;font:400 13px inherit;resize:vertical}
+.seg .rec{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.28);border-radius:9px;
+  padding:10px 12px;margin-top:11px;font-size:12.2px;color:var(--acc2)}
+
+/* ── jugadas / fuentes ── */
+.pm{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:11px}
+.pm.top1{border-color:rgba(245,166,35,.42);background:linear-gradient(160deg,rgba(245,166,35,.08),var(--card) 66%)}
+.pm .nu{width:23px;height:23px;border-radius:7px;background:var(--acc);color:#1a1108;
+  font:800 12px inherit;display:inline-flex;align-items:center;justify-content:center;margin-right:9px;vertical-align:2px}
+.pm .ti{font-size:15px;font-weight:700;line-height:1.3}
+.pm .ent{font-size:11.5px;color:var(--tx3);margin-top:6px}
+.pm .pq{font-size:12.8px;color:var(--tx2);line-height:1.62;margin-top:9px}
+.pm .ver{display:inline-block;margin-top:10px;color:var(--info);font-size:12.5px;font-weight:600}
+
+/* ── mosaicos ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:560px){.g2{grid-template-columns:1fr 1fr 1fr}}
+.t{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 13px;
+  display:flex;flex-direction:column;min-height:104px;transition:transform .1s,border-color .15s}
+.t:active{transform:scale(.965);border-color:var(--acc)}
+.t .e{font-size:24px;line-height:1;margin-bottom:8px}
+.t .n{font-size:14px;font-weight:700;line-height:1.25}
+.t .d{font-size:11px;color:var(--tx3);margin-top:3px;line-height:1.35}
+.t.hi{border-color:rgba(245,166,35,.5);background:linear-gradient(158deg,rgba(245,166,35,.09),var(--card) 62%)}
+.t.hi .n{color:var(--acc2)}
+
+h2{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx3);
+  margin:26px 0 11px;display:flex;align-items:center;gap:8px}
+h2::after{content:'';flex:1;height:1px;background:var(--line)}
+.sbnote{color:var(--tx3);font-size:12px;margin:-4px 0 12px;line-height:1.5}
+
+.all{display:block;width:100%;margin:12px 0 0;border:none;border-radius:14px;cursor:pointer;
+  background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;padding:16px;
+  font:800 15.5px inherit;box-shadow:0 6px 18px rgba(245,166,35,.22)}
+.all:active{transform:scale(.98)}
+.all small{display:block;font-size:11px;font-weight:600;opacity:.74;margin-top:5px}
+
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px;
+  margin-top:12px;font-size:12.8px;color:var(--tx2);line-height:1.64}
+.box .h{color:var(--tx);font-weight:700;font-size:13.5px;display:block;margin-bottom:7px}
+.box b{color:var(--acc)}
+.box.gold{border-color:rgba(245,166,35,.34);background:linear-gradient(160deg,rgba(245,166,35,.07),var(--card) 70%)}
+#inst{display:none;width:100%;margin-top:12px;border:1px solid var(--acc);border-radius:14px;
+  background:rgba(245,166,35,.1);color:var(--acc2);padding:15px;font:700 15px inherit;cursor:pointer}
+
+.vacio{text-align:center;color:var(--tx3);font-size:13.5px;padding:38px 20px;line-height:1.7}
+.vacio .em{font-size:38px;display:block;margin-bottom:12px}
+footer{text-align:center;color:#6b7889;font-size:11px;margin-top:26px;line-height:1.8;
+  padding-top:18px;border-top:1px solid var(--line)}
+.pane{display:none}.pane.on{display:block}
+
+/* ── navegación ── */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:rgba(14,17,22,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);display:flex;padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+nav button{flex:1;background:none;border:none;color:var(--tx3);font:600 9.5px/1.3 inherit;
+  padding:6px 2px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+nav button .i{font-size:19px;line-height:1}
+nav button.on{color:var(--acc)}
+nav button .bdg{position:absolute;top:0;right:50%;transform:translateX(20px);
+  background:var(--hot);color:#1a1108;font-size:9px;font-weight:800;min-width:16px;height:16px;
+  border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+
+/* ── toast ── */
+#toast{position:fixed;left:50%;bottom:100px;transform:translate(-50%,14px);
+  background:var(--card3);border:1px solid var(--line);color:var(--tx);
+  padding:12px 18px;border-radius:12px;font-size:12.8px;z-index:99;
+  opacity:0;pointer-events:none;transition:all .22s;max-width:88%;text-align:center;
+  box-shadow:0 8px 28px rgba(0,0,0,.45)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ══ BUSCADOR UNIVERSAL ══ */
+.ambito{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
+.amb{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 12px;
+  cursor:pointer;color:var(--tx2);display:flex;flex-direction:column;align-items:center;gap:4px;
+  font-family:inherit;text-align:center}
+.amb.ancho{grid-column:1 / -1;flex-direction:row;justify-content:center;padding:12px}
+.amb.on{border-color:var(--acc);background:linear-gradient(160deg,rgba(245,166,35,.12),var(--card) 70%);color:var(--tx)}
+.amb .ai{font-size:24px;line-height:1}
+.amb .an{font-size:13.5px;font-weight:700}
+.amb.on .an{color:var(--acc2)}
+.amb .ad{font-size:10.5px;color:var(--tx3);line-height:1.3}
+
+.bcaja{display:flex;gap:8px;flex-wrap:wrap}
+.bcaja input{flex:1 1 100%;background:var(--card);border:1px solid var(--line);color:var(--tx);
+  border-radius:13px;padding:15px 16px;font:400 15px inherit}
+.bcaja input:focus{outline:none;border-color:var(--acc)}
+.bcaja select{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);color:var(--tx2);
+  border-radius:13px;padding:13px 14px;font:600 13px inherit;cursor:pointer}
+.bir{flex:1;min-width:120px;border:none;border-radius:13px;cursor:pointer;
+  background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;
+  padding:13px;font:800 15px inherit;box-shadow:0 5px 16px rgba(245,166,35,.22)}
+.bir:active{transform:scale(.98)}
+.bhint{font-size:11.5px;color:var(--tx3);margin:9px 0 4px;text-align:center}
+
+.rescab{background:var(--card);border:1px solid rgba(245,166,35,.3);border-radius:14px;
+  padding:14px 16px;margin:18px 0 12px}
+.rq{font-size:14px;color:var(--tx2)}
+.rq b{color:var(--acc2)}
+.rz{font-size:11.5px;color:var(--tx3);margin-top:4px}
+.rescab .all{margin-top:12px;padding:14px;font-size:14.5px}
+
+.rubros{margin-top:4px}
+.rgrupo{margin-bottom:15px}
+.rgt{font:800 10px inherit;letter-spacing:1px;text-transform:uppercase;color:var(--tx3);margin-bottom:7px}
+.rgc{display:flex;flex-wrap:wrap;gap:6px}
+.rb{background:var(--card);border:1px solid var(--line);color:var(--tx2);padding:8px 13px;
+  border-radius:19px;font:600 12.5px inherit;cursor:pointer;line-height:1.2}
+.rb.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
+.rb:active{transform:scale(.96)}
+.t .mn{font-size:9.5px;color:var(--acc2);margin-top:5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.4px}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap">
-  <div class="head"><div class="brand">⚡</div><div><div class="ttl">CHASKI V4</div><div class="sub">Buscador universal · Estado + empresas privadas · cualquier rubro</div></div></div>
-  <div class="searchbox"><input id="q" placeholder="¿Qué buscas? Ej.: paneles solares, software, ambulancias, pintura…"><input id="loc" placeholder="Ubicación opcional: Áncash, Lima, Perú…"><button id="searchBtn">BUSCAR</button></div>
-</div></div>
-<main class="wrap">
-  <div class="tabs"><button class="tab on" data-mode="universal">🌐 Universal</button><button class="tab" data-mode="public">🏛️ Estado</button><button class="tab" data-mode="private">🏢 Privadas</button><button class="tab" data-mode="radar">📡 Radar cargado</button></div>
-  <div class="hero"><b id="heroTitle">Búsqueda universal</b><p id="heroText">Escribe cualquier producto, servicio, obra, consultoría, profesión o necesidad. CHASKI no limita la búsqueda a rubros predefinidos.</p></div>
-  <div class="notice" id="limitNote"><strong>Cómo funciona:</strong> CHASKI combina buscadores oficiales, portales de proveedores y búsquedas web. Los formularios de SEACE usan sesión y componentes dinámicos, por lo que una página estática no puede rellenarlos ni consultar tu sesión automáticamente; sí puede abrir la fuente correcta y dejarte los datos mínimos listos para copiar.</div>
-  <div id="searchPack" class="pack"></div>
-  <div id="sources" class="grid"></div>
-  <div id="localSection"></div>
-  <footer>CHASKI V4 · Herramienta de exploración de oportunidades. Verifica siempre la convocatoria en la fuente oficial antes de postular.</footer>
-</main>
-<nav><button class="on" data-mode="universal"><span>🌐</span>Universal</button><button data-mode="public"><span>🏛️</span>Estado</button><button data-mode="private"><span>🏢</span>Privadas</button><button data-mode="radar"><span>📡</span>Radar</button></nav>
-<div id="toast" class="toast"></div>
+<div class="w">
+
+<header>
+  <div class="lg">⚡</div>
+  <div>
+    <h1>CHASKI</h1>
+    <div class="tag">El que trae la noticia primero</div>
+    <div class="sb" id="sb"></div>
+  </div>
+</header>
+
+<!-- ══════ VIGENTES ══════ -->
+<section class="pane on" id="p1">
+  <div class="box" id="avisoLocal" style="display:none">
+    <span class="h">📄 Estás viendo la copia guardada</span>
+    Los datos vienen dentro de este archivo. Publícalo en GitHub para que se actualice sola.
+  </div>
+
+  <div id="resumen"></div>
+
+  <div class="chips">
+    <button class="chip on" data-g="urg" data-v="todas">Todas</button>
+    <button class="chip" data-g="urg" data-v="accion">📋 Para hoy</button>
+    <button class="chip" data-g="urg" data-v="urgente">🔴 Urgentes</button>
+    <button class="chip" data-g="urg" data-v="semana">Esta semana</button>
+    <button class="chip" data-g="urg" data-v="alta">⭐ Buen encaje</button>
+    <button class="chip" data-g="urg" data-v="fav">Favoritas</button>
+  </div>
+  <div class="selrow">
+    <select id="fProv"></select>
+    <select id="fTipo"></select>
+    <select id="fEstado"></select>
+  </div>
+  <div class="cuenta" id="cuenta"></div>
+  <div id="lista"></div>
+</section>
+
+<!-- ══════ DESIERTAS ══════ -->
+<section class="pane" id="p5">
+  <div class="box gold"><span class="h">🏜️ Por qué esto es oro</span><div id="dPorque"></div></div>
+  <div class="box"><span class="h">⚖️ Qué pasa después del desierto</span><div id="dDespues"></div></div>
+  <div class="box"><span class="h">📞 La jugada</span><div id="dJugada"></div></div>
+  <h2>Candidatas a quedar desiertas</h2>
+  <div class="sbnote">Convocatorias que acaban de cerrar en distritos alejados. Llama y pregunta si hubo postores.</div>
+  <div id="dCand"></div>
+  <h2>Dónde cazarlos</h2>
+  <div id="dFuentes"></div>
+</section>
+
+<!-- ══════ JUGADAS ══════ -->
+<section class="pane" id="p2">
+  <h2>Jugadas que no caducan</h2>
+  <div id="perms"></div>
+</section>
+
+<!-- ══════ BUSCAR ══════ -->
+<section class="pane" id="p3">
+  <div id="bPanel"></div>
+
+  <h2>Si el SEACE te dice que no existe</h2>
+  <div class="box gold">
+    <span class="h">⚠️ Hay dos pantallas distintas y es fácil confundirlas</span>
+    <b>Mis procedimientos / Bandeja de proveedor</b> — solo muestra los procesos donde <b>tú ya estás registrado</b> como participante. Si no te has inscrito, saldrá «0 registros encontrados» aunque la convocatoria exista.<br><br>
+    <b>Buscar Procedimientos (Buscador Público)</b> — ve <b>todos</b> los procesos del Estado, estés inscrito o no. Es el que necesitas para encontrar oportunidades nuevas. Está en el menú lateral del SEACE como «Buscar Procedimientos».<br><br>
+    Otra causa frecuente: buscar por nomenclatura con el <b>año equivocado</b>. Revisa que «Año de la Convocatoria» coincida, y prueba buscando por <b>Descripción del Objeto</b> en lugar de por nomenclatura.
+  </div>
+
+</section>
+
+<!-- ══════ MÁS ══════ -->
+<section class="pane" id="p4">
+  <h2>Tu app</h2>
+  <button id="inst">📲 Instalar CHASKI en este celular</button>
+  <div class="box gold" id="ayudaInst">
+    <span class="h">📲 Ponlo en tu pantalla de inicio</span>
+    <b>Android:</b> menú ⋮ → <b>Instalar aplicación</b>.<br>
+    <b>iPhone:</b> compartir ⬆️ → <b>Añadir a pantalla de inicio</b>.
+  </div>
+
+  <h2>Tu seguimiento</h2>
+  <div class="box">
+    <span class="h">💾 Dónde se guarda</span>
+    Los estados, notas y favoritos se guardan <b>en este dispositivo</b>, no en internet. Si abres CHASKI en otro equipo, no los verás allí. Usa los botones de abajo para llevarlos de un lado a otro.
+    <div class="acc" style="margin-top:12px">
+      <span class="bt2" onclick="exportarSeg()">⬇️ Exportar seguimiento</span>
+      <label class="bt2" style="display:inline-block">⬆️ Importar
+        <input type="file" accept="application/json" style="display:none" onchange="importarSeg(this)">
+      </label>
+    </div>
+  </div>
+
+  <h2>Cómo leer las etiquetas</h2>
+  <div class="box">
+    <span class="h">✓ Dato oficial</span>Sale de la fuente citada al pie de cada tarjeta. Entidad, plazo, tipo de proceso y nomenclatura.<br><br>
+    <span class="h">💡 Análisis CHASKI · Probable</span>Deducción con base sólida, por ejemplo que una supervisión de agua potable necesite un especialista electromecánico.<br><br>
+    <span class="h">💡 Análisis CHASKI · Hipótesis</span>Suposición razonable pero <b>sin confirmar en el expediente</b>. Verifícala antes de gastar tiempo o dinero.<br><br>
+    <span class="h">? Por verificar</span>Lo que hay que preguntar a la entidad. No lo tomes como parte de las bases.
+  </div>
+
+  <h2>Cómo se calcula el encaje</h2>
+  <div class="box">
+    Cada oportunidad suma hasta 100 puntos entre siete factores. Toca el número en cualquier tarjeta para ver el desglose completo. <b>Es una guía de priorización, no una garantía</b>: la puntuación la asigno yo con criterio comercial, no sale de una fórmula oficial.
+  </div>
+
+  <h2>Fuentes de las cifras</h2>
+  <div id="fuentes"></div>
+
+  <h2>Cobertura y actualización</h2>
+  <div class="box">
+    <span class="h">📍 Zona</span>
+    Provincias de <b>Huaraz, Recuay, Carhuaz, Yungay y Huaylas (Caraz)</b> con sus 51 distritos. Zona secundaria: San Marcos y Huari por el canon de Antamina, y Aija, Bolognesi y Huallanca por la minería.
+  </div>
+  <div class="box">
+    <span class="h">🔄 Actualización</span>
+    La lista vive en <b>oportunidades.json</b>. El barrido regenera el archivo y tú lo subes a GitHub: entrar al archivo, ✏️ editar, pegar y confirmar.<br><br>
+    La app calcula sola los días restantes y <b>oculta lo vencido</b>, aunque no actualices en una semana.
+  </div>
+
+  <footer>
+    CHASKI · Radar de oportunidades<br>
+    RyC Contratistas Generales · YACUSOL<br>
+    Ing. Rafael Zeña · Ingeniero Mecánico Electricista
+  </footer>
+</section>
+</div>
+
+<nav>
+  <button class="on" data-p="p1"><span class="i">📡</span>Vigentes<span class="bdg" id="bdg" style="display:none">0</span></button>
+  <button data-p="p5"><span class="i">🏜️</span>Desiertas</button>
+  <button data-p="p2"><span class="i">🎯</span>Jugadas</button>
+  <button data-p="p3"><span class="i">🔍</span>Buscar</button>
+  <button data-p="p4"><span class="i">⚙️</span>Más</button>
+</nav>
+
+<div id="toast"></div>
+
 <script>
-var MODE='universal',PUB={oportunidades:[]},PRI={oportunidades:[]};
-var YEAR=new Date().getFullYear();
-var URLS={
-  seacePublic:'https://prod1.seace.gob.pe/SeaceWeb-PRO/public/buscarProcedimientosSeleccion.iface?init=1',
-  seaceProvider:'https://prod1.seace.gob.pe/SeaceWeb-PRO/jspx/sel/procesoseleccionficha/consultarBandejaProcedimientosSeleccionProveedor.iface?locale=es_PE',
-  contratosMenores:'https://prod6.seace.gob.pe/auth-proveedor/',
-  cotizador:'https://prod7.seace.gob.pe/cotizador-proveedor/sign-in-proveedor',
-  oeceOpp:'https://www.gob.pe/703-acceder-a-oportunidades-de-negocio-con-el-estado',
-  peruCompras:'https://www.gob.pe/14335-participar-en-los-catalogos-electronicos-de-acuerdos-marco-de-peru-compras-proveedores',
-  ariba:'https://service.ariba.com/Discovery.aw/109531021/ad/default?awr=2',
-  achilles:'https://pages.achilles.com/es/comienza-tu-registro-en-achilles-network',
-  ebiz:'https://ebiz.pe/proveedoresplus/'
+var DATOS_EMBEBIDOS = {
+  "actualizado": "2026-08-18",
+  "hora": "14:00",
+  "zona": "Callejón de Huaylas y Áncash",
+  "metodo_encaje": {
+    "descripcion": "Cada oportunidad se puntúa sobre 100 sumando siete factores. La puntuación es una guía de priorización, no una garantía.",
+    "factores": [
+      {
+        "k": "afinidad",
+        "n": "Afinidad con lo que hace RyC",
+        "max": 20
+      },
+      {
+        "k": "distancia",
+        "n": "Cercanía al Callejón de Huaylas",
+        "max": 15
+      },
+      {
+        "k": "subcontrato",
+        "n": "Vía de entrada realista",
+        "max": 15
+      },
+      {
+        "k": "plazo",
+        "n": "Tiempo restante para actuar",
+        "max": 15
+      },
+      {
+        "k": "requisitos",
+        "n": "Requisitos que puedes acreditar",
+        "max": 15
+      },
+      {
+        "k": "competencia",
+        "n": "Competencia esperada (más alto = menos rivales)",
+        "max": 10
+      },
+      {
+        "k": "monto",
+        "n": "Atractivo económico estimado",
+        "max": 10
+      }
+    ]
+  },
+  "fuentes_citadas": [
+    {
+      "afirmacion": "El 15,9 % de los ítems convocados por el Estado queda desierto; 27 % sin participantes, 26 % sin ofertas presentadas y 45 % con todas las ofertas rechazadas.",
+      "fuente": "MEF — Estudio «¿Por qué razones un proceso de selección queda desierto?»",
+      "url": "https://www.mef.gob.pe/cont_estado/documentos/1_Estudio_desiertos.pdf"
+    },
+    {
+      "afirmacion": "El MINEM convocará en 2026 proyectos de electrificación rural por más de S/ 1 159 millones, con Áncash entre las regiones beneficiadas.",
+      "fuente": "Energiminas, 9 de febrero de 2026",
+      "url": "https://energiminas.com/2026/02/09/minem-convocara-en-2026-proyectos-de-electrificacion-rural-por-mas-de-s-1159-millones/"
+    },
+    {
+      "afirmacion": "Áncash registra 94 unidades mineras de exploración y producción.",
+      "fuente": "Rumbo Minero, citando al MINEM",
+      "url": "https://www.rumbominero.com/peru/noticias/mineria/ancash-registra-94-unidades-de-exploracion-y-produccion-segun-el-mem/"
+    },
+    {
+      "afirmacion": "Osinergmin contrata empresas supervisoras a través del sistema SICOES.",
+      "fuente": "Plataforma del Estado Peruano — gob.pe",
+      "url": "https://www.gob.pe/41294-acceder-al-sistema-de-registro-y-contratacion-de-empresas-supervisoras-sicoes"
+    },
+    {
+      "afirmacion": "Minera Lincuna alista cambios por US$ 135 millones en Huancapetí, Áncash.",
+      "fuente": "Diario Gestión",
+      "url": "https://gestion.pe/economia/empresas/ancash-los-ocho-cambios-por-us-135-millones-que-alista-minera-lincuna-en-huancapeti-noticia/"
+    }
+  ],
+  "buscadores_oficiales": {
+    "seace": "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml",
+    "ocds": "https://contratacionesabiertas.oece.gob.pe/"
+  },
+  "oportunidades": [
+    {
+      "id": "rnr",
+      "titulo": "Supervisión de obra — agua potable y desagüe",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de Ranrahirca",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Consultoría",
+        "modalidad": "Concurso Público",
+        "provincia": "Yungay",
+        "distrito": "Ranrahirca",
+        "cierra": "2026-09-02",
+        "hora": null,
+        "cui": "2305704",
+        "monto": null,
+        "fuente": "PerúContrata",
+        "fuente_url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Es la única donde entras por la puerta principal, con tu título, sin depender de nadie.",
+        "detalle": "Toda planta de agua potable y desagüe tiene componente electromecánico: bombeo, tableros, arrancadores, protecciones y pozo a tierra. Los equipos de supervisión suelen exigir un especialista electromecánico además del sanitario. Si no calificas como jefe de supervisión, postula como especialista integrante del equipo de un consultor que sí tenga la experiencia en obras de saneamiento.",
+        "rubros": [
+          "consultoria",
+          "electrico"
+        ],
+        "via": "directa",
+        "certeza": "probable"
+      },
+      "porverificar": [
+        "Si las bases exigen especialista electromecánico y con qué experiencia mínima",
+        "Valor referencial y plazo de la consultoría",
+        "Si admiten consorcio, que sería tu vía más rápida"
+      ],
+      "encaje": {
+        "afinidad": 16,
+        "distancia": 14,
+        "monto": 5,
+        "subcontrato": 15,
+        "competencia": 6,
+        "plazo": 13,
+        "requisitos": 10
+      }
+    },
+    {
+      "id": "tcp",
+      "titulo": "Cobertura de graderías del estadio municipal",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de Ticapampa",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública Abreviada",
+        "provincia": "Recuay",
+        "distrito": "Ticapampa",
+        "cierra": "2026-08-25",
+        "hora": null,
+        "cui": "2727791",
+        "monto": null,
+        "fuente": "PerúContrata",
+        "fuente_url": "https://www.perucontrata.com.pe/licitaciones-peru/ancash/",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Distrito chico en Recuay, poca competencia. Ve por el subcontrato eléctrico con el que gane.",
+        "detalle": "Una cobertura de graderías normalmente trae iluminación deportiva, tablero de fuerza y protección contra descargas atmosféricas, además del pozo a tierra correspondiente. Ojo: esto es una inferencia por el tipo de obra, no está confirmado en el expediente. Ticapampa es un distrito pequeño donde el trato directo funciona mejor que el papeleo.",
+        "rubros": [
+          "electrico",
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente técnico incluye partidas de iluminación y pozo a tierra, o solo la estructura",
+        "Quiénes se registraron como participantes",
+        "Valor referencial de la obra"
+      ],
+      "encaje": {
+        "afinidad": 14,
+        "distancia": 15,
+        "monto": 5,
+        "subcontrato": 13,
+        "competencia": 8,
+        "plazo": 10,
+        "requisitos": 12
+      }
+    },
+    {
+      "id": "crz",
+      "titulo": "Movilidad urbana — Jr. La Esperanza, Jr. Señor de Chaucayán y Av. Machapay",
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "DRTC — Dirección Regional de Transportes y Comunicaciones",
+        "nomenclatura": "LP-SM-2-2026-GRA/GRI/DRTC/C-1",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública",
+        "provincia": "Carhuaz",
+        "distrito": "Carhuaz",
+        "cierra": "2026-08-20",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Está en Carhuaz, tu zona, pero cierra en dos días. Si vas, es hoy.",
+        "detalle": "Las obras de movilidad urbana suelen incluir alumbrado público, reubicación de postes y a veces semaforización. El GORE Áncash ya conoce a RyC por trabajos anteriores. Como el plazo está encima, la vía realista no es postular sino ubicar a los postores registrados y ofrecerles el paquete eléctrico para su propuesta.",
+        "rubros": [
+          "electrico",
+          "alumbrado"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente incluye partidas de alumbrado público o solo pavimento y veredas",
+        "Lista de participantes registrados en el SEACE",
+        "Valor referencial"
+      ],
+      "encaje": {
+        "afinidad": 15,
+        "distancia": 15,
+        "monto": 6,
+        "subcontrato": 13,
+        "competencia": 4,
+        "plazo": 4,
+        "requisitos": 11
+      }
+    },
+    {
+      "id": "pch",
+      "titulo": "Espacios públicos urbanos — Pichiu San Pedro",
+      "oficial": {
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "unidad": "No verificada",
+        "nomenclatura": "No publicada en la fuente consultada",
+        "tipo": "Obra",
+        "modalidad": "Licitación Pública Abreviada",
+        "provincia": "Huari",
+        "distrito": "San Marcos",
+        "cierra": "2026-08-19",
+        "hora": null,
+        "cui": "2677790",
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Cierra mañana. Más que postular, sirve para entrar a la lista de proveedores de San Marcos.",
+        "detalle": "San Marcos concentra el canon de Antamina y es de los distritos con más presupuesto de Áncash: contrata seguido y paga. Los proyectos de espacios públicos suelen llevar alumbrado ornamental y tableros, aunque eso depende del expediente. Aunque no llegues a esta convocatoria, la visita a su área de infraestructura vale por sí sola.",
+        "rubros": [
+          "electrico",
+          "alumbrado"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si el expediente contempla alumbrado ornamental",
+        "Cómo inscribirse en su registro de proveedores",
+        "Qué obras tienen programadas para el resto del año"
+      ],
+      "encaje": {
+        "afinidad": 11,
+        "distancia": 7,
+        "monto": 6,
+        "subcontrato": 11,
+        "competencia": 7,
+        "plazo": 2,
+        "requisitos": 10
+      }
+    },
+    {
+      "id": "bcv",
+      "titulo": "Mantenimiento correctivo de bocatoma — barraje móvil La Víbora",
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "Proyecto Especial CHINECAS",
+        "nomenclatura": "CP SER-SM-3-2026-GRA-PE.CHINECAS-1",
+        "tipo": "Servicio",
+        "modalidad": "Concurso Público",
+        "provincia": "Santa",
+        "distrito": "No verificado",
+        "cierra": "2026-08-21",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Un barraje móvil tiene compuertas motorizadas. Pregunta si el alcance incluye lo electromecánico.",
+        "detalle": "Los barrajes móviles operan con compuertas accionadas por motores, con tableros de mando, protecciones y puesta a tierra. Si el alcance del servicio incluye esa parte, es trabajo tuyo directo. Si el alcance es solo obra civil, queda como adicional que puedes ofrecer al ganador. Está en la zona de Chimbote, fuera del Callejón de Huaylas.",
+        "rubros": [
+          "electrico",
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Alcance exacto del servicio: ¿incluye compuertas y tableros?",
+        "Valor referencial",
+        "Si CHINECAS admite subcontratación"
+      ],
+      "encaje": {
+        "afinidad": 10,
+        "distancia": 5,
+        "monto": 6,
+        "subcontrato": 10,
+        "competencia": 6,
+        "plazo": 6,
+        "requisitos": 10
+      }
+    },
+    {
+      "id": "drn",
+      "titulo": "Mantenimiento del Dren Cascajal, Km 0+000 al Km 4+000",
+      "oficial": {
+        "entidad": "Gobierno Regional de Áncash",
+        "unidad": "Proyecto Especial CHINECAS",
+        "nomenclatura": "CP SER-SM-4-2026-P.E.CHINECAS-C-1",
+        "tipo": "Servicio",
+        "modalidad": "Concurso Público",
+        "provincia": "Santa",
+        "distrito": "Chimbote",
+        "cierra": "2026-08-26",
+        "hora": null,
+        "cui": null,
+        "monto": null,
+        "fuente": "PerúLicitaciones",
+        "fuente_url": "https://www.perulicitaciones.com/departamento/ancash.html",
+        "verificado": "2026-08-18"
+      },
+      "analisis": {
+        "resumen": "Rubro hidráulico, poco tuyo. Vale por el contacto con CHINECAS, no por el trabajo.",
+        "detalle": "Limpieza y mantenimiento de un dren: movimiento de tierras y maquinaria, sin componente eléctrico relevante. Lo único aprovechable sería la electricidad provisional de obra o un grupo electrógeno, que es marginal. Lo incluyo porque pediste ver todo sin filtrar por rubro y porque CHINECAS es una unidad ejecutora que contrata seguido en Áncash.",
+        "rubros": [
+          "mantenimiento"
+        ],
+        "via": "subcontrato",
+        "certeza": "hipotesis"
+      },
+      "porverificar": [
+        "Si requieren energía provisional o grupo electrógeno en obra",
+        "Qué otros servicios tiene CHINECAS programados este año"
+      ],
+      "encaje": {
+        "afinidad": 5,
+        "distancia": 5,
+        "monto": 6,
+        "subcontrato": 8,
+        "competencia": 6,
+        "plazo": 11,
+        "requisitos": 9
+      }
+    }
+  ],
+  "permanentes": [
+    {
+      "titulo": "Registrarte en SICOES como empresa supervisora",
+      "entidad": "Osinergmin",
+      "porque": "Osinergmin no compra materiales: compra ingeniería. Contrata terceros para supervisar instalaciones eléctricas, grifos, hidrocarburos y unidades mineras. Áncash tiene 94 unidades mineras y decenas de grifos que supervisar. Un Ingeniero Mecánico Electricista colegiado con RUC y experiencia acreditada es exactamente el perfil. Te registras una vez y quedas habilitado a contratos recurrentes de honorarios, sin comprar equipos ni mover cuadrilla.",
+      "prioridad": 1,
+      "url": "https://www.gob.pe/41294-acceder-al-sistema-de-registro-y-contratacion-de-empresas-supervisoras-sicoes"
+    },
+    {
+      "titulo": "Electrificación rural del MINEM — más de S/ 1 159 millones en 2026",
+      "entidad": "MINEM · Dirección General de Electrificación Rural",
+      "porque": "El MINEM anunció convocar en 2026 proyectos de electrificación rural por más de S/ 1 159 millones para 4 300 localidades, y Áncash figura entre las regiones objetivo declaradas, con S/ 473 millones solo en proyectos integrales. Obras, expedientes técnicos, supervisión y sistemas fotovoltaicos aislados. Revisa el portal cada semana.",
+      "prioridad": 2,
+      "url": "https://dger.minem.gob.pe/index2.html"
+    },
+    {
+      "titulo": "Activar tus alertas del SEACE por rubro",
+      "entidad": "RNP · OECE",
+      "porque": "Con tu Registro Nacional de Proveedores activo puedes suscribirte a notificaciones por rubro y departamento. Te llegan al correo apenas se publica la convocatoria. Es gratis, es oficial y te pone entre los primeros. Configúralo para servicios eléctricos, bienes de energía solar y consultoría.",
+      "prioridad": 3,
+      "url": "https://prod6.seace.gob.pe/auth-proveedor/"
+    },
+    {
+      "titulo": "Homologarte como proveedor de Antamina",
+      "entidad": "Compañía Minera Antamina",
+      "porque": "La mina más grande de Áncash, en San Marcos. Servicios eléctricos, mantenimiento y pozos a tierra en campamentos e instalaciones auxiliares. El trámite de homologación es lento, así que conviene empezarlo ahora aunque no tengas un requerimiento a la vista.",
+      "prioridad": 4,
+      "url": "https://portalproveedores.asip.antamina.com/"
+    },
+    {
+      "titulo": "Meter las termas YACUSOL al Catálogo Electrónico de Acuerdo Marco",
+      "entidad": "PERÚ COMPRAS",
+      "porque": "De todo lo que hay en esta lista, es la palanca de mayor impacto para la marca. Si YACUSOL entra al catálogo de Acuerdo Marco, las entidades del Estado te compran por orden directa, sin licitación y sin competir. Dejas de perseguir convocatorias y las compras llegan solas. Trámite de una vez, retorno permanente.",
+      "prioridad": 5,
+      "url": "https://www.gob.pe/perucompras"
+    },
+    {
+      "titulo": "Visitar las 15 municipalidades con más presupuesto del radio",
+      "entidad": "51 municipalidades del Callejón de Huaylas",
+      "porque": "En una municipalidad distrital quien decide qué se compra es el ingeniero de la Gerencia de Infraestructura, no logística. Una visita con la ficha técnica de YACUSOL y una propuesta de mantenimiento preventivo de pozos a tierra puede convertirse en el requerimiento del próximo trimestre, redactado con tus especificaciones. Una ruta de dos semanas cubre las 15 más presupuestadas.",
+      "prioridad": 6,
+      "url": "https://apps5.mineco.gob.pe/transparencia/Navegador/default.aspx"
+    }
+  ],
+  "desiertos": {
+    "porque_importa": "El MEF estudió el fenómeno: el 15.9 % de todos los ítems convocados por el Estado queda desierto. De esos, el 27 % no tuvo ni un solo proveedor registrado y el 26 % tuvo registrados que no presentaron oferta. Es decir, en más de la mitad de los desiertos la entidad no compitió contra nadie: simplemente nadie apareció. Y el 45 % restante se declaró desierto porque todas las ofertas fueron rechazadas, en su mayoría por no acreditar bien los Requerimientos Técnicos Mínimos. Ahí está tu ventaja: no ganas por precio, ganas por presentar el expediente completo y bien documentado.",
+    "que_pasa_despues": "Declarar desierto no cancela la necesidad. La entidad tiene el presupuesto comprometido y la obligación de contratar. Puede volver a convocar, redefinir el requerimiento, ajustar el valor referencial o, tras desiertos sucesivos, pasar a un procedimiento no competitivo o a contratación directa justificada. En ese punto la entidad busca proveedor activamente en lugar de esperar postores.",
+    "jugada": "Cuando detectes un desierto, no esperes la nueva convocatoria. Llama al Órgano Encargado de las Contrataciones de la entidad, preséntate como proveedor del rubro y pregunta dos cosas: cuándo relanzan y por qué se cayó la primera vez. Si fue por falta de postores, tienes el campo libre. Si fue porque rechazaron las ofertas, pide ver los requisitos que nadie cumplió: casi siempre son de documentación, no de capacidad técnica.",
+    "candidatas": [
+      {
+        "titulo": "Mantenimiento de la infraestructura del Centro Cívico de San Marcos",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-18",
+        "senal": "Servicio de mantenimiento en distrito alejado, plazo corto. Los mantenimientos de infraestructura en distritos de sierra son de los que más quedan desiertos porque las empresas de Lima no viajan.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "titulo": "Creación de servicios de protección en riberas del río Mosna",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-18",
+        "senal": "Obra en zona rural de Huari. Si quedó desierta, San Marcos tiene canon de Antamina y presupuesto asegurado: la relanzan sí o sí.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "titulo": "Mejoramiento de espacios públicos urbanos — Pichiu San Pedro",
+        "entidad": "Municipalidad Distrital de San Marcos",
+        "lugar": "San Marcos, Huari",
+        "cerro": "2026-08-19",
+        "senal": "Centro poblado pequeño, Licitación Pública Abreviada. Vale llamar el 20 de agosto para preguntar si hubo postores.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      }
+    ],
+    "donde_cazarlos": [
+      {
+        "nombre": "SEACE — Buscador Público, filtro Estado: Desierto",
+        "detalle": "La fuente oficial. En el buscador elige Departamento: Áncash y en Estado marca Desierto.",
+        "url": "https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"
+      },
+      {
+        "nombre": "LicitacionesPerú — fase Desierto",
+        "detalle": "Muestra los procesos con el sello «Desierto — nadie ganó». Cambia el departamento en el filtro de la página.",
+        "url": "https://licitacionesperu.pe/licitaciones/?phase=Desierto&year=2026&sort=published_at+DESC"
+      },
+      {
+        "nombre": "PerúLicitaciones — Áncash",
+        "detalle": "Revisa el estado de cada proceso; los que no adjudicaron vuelven a salir.",
+        "url": "https://www.perulicitaciones.com/departamento/ancash.html"
+      },
+      {
+        "nombre": "Búsqueda abierta de desiertos en Áncash",
+        "detalle": "Rastreo en Google de declaratorias de desierto y segundas convocatorias del último mes.",
+        "url": "https://www.google.com/search?q=%28%22declarado+desierto%22+OR+%22declara+desierto%22+OR+%22segunda+convocatoria%22%29+%28%22Ancash%22+OR+%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22+OR+%22Huari%22%29+2026&tbs=qdr:m"
+      }
+    ]
+  }
 };
-function esc(s){return String(s==null?'':s).replace(/[&<>\"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]})}
-function norm(s){return String(s==null?'':s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
-function toast(m){var x=document.getElementById('toast');x.textContent=m;x.classList.add('on');clearTimeout(window._t);window._t=setTimeout(function(){x.classList.remove('on')},1900)}
-function cp(v){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v||'').then(function(){toast('Copiado')})}else{var a=document.createElement('textarea');a.value=v||'';document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();toast('Copiado')}}
-function openUrl(u){window.open(u,'_blank','noopener')}
-function g(q){return 'https://www.google.com/search?q='+encodeURIComponent(q)}
-function terms(){var q=document.getElementById('q').value.trim(),loc=document.getElementById('loc').value.trim();return {q:q,loc:loc,all:[q,loc].filter(Boolean).join(' ')}}
-function sourceCard(kind,badge,title,desc,url,label){return '<article class="source '+kind+'"><span class="badge '+(kind==='public'?'off':'web')+'">'+esc(badge)+'</span><h3>'+esc(title)+'</h3><p>'+esc(desc)+'</p><div class="actions"><button class="go '+(kind==='public'?'primary':'')+'" onclick="openUrl('+JSON.stringify(url)+')">'+esc(label||'ABRIR')+'</button><button class="mini" onclick="cp('+JSON.stringify(url)+')">↗</button></div></article>'}
-function renderPack(){var t=terms(),p=document.getElementById('searchPack');if(MODE==='radar'){p.classList.add('hidden');return}p.classList.remove('hidden');var q=t.q||'— escribe un término —',loc=t.loc||'Todo el Perú / sin filtro';var rows='';rows+=row('Palabra / rubro',q);rows+=row('Ubicación',loc);rows+=row('Año SEACE',String(YEAR));if(MODE!=='private'){rows+=row('Primer intento SEACE','Año + descripción. No agregar más filtros hasta ver resultados.');rows+=row('Descripción para pegar',t.q||'');}if(MODE!=='public'){rows+=row('Búsqueda privada','Proveedor / cotización / RFQ / RFP / convocatoria + tu término.');}p.innerHTML='<h3>🔎 Paquete de búsqueda</h3>'+rows}
-function row(k,v){return '<div class="row"><div class="k">'+esc(k)+'</div><div class="v">'+esc(v)+'</div><button class="copy" onclick="cp('+JSON.stringify(v)+')">COPIAR</button></div>'}
-function publicSources(t){var q=t.q||'',loc=t.loc||'';return [
- sourceCard('public','OFICIAL','OECE — Oportunidades de negocio','Módulo oficial pensado para descubrir procedimientos vigentes por descripción, objeto y ubicación.',URLS.oeceOpp,'ABRIR OECE'),
- sourceCard('public','OFICIAL','SEACE — Buscador público','Consulta procedimientos, requerimientos, expresiones de interés, órdenes y condiciones de contratación.',URLS.seacePublic,'ABRIR SEACE'),
- sourceCard('public','OFICIAL · RNP','SEACE — Proveedor','Para proveedores con RNP: buscar procedimientos, registrar participación y presentar ofertas.',URLS.seaceProvider,'ABRIR PROVEEDOR'),
- sourceCard('public','OFICIAL · RNP','Contratos menores','Busca contratos menores, formula consultas y registra cotizaciones.',URLS.contratosMenores,'ABRIR MENORES'),
- sourceCard('public','OFICIAL · RNP','Cotizador SEACE','Participa en indagaciones de mercado y envía cotizaciones.',URLS.cotizador,'ABRIR COTIZADOR'),
- sourceCard('public','OFICIAL','PERÚ COMPRAS — Acuerdos Marco','Oportunidades de venta mediante Catálogos Electrónicos y selección de proveedores.',URLS.peruCompras,'ABRIR CATÁLOGOS'),
- sourceCard('public','WEB','Búsqueda amplia en SEACE/OECE','Busca el término sin depender de un solo formulario del SEACE.',g('site:seace.gob.pe OR site:gob.pe/oece '+q+' '+loc+' '+YEAR),'BUSCAR WEB'),
- sourceCard('public','WEB','Entidades públicas y requerimientos','Rastrea publicaciones, requerimientos, cotizaciones y convocatorias en portales del Estado.',g('site:gob.pe '+q+' '+loc+' (convocatoria OR requerimiento OR cotizacion OR contratación) '+YEAR),'BUSCAR GOB.PE')
- ]}
-function privateSources(t){var q=t.q||'',loc=t.loc||'Perú';return [
- sourceCard('private','WEB UNIVERSAL','Empresas privadas — búsqueda amplia','Busca cualquier rubro junto con señales de compra: proveedores, cotizaciones, RFQ, RFP y convocatorias.',g(q+' '+loc+' (proveedores OR cotizacion OR cotización OR RFQ OR RFP OR licitacion OR licitación OR convocatoria) -site:gob.pe -site:seace.gob.pe'),'BUSCAR EMPRESAS'),
- sourceCard('private','WEB','LinkedIn — Compras y abastecimiento','Rastrea publicaciones de compradores, logística, procurement y abastecimiento que buscan proveedores.',g('site:linkedin.com/posts '+q+' '+loc+' ("buscamos proveedores" OR "solicitud de cotización" OR "búsqueda de proveedores" OR RFQ OR sourcing)'),'BUSCAR LINKEDIN'),
- sourceCard('private','WEB','Portales de proveedores','Localiza registros, homologaciones, supplier portals y concursos privados relacionados con el término.',g(q+' '+loc+' ("portal de proveedores" OR "registro de proveedores" OR homologacion OR homologación OR "supplier portal" OR sourcing)'),'BUSCAR PORTALES'),
- sourceCard('private','RED B2B','SAP Business Network Discovery','Red global para oportunidades de negocio, RFQ y conexión comprador-proveedor.',URLS.ariba,'ABRIR SAP'),
- sourceCard('private','RED B2B','Achilles Network','Red de compradores y proveedores usada en cadenas de suministro y sectores industriales.',URLS.achilles,'ABRIR ACHILLES'),
- sourceCard('private','RED B2B','eBIZ Proveedores+','Red empresarial para conectar proveedores con organizaciones compradoras en Perú y Latinoamérica.',URLS.ebiz,'ABRIR eBIZ'),
- sourceCard('private','WEB','Licitaciones y concursos privados','Busca términos usados por empresas para concursos, invitaciones, RFQ y RFP.',g(q+' '+loc+' ("licitación privada" OR "licitacion privada" OR concurso OR "request for quotation" OR "request for proposal")'),'BUSCAR CONCURSOS'),
- sourceCard('private','WEB','Compras corporativas por empresa','Útil si conoces una empresa objetivo: agrega su nombre al campo de ubicación o junto al rubro.',g(q+' '+loc+' (compras OR abastecimiento OR procurement OR sourcing OR proveedores)'),'BUSCAR COMPRAS')
- ]}
-function renderSources(){var t=terms(),s=[];if(MODE==='universal'||MODE==='public')s=s.concat(publicSources(t));if(MODE==='universal'||MODE==='private')s=s.concat(privateSources(t));document.getElementById('sources').innerHTML=s.join('')}
-function trustPublic(o){var of=o.oficial||{},nom=of.nomenclatura||'';if(nom&&norm(nom).indexOf('no publicada')<0)return 'Nomenclatura disponible · validar en SEACE';return 'Fuente externa · no verificada en SEACE'}
-function localMatches(x,t){if(!t.q&&!t.loc)return true;var s=norm(JSON.stringify(x));return (!t.q||s.indexOf(norm(t.q))>=0)&&(!t.loc||s.indexOf(norm(t.loc))>=0)}
-function renderLocal(){var box=document.getElementById('localSection'),t=terms(),html='';if(MODE==='radar'||MODE==='universal'||MODE==='public'){
- var pubs=(PUB.oportunidades||[]).filter(function(o){return localMatches(o,t)});html+='<div class="section-title">📡 Radar público cargado <span>'+pubs.length+' coincidencias · referencias que requieren verificación oficial</span></div>';html+=pubs.length?pubs.map(function(o){var of=o.oficial||{};return '<article class="radar-card pub"><div class="rtitle">'+esc(o.titulo)+'</div><div class="rmeta">'+esc(of.entidad||'')+' · '+esc(of.provincia||'')+' · '+esc(trustPublic(o))+'</div><div class="rdesc">'+esc((o.analisis&&o.analisis.resumen)||'')+'</div><div class="rbuttons"><button onclick="cp('+JSON.stringify(of.nomenclatura||o.titulo||'')+')">📋 Copiar dato</button><a target="_blank" rel="noopener" href="'+esc(URLS.seacePublic)+'">🏛️ Verificar en SEACE</a></div></article>'}).join(''):'<div class="empty">Sin coincidencias en el radar público cargado.</div>'}
- if(MODE==='radar'||MODE==='universal'||MODE==='private'){
- var pris=(PRI.oportunidades||[]).filter(function(o){return localMatches(o,t)});html+='<div class="section-title">🏢 Radar privado cargado <span>'+pris.length+' coincidencias</span></div>';html+=pris.length?pris.map(function(o){return '<article class="radar-card pri"><div class="rtitle">'+esc(o.titulo)+'</div><div class="rmeta">'+esc(o.empresa||'')+' · '+esc(o.sector||'')+' · '+esc(o.region||'')+'</div><div class="rdesc">'+esc(o.accion||o.resumen||'')+'</div><div class="rbuttons"><a target="_blank" rel="noopener" href="'+esc(o.url||o.url_info||'#')+'">🚀 Abrir portal</a><button onclick="cp('+JSON.stringify((o.empresa||'')+' | '+(o.accion||''))+')">📋 Copiar acción</button></div></article>'}).join(''):'<div class="empty">Sin coincidencias en el radar privado cargado.</div>'}
- box.innerHTML=html}
-function renderHero(){var h=document.getElementById('heroTitle'),p=document.getElementById('heroText'),n=document.getElementById('limitNote');if(MODE==='universal'){h.textContent='Búsqueda universal';p.textContent='Una sola palabra puede lanzarse contra fuentes públicas y privadas. No hay catálogo cerrado de rubros.';n.classList.remove('hidden')}else if(MODE==='public'){h.textContent='Oportunidades con el Estado';p.textContent='SEACE, OECE, contratos menores, Cotizador y PERÚ COMPRAS. Busca bienes, servicios, obras o consultorías.';n.classList.remove('hidden')}else if(MODE==='private'){h.textContent='Oportunidades en empresas privadas';p.textContent='Busca RFQ, RFP, concursos, compras corporativas, homologaciones y portales de proveedores en cualquier sector.';n.classList.remove('hidden')}else{h.textContent='Radar cargado';p.textContent='Muestra las oportunidades que ya están guardadas en CHASKI. Las públicas no se consideran oficiales hasta ser verificadas en SEACE.';n.classList.add('hidden')}}
-function render(){renderHero();renderPack();renderSources();renderLocal()}
-function setMode(m){MODE=m;document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.toggle('on',x.dataset.mode===m)});render();window.scrollTo(0,0)}
-document.querySelectorAll('[data-mode]').forEach(function(b){b.addEventListener('click',function(){setMode(this.dataset.mode)})});
-document.getElementById('searchBtn').addEventListener('click',function(){if(!terms().q){document.getElementById('q').focus();toast('Escribe un producto, servicio o rubro')}else{render();try{localStorage.setItem('chaski.v4.last',JSON.stringify(terms()))}catch(e){}}});
-document.getElementById('q').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('searchBtn').click()});
-document.getElementById('loc').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('searchBtn').click()});
-try{var last=JSON.parse(localStorage.getItem('chaski.v4.last')||'null');if(last){document.getElementById('q').value=last.q||'';document.getElementById('loc').value=last.loc||''}}catch(e){}
-Promise.allSettled([fetch('oportunidades.json?v='+Date.now()).then(function(r){return r.ok?r.json():{oportunidades:[]}}),fetch('privadas.json?v='+Date.now()).then(function(r){return r.ok?r.json():{oportunidades:[]}})]).then(function(r){if(r[0].status==='fulfilled')PUB=r[0].value;if(r[1].status==='fulfilled')PRI=r[1].value;render()});
-render();
+/* ══════════════════════════════════════════════════════════════
+   CHASKI · BUSCADOR UNIVERSAL
+   Cualquier rubro · Entidades públicas o empresas privadas
+   ══════════════════════════════════════════════════════════════ */
+
+var RUBROS=[
+ {g:"Construcción",  n:"Obras civiles",        q:'"ejecución de obra" OR "obras civiles" OR construcción'},
+ {g:"Construcción",  n:"Saneamiento",          q:'"agua potable" OR alcantarillado OR desagüe OR saneamiento'},
+ {g:"Construcción",  n:"Carreteras y vías",    q:'carretera OR pavimentación OR "trocha carrozable" OR asfaltado'},
+ {g:"Construcción",  n:"Edificaciones",        q:'edificación OR "local escolar" OR "centro de salud" OR "losa deportiva"'},
+ {g:"Construcción",  n:"Defensa ribereña",     q:'"defensa ribereña" OR "protección de riberas" OR gaviones OR encauzamiento'},
+ {g:"Construcción",  n:"Movimiento de tierras",q:'"movimiento de tierras" OR excavación OR demolición OR "eliminación de desmonte"'},
+
+ {g:"Energía",       n:"Instalaciones eléctricas", q:'"instalaciones eléctricas" OR "instalación eléctrica" OR electrificación'},
+ {g:"Energía",       n:"Pozo a tierra",        q:'"pozo a tierra" OR "puesta a tierra" OR "sistema de puesta a tierra"'},
+ {g:"Energía",       n:"Paneles solares",      q:'"panel solar" OR "paneles solares" OR fotovoltaico OR "energía solar"'},
+ {g:"Energía",       n:"Termas solares",       q:'"terma solar" OR "termas solares" OR "calentador solar"'},
+ {g:"Energía",       n:"Redes y alumbrado",    q:'"redes eléctricas" OR "alumbrado público" OR "media tensión" OR luminaria'},
+ {g:"Energía",       n:"Subestaciones",        q:'subestación OR transformador OR "celda de media tensión"'},
+ {g:"Energía",       n:"Grupos electrógenos",  q:'"grupo electrógeno" OR generador OR "planta eléctrica"'},
+
+ {g:"Mecánica",      n:"Mantenimiento industrial", q:'"mantenimiento industrial" OR "mantenimiento preventivo" OR "mantenimiento correctivo"'},
+ {g:"Mecánica",      n:"Metalmecánica",        q:'metalmecánica OR soldadura OR "estructura metálica" OR "fabricación metálica"'},
+ {g:"Mecánica",      n:"Maquinaria pesada",    q:'"maquinaria pesada" OR "alquiler de maquinaria" OR excavadora OR cargador frontal'},
+ {g:"Mecánica",      n:"Aire acondicionado",   q:'"aire acondicionado" OR climatización OR ventilación OR refrigeración'},
+ {g:"Mecánica",      n:"Bombas y motores",     q:'"electrobomba" OR "bomba sumergible" OR motor OR "estación de bombeo"'},
+ {g:"Mecánica",      n:"Ascensores",           q:'ascensor OR montacargas OR elevador'},
+
+ {g:"Seguridad",     n:"Contra incendios",     q:'"sistema contra incendio" OR extintor OR "detección de humo" OR rociadores'},
+ {g:"Seguridad",     n:"Vigilancia",           q:'"servicio de vigilancia" OR seguridad OR resguardo OR "agente de seguridad"'},
+ {g:"Seguridad",     n:"Cámaras y CCTV",       q:'CCTV OR "cámaras de seguridad" OR videovigilancia OR "central de monitoreo"'},
+ {g:"Seguridad",     n:"EPP y señalización",   q:'"equipos de protección personal" OR EPP OR señalización OR "señalética"'},
+
+ {g:"Servicios",     n:"Limpieza",             q:'"servicio de limpieza" OR "limpieza pública" OR conserjería'},
+ {g:"Servicios",     n:"Alimentación",         q:'"servicio de alimentación" OR catering OR "raciones alimenticias" OR desayuno'},
+ {g:"Servicios",     n:"Residuos sólidos",     q:'"residuos sólidos" OR "recojo de basura" OR "disposición final"'},
+ {g:"Servicios",     n:"Jardinería y fumigación", q:'jardinería OR "áreas verdes" OR fumigación OR desratización'},
+ {g:"Servicios",     n:"Lavandería",           q:'lavandería OR "lavado de ropa" OR "servicio de lavado"'},
+
+ {g:"Transporte",    n:"Transporte de personal", q:'"transporte de personal" OR "servicio de transporte" OR movilidad'},
+ {g:"Transporte",    n:"Transporte de carga",  q:'"transporte de carga" OR flete OR "distribución de material"'},
+ {g:"Transporte",    n:"Alquiler de vehículos",q:'"alquiler de vehículo" OR "alquiler de camioneta" OR "arrendamiento de vehículos"'},
+ {g:"Transporte",    n:"Combustible",          q:'combustible OR "vales de combustible" OR petróleo OR gasolina OR diésel'},
+
+ {g:"Tecnología",    n:"Equipos de cómputo",   q:'"equipos de cómputo" OR computadora OR laptop OR servidor OR impresora'},
+ {g:"Tecnología",    n:"Software y sistemas",  q:'software OR "sistema informático" OR licencia OR "desarrollo de sistema"'},
+ {g:"Tecnología",    n:"Cableado y redes",     q:'"cableado estructurado" OR "red de datos" OR fibra óptica OR switch'},
+ {g:"Tecnología",    n:"Telecomunicaciones",   q:'telecomunicaciones OR internet OR "servicio de datos" OR telefonía'},
+
+ {g:"Salud",         n:"Equipos médicos",      q:'"equipo médico" OR "equipamiento biomédico" OR "material médico"'},
+ {g:"Salud",         n:"Medicamentos",         q:'medicamento OR "productos farmacéuticos" OR insumo médico'},
+ {g:"Salud",         n:"Laboratorio",          q:'"insumos de laboratorio" OR reactivo OR "material de laboratorio"'},
+
+ {g:"Consultoría",   n:"Supervisión de obra",  q:'"supervisión de obra" OR "supervisor de obra" OR "inspector de obra"'},
+ {g:"Consultoría",   n:"Expedientes técnicos", q:'"expediente técnico" OR "elaboración de expediente" OR "estudio definitivo"'},
+ {g:"Consultoría",   n:"Estudios y proyectos", q:'"estudio de preinversión" OR "ficha técnica" OR perfil OR "estudio de impacto"'},
+ {g:"Consultoría",   n:"Capacitación",         q:'capacitación OR "servicio de capacitación" OR taller OR "curso de"'},
+ {g:"Consultoría",   n:"Contable y legal",     q:'"servicio contable" OR auditoría OR "asesoría legal" OR "patrocinio legal"'},
+
+ {g:"Suministros",   n:"Ferretería",           q:'ferretería OR "materiales de construcción" OR cemento OR fierro'},
+ {g:"Suministros",   n:"Mobiliario",           q:'mobiliario OR escritorio OR "carpeta escolar" OR estante OR silla'},
+ {g:"Suministros",   n:"Útiles de oficina",    q:'"útiles de oficina" OR "material de escritorio" OR papelería OR tóner'},
+ {g:"Suministros",   n:"Imprenta",             q:'"servicio de impresión" OR imprenta OR "material impreso" OR banner'},
+ {g:"Suministros",   n:"Uniformes y calzado",  q:'uniforme OR "ropa de trabajo" OR calzado OR "prendas de vestir"'},
+ {g:"Suministros",   n:"Víveres",              q:'víveres OR "productos alimenticios" OR abarrotes'},
+
+ {g:"Agro",          n:"Insumos agrícolas",    q:'"insumos agrícolas" OR fertilizante OR semilla OR abono'},
+ {g:"Agro",          n:"Riego tecnificado",    q:'"riego tecnificado" OR "sistema de riego" OR aspersión OR goteo'},
+ {g:"Agro",          n:"Pecuario",             q:'pecuario OR ganado OR "sanidad animal" OR "alimento balanceado"'},
+
+ {g:"Otros",         n:"Carpintería y vidrio", q:'carpintería OR "trabajos en madera" OR vidriería OR "mampara"'},
+ {g:"Otros",         n:"Pintura",              q:'"trabajos de pintura" OR pintado OR "pintura látex" OR esmalte'},
+ {g:"Otros",         n:"Gasfitería",           q:'gasfitería OR "instalaciones sanitarias" OR tubería OR grifería'},
+ {g:"Otros",         n:"Publicidad y eventos", q:'publicidad OR "organización de evento" OR difusión OR "spot publicitario"'}
+];
+
+var DEPTOS=["Todo el Perú","Áncash","Amazonas","Apurímac","Arequipa","Ayacucho","Cajamarca","Callao","Cusco",
+ "Huancavelica","Huánuco","Ica","Junín","La Libertad","Lambayeque","Lima","Loreto","Madre de Dios","Moquegua",
+ "Pasco","Piura","Puno","San Martín","Tacna","Tumbes","Ucayali"];
+
+/* zona por defecto: los distritos de Rafael */
+var ZONA_LOCAL='"Huaraz" OR "Carhuaz" OR "Yungay" OR "Caraz" OR "Recuay" OR "Huaylas"';
+
+function G(q){return 'https://www.google.com/search?q='+encodeURIComponent(q)+'&tbs=qdr:m';}
+function Gs(q){return 'https://www.google.com/search?q='+encodeURIComponent(q)+'&tbs=qdr:w';}
+
+/* ── fuentes públicas ── */
+var FUENTES_PUB=[
+ {n:"SEACE · Buscador Público",d:"Oficial. Copio tu búsqueda; pégala en «Descripción del Objeto»",icono:"🏛️",destacada:true,
+  manual:true,u:function(){return 'https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml';}},
+ {n:"Contrataciones Abiertas",d:"Portal oficial de datos abiertos del OECE",icono:"📊",destacada:true,
+  manual:true,u:function(){return 'https://contratacionesabiertas.oece.gob.pe/';}},
+ {n:"Menores a 8 UIT",d:"Órdenes de servicio y compra directa",icono:"💰",destacada:true,
+  u:function(q,d){return 'https://licitacionesperu.pe/contrataciones-menores/?search='+encodeURIComponent(q)+
+    '&status=Vigente&sort=published_at+DESC';}},
+ {n:"LicitacionesPerú",d:"Procedimientos de selección con filtro de etapa",icono:"📋",
+  u:function(q,d){return 'https://licitacionesperu.pe/licitaciones/?search='+encodeURIComponent(q)+
+    '&phase=Convocatoria&sort=published_at+DESC';}},
+ {n:"Procesos desiertos",d:"Los que nadie ganó y se vuelven a convocar",icono:"🏜️",
+  u:function(q,d){return 'https://licitacionesperu.pe/licitaciones/?search='+encodeURIComponent(q)+
+    '&phase=Desierto&sort=published_at+DESC';}},
+ {n:"TodoLicitaciones",d:"Buscador alterno de convocatorias",icono:"🔎",
+  u:function(q,d){return G('site:todolicitaciones.pe '+q+(d?' '+d:''));}},
+ {n:"PerúLicitaciones",d:"Con nomenclatura y fecha límite",icono:"📄",
+  u:function(q,d){return G('site:perulicitaciones.com '+q+(d?' '+d:''));}},
+ {n:"PerúContrata",d:"Boletín diario de convocatorias vigentes",icono:"📰",
+  u:function(q,d){return G('site:perucontrata.com.pe '+q+(d?' '+d:''));}},
+ {n:"Órdenes de servicio",d:"Portales de transparencia de cada entidad",icono:"🧾",
+  u:function(q,d){return G('site:transparencia.gob.pe OR site:gob.pe ("orden de servicio" OR "menores a 8 UIT" OR cotización) '+q+(d?' '+d:''));}},
+ {n:"Convocatorias del Estado",d:"Municipalidades, ministerios y programas",icono:"🏢",
+  u:function(q,d){return G('site:gob.pe (convocatoria OR contratación OR requerimiento) '+q+(d?' '+d:''));}},
+ {n:"PERÚ COMPRAS",d:"Catálogos electrónicos de Acuerdo Marco",icono:"🛒",
+  u:function(q,d){return G('site:perucompras.gob.pe OR "acuerdo marco" catálogo electrónico '+q);}},
+ {n:"Búsqueda abierta",d:"Todo lo que se publicó esta semana",icono:"🌐",
+  u:function(q,d){return Gs('(convocatoria OR licitación OR "términos de referencia" OR requerimiento) '+q+(d?' '+d:''));}}
+];
+
+/* ── fuentes privadas ── */
+var FUENTES_PRIV=[
+ {n:"Pedidos de cotización",d:"Empresas que buscan proveedor ahora mismo",icono:"💬",destacada:true,
+  u:function(q,d){return Gs('("solicito cotización" OR "requiero proveedor" OR "busco proveedor" OR "necesito servicio de") '+q+(d?' '+d:''));}},
+ {n:"Facebook",d:"Grupos y páginas locales de tu rubro",icono:"📱",destacada:true,
+  u:function(q,d){return Gs('site:facebook.com '+q+' (necesito OR busco OR requiero OR cotizar OR "se necesita") '+(d?d:''));}},
+ {n:"LinkedIn",d:"Empresas, proyectos y contactos de compras",icono:"💼",destacada:true,
+  u:function(q,d){return G('site:linkedin.com '+q+' (proveedor OR contratista OR "jefe de compras" OR licitación) '+(d?d:''));}},
+ {n:"Portales de proveedores",d:"Grandes empresas con registro abierto",icono:"🚪",
+  u:function(q,d){return G('("portal de proveedores" OR "registro de proveedores" OR "sé nuestro proveedor") '+q+' Perú '+(d?d:''));}},
+ {n:"Minería y energía",d:"Mineras, hidroeléctricas y contratistas",icono:"⛏️",
+  u:function(q,d){return G('(minera OR "unidad minera" OR hidroeléctrica OR concesionaria) (proveedor OR contratista OR licitación OR homologación) '+q+' '+(d?d:'Perú'));}},
+ {n:"Constructoras",d:"Quien gana la obra subcontrata tu parte",icono:"🏗️",
+  u:function(q,d){return G('(constructora OR contratista OR "empresa constructora") (subcontrato OR proveedor OR "busca") '+q+' '+(d?d:'Perú'));}},
+ {n:"Obras en marcha",d:"Proyectos nuevos que van a necesitar servicios",icono:"🚧",
+  u:function(q,d){return G('("nuevo proyecto" OR "inicio de obra" OR "en construcción" OR inauguración OR ampliación) '+q+' '+(d?d:'Perú'));}},
+ {n:"Bolsas de trabajo",d:"Muchos servicios se publican como empleo",icono:"👷",
+  u:function(q,d){return G('(site:computrabajo.com.pe OR site:bumeran.com.pe OR site:indeed.com.pe) '+q+' '+(d?d:''));}},
+ {n:"Marketplace de compras",d:"Oportunidades públicas y privadas juntas",icono:"🛍️",
+  u:function(q,d){return G('site:linkcontrata.lat '+q+' '+(d?d:''));}},
+ {n:"ONG y cooperación",d:"Términos de referencia y consultorías",icono:"🤝",
+  u:function(q,d){return G('("términos de referencia" OR "convocatoria a consultoría" OR TDR) (ONG OR cooperación OR proyecto) '+q+' '+(d?d:'Perú'));}},
+ {n:"Gremios y cámaras",d:"Cámara de comercio, CAPECO, SNI",icono:"🏛️",
+  u:function(q,d){return G('("cámara de comercio" OR CAPECO OR "Sociedad Nacional de Industrias" OR gremio) (convocatoria OR proveedor OR oportunidad) '+q+' '+(d?d:'Perú'));}},
+ {n:"Homologación",d:"Requisito para entrar a grandes empresas",icono:"✅",
+  u:function(q,d){return G('"homologación de proveedores" '+q+' Perú requisitos');}}
+];
+
+/* ── estado del buscador ── */
+var B={texto:'',rubro:null,depto:'Áncash',ambito:'publico'};
+
+function chipsRubros(){
+  var grupos=[],vistos={};
+  RUBROS.forEach(function(r){if(!vistos[r.g]){vistos[r.g]=1;grupos.push(r.g);}});
+  return grupos.map(function(g){
+    return '<div class="rgrupo"><div class="rgt">'+esc(g)+'</div><div class="rgc">'+
+      RUBROS.filter(function(r){return r.g===g;}).map(function(r,i){
+        var idx=RUBROS.indexOf(r);
+        return '<span class="rb'+(B.rubro===idx?' on':'')+'" onclick="pickRubro('+idx+')">'+esc(r.n)+'</span>';
+      }).join('')+'</div></div>';
+  }).join('');
+}
+
+function pickRubro(i){
+  B.rubro = (B.rubro===i)? null : i;
+  var inp=document.getElementById('bTexto');
+  if(B.rubro!==null && inp && !inp.value.trim()) inp.placeholder=RUBROS[i].n;
+  pintarBuscador();
+}
+function setAmbito(a){B.ambito=a;pintarBuscador();}
+
+function consulta(){
+  var libre=(document.getElementById('bTexto')||{}).value||'';
+  libre=libre.trim();
+  if(libre) return '"'+libre.replace(/"/g,'')+'"';
+  if(B.rubro!==null) return RUBROS[B.rubro].q;
+  return '';
+}
+function zona(){
+  var d=(document.getElementById('bDepto')||{}).value||B.depto;
+  if(d==='Todo el Perú') return '';
+  if(d==='Áncash') return '('+ZONA_LOCAL+' OR "Áncash")';
+  return '"'+d+'"';
+}
+
+function buscar(){
+  var q=consulta();
+  if(!q){aviso('Escribe algo o elige un rubro.');return;}
+  pintarResultados();
+  var r=document.getElementById('bResult');
+  if(r) r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function pintarResultados(){
+  var q=consulta(), z=zona();
+  var el=document.getElementById('bResult');
+  if(!q){el.innerHTML='';return;}
+
+  var lista=[];
+  if(B.ambito==='publico'||B.ambito==='ambos') lista=lista.concat(FUENTES_PUB.map(function(f){return {f:f,t:'pub'};}));
+  if(B.ambito==='privado'||B.ambito==='ambos') lista=lista.concat(FUENTES_PRIV.map(function(f){return {f:f,t:'priv'};}));
+
+  var textoPlano=(document.getElementById('bTexto').value||'').trim()||
+                 (B.rubro!==null?RUBROS[B.rubro].n:'');
+
+  el.innerHTML=
+   '<div class="rescab">'+
+     '<div class="rq">Buscando: <b>'+esc(textoPlano)+'</b></div>'+
+     '<div class="rz">'+esc((document.getElementById('bDepto')||{}).value||'Áncash')+' · '+
+       (B.ambito==='publico'?'Entidades públicas':B.ambito==='privado'?'Empresas privadas':'Público y privado')+
+       ' · '+lista.length+' fuentes</div>'+
+     '<button class="all" onclick="abrirTop()">🚀 Abrir las 3 mejores fuentes</button>'+
+   '</div>'+
+   '<div class="g2">'+lista.map(function(x){
+      var f=x.f;
+      var href=f.manual? f.u() : f.u(q,z);
+      var onc=f.manual? ' onclick="copiarBusqueda(event,\''+esc(q).replace(/'/g,"\\'")+'\',\''+esc(href)+'\')"':'';
+      return '<a class="t'+(f.destacada?' hi':'')+'" target="_blank" rel="noopener" href="'+esc(href)+'"'+onc+'>'+
+        '<span class="e">'+f.icono+'</span><span class="n">'+esc(f.n)+'</span>'+
+        '<span class="d">'+esc(f.d)+'</span>'+
+        (f.manual?'<span class="mn">se copia solo</span>':'')+'</a>';
+   }).join('')+'</div>';
+}
+
+function copiarBusqueda(ev,q,url){
+  texto(q,'Búsqueda copiada. Pégala en el campo «Descripción del Objeto» y dale Buscar.');
+}
+
+function abrirTop(){
+  var q=consulta(), z=zona();
+  var base=(B.ambito==='privado')?FUENTES_PRIV:FUENTES_PUB;
+  base.filter(function(f){return f.destacada;}).slice(0,3).forEach(function(f){
+    window.open(f.manual?f.u():f.u(q,z),'_blank','noopener');
+  });
+}
+
+function pintarBuscador(){
+  var el=document.getElementById('bPanel'); if(!el)return;
+  var txt=(document.getElementById('bTexto')||{}).value||'';
+  el.innerHTML=
+   '<div class="ambito">'+
+     '<button class="amb'+(B.ambito==='publico'?' on':'')+'" onclick="setAmbito(\'publico\')">'+
+       '<span class="ai">🏛️</span><span class="an">Entidades públicas</span>'+
+       '<span class="ad">Estado, municipios, ministerios</span></button>'+
+     '<button class="amb'+(B.ambito==='privado'?' on':'')+'" onclick="setAmbito(\'privado\')">'+
+       '<span class="ai">🏢</span><span class="an">Empresas privadas</span>'+
+       '<span class="ad">Mineras, constructoras, negocios</span></button>'+
+     '<button class="amb ancho'+(B.ambito==='ambos'?' on':'')+'" onclick="setAmbito(\'ambos\')">'+
+       '<span class="an">🌐 Buscar en los dos a la vez</span></button>'+
+   '</div>'+
+
+   '<div class="bcaja">'+
+     '<input type="text" id="bTexto" value="'+esc(txt)+'" placeholder="¿Qué buscas? Ej.: carpintería, catering, vigilancia..." '+
+       'onkeydown="if(event.key===\'Enter\')buscar()">'+
+     '<select id="bDepto">'+DEPTOS.map(function(d){
+        return '<option'+(d===B.depto?' selected':'')+'>'+d+'</option>';}).join('')+'</select>'+
+     '<button class="bir" onclick="buscar()">Buscar</button>'+
+   '</div>'+
+   '<div class="bhint">Escribe cualquier cosa, o elige uno de los '+RUBROS.length+' rubros de abajo.</div>'+
+
+   '<div id="bResult"></div>'+
+
+   '<h2>Rubros</h2>'+
+   '<div class="rubros">'+chipsRubros()+'</div>';
+
+  var i=document.getElementById('bTexto');
+  if(i){i.value=txt;}
+  if(consulta()) pintarResultados();
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   CHASKI · lógica de la aplicación
+   ══════════════════════════════════════════════════════════════ */
+
+var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','setiembre','octubre','noviembre','diciembre'];
+var DIA=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+var ESTADOS=['Pendiente','Contactada','Evaluando','Descartada','Ganada'];
+
+function hoy0(){var d=new Date();d.setHours(0,0,0,0);return d;}
+function parseF(s){var p=String(s).split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+function dias(s){return Math.round((parseF(s)-hoy0())/86400000);}
+function fFull(s){var d=parseF(s);return DIA[d.getDay()]+' '+d.getDate()+' de '+MES[d.getMonth()];}
+function fCorta(s){var d=parseF(s);return d.getDate()+' '+MES[d.getMonth()].slice(0,3)+'.';}
+function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function nivel(d){return d<=2?'r':(d<=9?'y':'g');}
+function score(o){var s=0;for(var k in o.encaje)s+=o.encaje[k];return s;}
+function nivelScore(s){return s>=75?'alto':(s>=60?'medio':'bajo');}
+
+/* ── memoria del dispositivo (tolerante a fallos) ── */
+var MEM={};
+function memLeer(){
+  try{var r=localStorage.getItem('chaski.seguimiento');MEM=r?JSON.parse(r):{};}
+  catch(e){MEM={};}
+}
+function memGuardar(){
+  try{localStorage.setItem('chaski.seguimiento',JSON.stringify(MEM));}catch(e){}
+}
+function seg(id){
+  if(!MEM[id])MEM[id]={estado:'Pendiente',accion:'',fecha:'',notas:'',fav:false};
+  return MEM[id];
+}
+function setSeg(id,campo,valor){seg(id)[campo]=valor;memGuardar();}
+
+var DATA={oportunidades:[],permanentes:[]}, F={urg:'todas',prov:'todas',tipo:'todos',estado:'todos'};
+
+/* ══ vista ejecutiva ══ */
+function pintarResumen(){
+  var vivas=vigentes();
+  var urg=vivas.filter(function(o){return dias(o.oficial.cierra)<=2;});
+  var alto=vivas.filter(function(o){return score(o)>=75;});
+  var favs=vivas.filter(function(o){return seg(o.id).fav;});
+  var hoyStr=new Date().toISOString().slice(0,10);
+  var segHoy=vivas.filter(function(o){var s=seg(o.id);return s.fecha&&s.fecha<=hoyStr;});
+  var pend=vivas.filter(function(o){return seg(o.id).estado==='Pendiente';});
+  var prox=vivas.length?vivas[0]:null;
+
+  document.getElementById('resumen').innerHTML=
+    '<div class="kpis">'+
+      kpi(urg.length,'urgentes','r')+
+      kpi(alto.length,'buen encaje','a')+
+      kpi(pend.length,'sin contactar','b')+
+      kpi(segHoy.length,'seguimiento hoy','v')+
+    '</div>'+
+    (prox?'<div class="prox"><span class="l">Próxima fecha crítica</span>'+
+      '<span class="v">'+fFull(prox.oficial.cierra)+'</span>'+
+      '<span class="q">'+esc(prox.titulo)+'</span></div>':'')+
+    '<button class="all" onclick="verHoy()">📋 Qué debo hacer hoy<small>Lo urgente y lo pendiente de contactar</small></button>'+
+    (favs.length?'<div class="minota">⭐ Tienes '+favs.length+' marcada'+(favs.length>1?'s':'')+' como favorita'+(favs.length>1?'s':'')+'.</div>':'');
+}
+function kpi(n,l,c){return '<div class="kpi '+c+'"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>';}
+function verHoy(){
+  F={urg:'accion',prov:'todas',tipo:'todos',estado:'todos'};
+  document.querySelectorAll('.chip[data-g="urg"]').forEach(function(c){
+    c.classList.toggle('on', c.dataset.v==='accion');});
+  pintar();
+  document.getElementById('lista').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function vigentes(){
+  return DATA.oportunidades
+    .filter(function(o){return dias(o.oficial.cierra)>=0;})
+    .sort(function(a,b){return dias(a.oficial.cierra)-dias(b.oficial.cierra);});
+}
+
+/* ══ filtros ══ */
+function pasa(o){
+  var d=dias(o.oficial.cierra), s=seg(o.id);
+  if(F.urg==='urgente'&&d>2)return false;
+  if(F.urg==='semana'&&d>7)return false;
+  if(F.urg==='alta'&&score(o)<75)return false;
+  if(F.urg==='fav'&&!s.fav)return false;
+  if(F.urg==='accion'&&!(d<=2||s.estado==='Pendiente'))return false;
+  if(F.prov!=='todas'&&o.oficial.provincia!==F.prov)return false;
+  if(F.tipo!=='todos'&&o.oficial.tipo!==F.tipo)return false;
+  if(F.estado!=='todos'&&s.estado!==F.estado)return false;
+  return true;
+}
+
+/* ══ tarjeta ══ */
+function tarjeta(o){
+  var d=dias(o.oficial.cierra), n=nivel(d), sc=score(o), ns=nivelScore(sc);
+  var s=seg(o.id), of=o.oficial, an=o.analisis;
+  var txt=d===0?'<b>HOY</b>cierra':(d===1?'<b>1</b>día':'<b>'+d+'</b>días');
+  var certeza=an.certeza==='probable'
+    ? '<span class="et pro">Probable</span>'
+    : '<span class="et hip">Hipótesis</span>';
+
+  return '<div class="op '+n+(s.fav?' fav':'')+'" id="c-'+o.id+'">'+
+    '<div class="top">'+
+      '<div class="ti">'+esc(o.titulo)+'</div>'+
+      '<div class="dias '+n+'">'+txt+'</div>'+
+    '</div>'+
+
+    '<div class="fila">'+
+      '<span class="sc '+ns+'" onclick="verEncaje(\''+o.id+'\')">Encaje '+sc+'/100 ▾</span>'+
+      '<span class="et est '+s.estado.toLowerCase()+'">'+esc(s.estado)+'</span>'+
+      '<span class="fv" onclick="toggleFav(\''+o.id+'\')">'+(s.fav?'⭐':'☆')+'</span>'+
+    '</div>'+
+    '<div class="desglose" id="e-'+o.id+'">'+desglose(o)+'</div>'+
+
+    /* ── DATO OFICIAL ── */
+    '<div class="blq of">'+
+      '<div class="bt">✓ Dato oficial</div>'+
+      linea('Entidad',of.entidad)+
+      (of.unidad&&of.unidad!=='No verificada'?linea('Unidad ejecutora',of.unidad):'')+
+      linea('Nomenclatura',of.nomenclatura,of.nomenclatura.indexOf('No publicada')<0?o.id:null)+
+      linea('Tipo',of.tipo+' · '+of.modalidad)+
+      linea('Lugar',(of.distrito&&of.distrito.indexOf('No ')<0?of.distrito+', ':'')+of.provincia+', Áncash')+
+      (of.cui?linea('CUI',of.cui):'')+
+      linea('Monto',of.monto?('S/ '+of.monto):'No verificado')+
+      linea('Cierra',fFull(of.cierra)+(of.hora?' · '+of.hora:' · hora no verificada'))+
+      '<div class="fnt">Fuente: '+esc(of.fuente)+' · verificado el '+fCorta(of.verificado)+'</div>'+
+    '</div>'+
+
+    /* ── ANÁLISIS ── */
+    '<div class="blq an">'+
+      '<div class="bt">💡 Análisis CHASKI '+certeza+'</div>'+
+      '<div class="res">'+esc(an.resumen)+'</div>'+
+      '<div class="det" id="d-'+o.id+'">'+esc(an.detalle)+'</div>'+
+      '<span class="mas" onclick="verDetalle(\''+o.id+'\')">Ver análisis completo ▾</span>'+
+    '</div>'+
+
+    /* ── POR VERIFICAR ── */
+    '<div class="blq pv">'+
+      '<div class="bt">? Por verificar</div>'+
+      '<ul>'+o.porverificar.map(function(p){return '<li>'+esc(p)+'</li>';}).join('')+'</ul>'+
+    '</div>'+
+
+    /* ── ACCIONES ── */
+    '<div class="acc">'+
+      '<a class="bt2" href="'+esc(DATA.buscadores_oficiales.seace)+'" target="_blank" rel="noopener">🏛️ Buscar en SEACE</a>'+
+      '<a class="bt2" href="'+esc(of.fuente_url)+'" target="_blank" rel="noopener">📄 Ver en '+esc(of.fuente)+'</a>'+
+      '<span class="bt2" onclick="guion(\''+o.id+'\')">📞 Copiar guion</span>'+
+      '<span class="bt2 sg" onclick="verSeg(\''+o.id+'\')">📝 Seguimiento</span>'+
+    '</div>'+
+
+    /* ── PANEL DE SEGUIMIENTO ── */
+    '<div class="seg" id="s-'+o.id+'">'+
+      '<label>Estado</label>'+
+      '<select onchange="setSeg(\''+o.id+'\',\'estado\',this.value);pintar();pintarResumen();">'+
+        ESTADOS.map(function(e){return '<option'+(s.estado===e?' selected':'')+'>'+e+'</option>';}).join('')+
+      '</select>'+
+      '<label>Próxima acción</label>'+
+      '<input type="text" value="'+esc(s.accion)+'" placeholder="Ej.: llamar a logística y pedir el expediente" '+
+        'onchange="setSeg(\''+o.id+'\',\'accion\',this.value)">'+
+      '<label>Fecha de seguimiento</label>'+
+      '<input type="date" value="'+esc(s.fecha)+'" onchange="setSeg(\''+o.id+'\',\'fecha\',this.value);pintarResumen();">'+
+      '<label>Notas</label>'+
+      '<textarea rows="3" placeholder="Con quién hablaste, qué te dijeron..." '+
+        'onchange="setSeg(\''+o.id+'\',\'notas\',this.value)">'+esc(s.notas)+'</textarea>'+
+      (s.accion?'<div class="rec">📌 '+esc(s.accion)+(s.fecha?' · para el '+fCorta(s.fecha):'')+'</div>':'')+
+    '</div>'+
+  '</div>';
+}
+
+function linea(k,v,copiaId){
+  return '<div class="ln"><span class="k">'+esc(k)+'</span><span class="v">'+esc(v)+
+    (copiaId?' <span class="cp" onclick="copiar(\''+copiaId+'\')">copiar</span>':'')+'</span></div>';
+}
+
+function desglose(o){
+  var M=DATA.metodo_encaje;
+  if(!M)return '';
+  return M.factores.map(function(f){
+    var val=o.encaje[f.k]||0, pct=Math.round(val/f.max*100);
+    return '<div class="fa"><span class="fn">'+esc(f.n)+'</span>'+
+      '<span class="bar"><i style="width:'+pct+'%"></i></span>'+
+      '<span class="fv2">'+val+'/'+f.max+'</span></div>';
+  }).join('')+'<div class="nota2">'+esc(M.descripcion)+'</div>';
+}
+
+/* ══ interacciones ══ */
+function verEncaje(id){var e=document.getElementById('e-'+id);e.classList.toggle('on');}
+function verDetalle(id){var e=document.getElementById('d-'+id);e.classList.toggle('on');
+  e.nextElementSibling.textContent=e.classList.contains('on')?'Ocultar análisis ▴':'Ver análisis completo ▾';}
+function verSeg(id){document.getElementById('s-'+id).classList.toggle('on');}
+function toggleFav(id){setSeg(id,'fav',!seg(id).fav);pintar();pintarResumen();}
+
+function copiar(id){
+  var o=DATA.oportunidades.filter(function(x){return x.id===id;})[0];
+  if(!o)return;
+  texto(o.oficial.nomenclatura,'Nomenclatura copiada. Pégala en el buscador del SEACE.');
+}
+function guion(id){
+  var o=DATA.oportunidades.filter(function(x){return x.id===id;})[0];
+  if(!o)return;
+  var g='Buenos días, le habla el Ingeniero Rafael Zeña, de RyC Contratistas Generales, de Huaraz. '+
+    'Somos especialistas en instalaciones eléctricas, pozos a tierra y energía solar, con experiencia acreditada en entidades públicas de Áncash.\n\n'+
+    'Lo llamo por el proceso "'+o.titulo+'"'+
+    (o.oficial.nomenclatura.indexOf('No publicada')<0?' ('+o.oficial.nomenclatura+')':'')+
+    ' de '+o.oficial.entidad+'.\n\n'+
+    'Quisiera consultarle dos cosas:\n'+
+    '1) Si el expediente técnico contempla partidas eléctricas, y de ser así, cuáles.\n'+
+    '2) Quiénes se han registrado como participantes, para poder coordinar con ellos.\n\n'+
+    'Podemos ejecutar esa parte del trabajo o acompañar al postor que resulte ganador. ¿Con quién debería coordinar?';
+  texto(g,'Guion copiado. Pégalo donde lo necesites.');
+}
+function texto(t,msg){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(function(){aviso(msg);},function(){fallback(t,msg);});
+  } else fallback(t,msg);
+}
+function fallback(t,msg){
+  var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity=0;
+  document.body.appendChild(a);a.select();
+  try{document.execCommand('copy');aviso(msg);}catch(e){aviso('No pude copiar. Selecciónalo a mano.');}
+  document.body.removeChild(a);
+}
+function aviso(m){
+  var t=document.getElementById('toast');
+  t.textContent=m;t.classList.add('on');
+  clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove('on');},2600);
+}
+
+/* ══ pintar lista ══ */
+function pintar(){
+  var vivas=vigentes(), f=vivas.filter(pasa);
+  var urg=vivas.filter(function(o){return dias(o.oficial.cierra)<=2;}).length;
+  var b=document.getElementById('bdg');
+  if(urg>0){b.textContent=urg;b.style.display='flex';b.title=urg+' cierran en 2 días o menos';}
+  else b.style.display='none';
+
+  document.getElementById('cuenta').textContent=
+    f.length+' de '+vivas.length+' oportunidad'+(vivas.length===1?'':'es')+' vigente'+(vivas.length===1?'':'s');
+
+  var el=document.getElementById('lista');
+  el.innerHTML=f.length?f.map(tarjeta).join('')
+    :'<div class="vacio"><span class="em">🌄</span>Nada con estos filtros.<br>Prueba quitando alguno.</div>';
+}
+
+/* ══ desiertos ══ */
+function pintarDes(){
+  var D=DATA.desiertos; if(!D)return;
+  document.getElementById('dPorque').textContent=D.porque_importa||'';
+  document.getElementById('dDespues').textContent=D.que_pasa_despues||'';
+  document.getElementById('dJugada').textContent=D.jugada||'';
+  document.getElementById('dCand').innerHTML=(D.candidatas||[]).map(function(c){
+    var dd=dias(c.cerro);
+    var et=dd===0?'cerró hoy':(dd<0?'cerró hace '+Math.abs(dd)+(Math.abs(dd)===1?' día':' días'):'cierra en '+dd+' d');
+    return '<div class="op y"><div class="top"><div class="ti">'+esc(c.titulo)+'</div>'+
+      '<div class="dias y peq">'+esc(et)+'</div></div>'+
+      '<div class="sub">'+esc(c.entidad)+' · 📍 '+esc(c.lugar)+'</div>'+
+      '<div class="blq an"><div class="bt">💡 Por qué vigilarla <span class="et hip">Hipótesis</span></div>'+
+      '<div class="res">'+esc(c.senal)+'</div></div>'+
+      '<div class="acc"><a class="bt2" href="'+esc(c.url)+'" target="_blank" rel="noopener">Ver el proceso →</a></div></div>';
+  }).join('')||'<div class="vacio">Sin candidatas registradas.</div>';
+  document.getElementById('dFuentes').innerHTML=(D.donde_cazarlos||[]).map(function(f){
+    return '<div class="pm"><span class="ti">'+esc(f.nombre)+'</span><div class="pq">'+esc(f.detalle)+'</div>'+
+      '<a class="ver" href="'+esc(f.url)+'" target="_blank" rel="noopener">Abrir →</a></div>';
+  }).join('');
+}
+
+/* ══ jugadas ══ */
+function pintarPerms(){
+  document.getElementById('perms').innerHTML=DATA.permanentes
+    .slice().sort(function(a,b){return a.prioridad-b.prioridad;})
+    .map(function(p,i){
+      return '<div class="pm'+(i===0?' top1':'')+'"><span class="nu">'+p.prioridad+'</span>'+
+        '<span class="ti">'+esc(p.titulo)+'</span><div class="ent">'+esc(p.entidad)+'</div>'+
+        '<div class="pq">'+esc(p.porque)+'</div>'+
+        '<a class="ver" href="'+esc(p.url)+'" target="_blank" rel="noopener">Abrir el portal →</a></div>';
+    }).join('');
+}
+
+/* ══ fuentes citadas ══ */
+function pintarFuentes(){
+  var el=document.getElementById('fuentes'); if(!el||!DATA.fuentes_citadas)return;
+  el.innerHTML=DATA.fuentes_citadas.map(function(f){
+    return '<div class="pm"><div class="pq">«'+esc(f.afirmacion)+'»</div>'+
+      '<div class="ent">'+esc(f.fuente)+'</div>'+
+      '<a class="ver" href="'+esc(f.url)+'" target="_blank" rel="noopener">Ver la fuente →</a></div>';
+  }).join('');
+}
+
+/* ══ filtros dinámicos ══ */
+function montarFiltros(){
+  var provs=[],tipos=[];
+  DATA.oportunidades.forEach(function(o){
+    if(provs.indexOf(o.oficial.provincia)<0)provs.push(o.oficial.provincia);
+    if(tipos.indexOf(o.oficial.tipo)<0)tipos.push(o.oficial.tipo);
+  });
+  sel('fProv',['todas'].concat(provs.sort()),'Provincia');
+  sel('fTipo',['todos'].concat(tipos.sort()),'Tipo');
+  sel('fEstado',['todos'].concat(ESTADOS),'Estado comercial');
+}
+function sel(id,vals,lbl){
+  var e=document.getElementById(id); if(!e)return;
+  e.innerHTML=vals.map(function(v){
+    return '<option value="'+esc(v)+'">'+(v==='todas'||v==='todos'?lbl+': '+v:esc(v))+'</option>';}).join('');
+}
+
+/* ══ exportar / importar seguimiento ══ */
+function exportarSeg(){
+  var blob=new Blob([JSON.stringify(MEM,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='chaski-seguimiento.json';a.click();
+  aviso('Seguimiento exportado.');
+}
+function importarSeg(inp){
+  var f=inp.files[0]; if(!f)return;
+  var r=new FileReader();
+  r.onload=function(){try{MEM=JSON.parse(r.result);memGuardar();pintar();pintarResumen();aviso('Seguimiento importado.');}
+    catch(e){aviso('El archivo no es válido.');}};
+  r.readAsText(f);
+}
+
+/* ══ arranque ══ */
+function aplicar(d,origen){
+  DATA=d;
+  var f=parseF(d.actualizado);
+  document.getElementById('sb').innerHTML=
+    'Actualizado el '+f.getDate()+' de '+MES[f.getMonth()]+(d.hora?', '+d.hora:'')+
+    ' · <span class="ver2">verificado uno por uno</span>';
+  montarFiltros();
+  pintarResumen(); pintar(); pintarPerms(); pintarDes(); pintarFuentes();
+  if(typeof pintarBuscador==='function') pintarBuscador();
+  var av=document.getElementById('avisoLocal');
+  if(av)av.style.display=(origen==='archivo')?'block':'none';
+}
+
+memLeer();
+aplicar(DATOS_EMBEBIDOS,'archivo');
+
+fetch('oportunidades.json?v='+Date.now())
+  .then(function(r){if(!r.ok)throw 0;return r.json();})
+  .then(function(d){if(d&&d.actualizado&&d.actualizado>=DATOS_EMBEBIDOS.actualizado)aplicar(d,'web');})
+  .catch(function(){});
+
+/* filtros */
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip[data-g="urg"]').forEach(function(x){x.classList.remove('on');});
+    c.classList.add('on');F.urg=c.dataset.v;pintar();
+  });
+});
+['fProv','fTipo','fEstado'].forEach(function(id){
+  var e=document.getElementById(id); if(!e)return;
+  e.addEventListener('change',function(){
+    F[id==='fProv'?'prov':id==='fTipo'?'tipo':'estado']=e.value;pintar();
+  });
+});
+
+/* pestañas */
+document.querySelectorAll('nav button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('nav button').forEach(function(x){x.classList.remove('on');});
+    document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+    document.getElementById(b.dataset.p).classList.add('on');
+    window.scrollTo(0,0);
+  });
+});
+
+/* fuentes en vivo */
+var FUENTES=[
+ 'https://www.perucontrata.com.pe/licitaciones-peru/ancash/',
+ 'https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026',
+ 'https://www.perulicitaciones.com/departamento/ancash.html',
+ 'https://www.perucontrata.com.pe/boletin-licitaciones/',
+ 'https://prod6.seace.gob.pe/auth-proveedor/',
+ 'https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml'];
+function abrirTodas(){for(var i=0;i<FUENTES.length;i++){window.open(FUENTES[i],'_blank','noopener');}}
+
+/* instalación */
+var deferred=null,btn=document.getElementById('inst');
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.style.display='block';});
+if(btn)btn.addEventListener('click',function(){
+  if(!deferred)return;deferred.prompt();
+  deferred.userChoice.then(function(){deferred=null;btn.style.display='none';});
+});
+window.addEventListener('appinstalled',function(){
+  if(btn)btn.style.display='none';
+  var a=document.getElementById('ayudaInst');if(a)a.style.display='none';
+});
+if(window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone){
+  var a0=document.getElementById('ayudaInst');if(a0)a0.style.display='none';
+}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
+}
+
 </script>
 </body>
 </html>

@@ -73,34 +73,16 @@
 
 <!-- ══════ BUSCAR ══════ -->
 <section class="pane" id="p3">
-  <h2>Búsqueda manual por rubro</h2>
-  <div class="g2">
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22pozo+a+tierra%22+OR+%22puesta+a+tierra%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29+%28%22convocatoria%22+OR+%22orden+de+servicio%22+OR+%22requerimiento%22%29+-Junin+-Huancayo+-Lima&tbs=qdr:w"><span class="e">⚡</span><span class="n">Pozos a tierra</span><span class="d">Mantenimiento y certificación</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22terma+solar%22+OR+%22termas+solares%22+OR+%22calentador+solar%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Ancash%22%29+%28adquisicion+OR+instalacion+OR+mantenimiento%29+-Lima+-Arequipa&tbs=qdr:w"><span class="e">☀️</span><span class="n">Termas solares</span><span class="d">Venta e instalación</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22panel+solar%22+OR+%22paneles+solares%22+OR+%22electrificacion+rural%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29+%28licitacion+OR+convocatoria+OR+suministro%29&tbs=qdr:w"><span class="e">🔆</span><span class="n">Paneles solares</span><span class="d">Fotovoltaico y rural</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22redes+electricas%22+OR+%22alumbrado+publico%22+OR+subestacion%29+mantenimiento+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22+OR+%22Recuay%22%29&tbs=qdr:w"><span class="e">🔌</span><span class="n">Redes eléctricas</span><span class="d">Alumbrado, subestaciones</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28%22supervisor+de+obra%22+OR+%22especialista+electrico%22+OR+consultoria+OR+%22locacion+de+servicios%22%29+%28%22ingeniero+mecanico+electricista%22+OR+%22ingeniero+electricista%22%29+%28%22Ancash%22+OR+%22Huaraz%22%29&tbs=qdr:w"><span class="e">📐</span><span class="n">Consultoría</span><span class="d">Supervisión y peritaje</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=mantenimiento+%28%22luces+de+emergencia%22+OR+%22sistema+contra+incendio%22+OR+%22grupo+electrogeno%22+OR+%22tablero+electrico%22%29+%28%22Huaraz%22+OR+%22Carhuaz%22+OR+%22Yungay%22+OR+%22Caraz%22%29&tbs=qdr:w"><span class="e">🧰</span><span class="n">Mantenimiento</span><span class="d">Emergencia y tableros</span></a>
+  <div id="bPanel"></div>
+
+  <h2>Si el SEACE te dice que no existe</h2>
+  <div class="box gold">
+    <span class="h">⚠️ Hay dos pantallas distintas y es fácil confundirlas</span>
+    <b>Mis procedimientos / Bandeja de proveedor</b> — solo muestra los procesos donde <b>tú ya estás registrado</b> como participante. Si no te has inscrito, saldrá «0 registros encontrados» aunque la convocatoria exista.<br><br>
+    <b>Buscar Procedimientos (Buscador Público)</b> — ve <b>todos</b> los procesos del Estado, estés inscrito o no. Es el que necesitas para encontrar oportunidades nuevas. Está en el menú lateral del SEACE como «Buscar Procedimientos».<br><br>
+    Otra causa frecuente: buscar por nomenclatura con el <b>año equivocado</b>. Revisa que «Año de la Convocatoria» coincida, y prueba buscando por <b>Descripción del Objeto</b> en lugar de por nomenclatura.
   </div>
 
-  <h2>Fuentes en vivo</h2>
-  <div class="g2">
-    <a class="t hi" target="_blank" rel="noopener" href="https://prod2.seace.gob.pe/seacebus-uiwd-pub/buscadorPublico/buscadorPublico.xhtml"><span class="e">🏛️</span><span class="n">Buscador SEACE</span><span class="d">Fuente oficial</span></a>
-    <a class="t hi" target="_blank" rel="noopener" href="https://contratacionesabiertas.oece.gob.pe/"><span class="e">📊</span><span class="n">Contrataciones Abiertas</span><span class="d">Portal oficial OCDS</span></a>
-    <a class="t hi" target="_blank" rel="noopener" href="https://licitacionesperu.pe/contrataciones-menores/?status=Vigente&year=2026"><span class="e">💰</span><span class="n">Menores 8 UIT</span><span class="d">Órdenes de servicio</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.perucontrata.com.pe/licitaciones-peru/ancash/"><span class="e">📍</span><span class="n">Áncash vigentes</span><span class="d">Con plazo abierto</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/departamento/ancash.html"><span class="e">📋</span><span class="n">Convocatorias</span><span class="d">Con fecha límite</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://prod6.seace.gob.pe/auth-proveedor/"><span class="e">🔑</span><span class="n">SEACE 8 UIT</span><span class="d">Con tu RNP</span></a>
-  </div>
-  <button class="all" onclick="abrirTodas()">🔄 ABRIR TODAS LAS FUENTES<small>Las 6 páginas con lo vigente de hoy</small></button>
-
-  <h2>Entidades</h2>
-  <div class="g2">
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=SUNAT+%28%22Oficina+Zonal+Huaraz%22+OR+Ancash%29+%28mantenimiento+OR+%22pozo+a+tierra%22+OR+%22luces+de+emergencia%22%29+contratacion&tbs=qdr:m"><span class="e">🏢</span><span class="n">SUNAT</span><span class="d">Oficina Zonal Huaraz</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/ministerio-del-interior-pnp-ue-001-oga.html"><span class="e">🚔</span><span class="n">PNP · Mininter</span><span class="d">Comisarías</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.google.com/search?q=%28Lincuna+OR+%22Santa+Luisa%22+OR+Huanzala+OR+Contonga+OR+Pachapaqui%29+Ancash+%28contratista+OR+proveedor+OR+%22servicio+electrico%22%29&tbs=qdr:m"><span class="e">⛏️</span><span class="n">Mineras</span><span class="d">Lincuna, Santa Luisa</span></a>
-    <a class="t" target="_blank" rel="noopener" href="https://www.perulicitaciones.com/entidad/empresa-regional-de-servicio-publico-de-electricidad-electro-nor-medio-sa-hidrandina.html"><span class="e">💡</span><span class="n">Hidrandina</span><span class="d">Concesionaria</span></a>
-  </div>
 </section>
 
 <!-- ══════ MÁS ══════ -->

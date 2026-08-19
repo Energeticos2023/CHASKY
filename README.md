@@ -47,6 +47,14 @@ Para unificarlo: **Settings → Repository name → cambiar a `chaski` → Renam
 | `apple-touch-icon.png` | Ícono de iPhone |
 | `favicon.png` | Ícono de la pestaña |
 
+## Qué trae
+
+- **📡 Vigentes** — oportunidades verificadas, con dato oficial, análisis y puntuación de encaje.
+- **🏜️ Desiertas** — procesos que nadie ganó y se vuelven a convocar.
+- **🎯 Jugadas** — acciones comerciales que no caducan.
+- **🔍 Buscar** — buscador universal: 57 rubros, 26 departamentos, entidades públicas y empresas privadas.
+- **⚙️ Más** — instalación, seguimiento, fuentes y método.
+
 ## Cómo actualizarlo
 
 Para refrescar la lista, edita **`oportunidades.json`** desde GitHub (lápiz ✏️), pega la versión nueva y confirma. La app calcula sola los días restantes y oculta lo vencido.

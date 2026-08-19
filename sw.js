@@ -3,7 +3,7 @@
    La lista de oportunidades se pide siempre a la red primero, para que
    veas lo último apenas subas una actualización. */
 
-const CACHE = 'chaski-v5';
+const CACHE = 'chaski-v6';
 const SHELL = [
   './',
   './index.html',

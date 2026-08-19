@@ -325,6 +325,7 @@ function aplicar(d,origen){
     ' · <span class="ver2">verificado uno por uno</span>';
   montarFiltros();
   pintarResumen(); pintar(); pintarPerms(); pintarDes(); pintarFuentes();
+  if(typeof pintarBuscador==='function') pintarBuscador();
   var av=document.getElementById('avisoLocal');
   if(av)av.style.display=(origen==='archivo')?'block':'none';
 }
