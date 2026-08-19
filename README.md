@@ -52,7 +52,7 @@ Para unificarlo: **Settings → Repository name → cambiar a `chaski` → Renam
 - **📡 Vigentes** — oportunidades verificadas, con dato oficial, análisis y puntuación de encaje.
 - **🏜️ Desiertas** — procesos que nadie ganó y se vuelven a convocar.
 - **🎯 Jugadas** — acciones comerciales que no caducan.
-- **🔍 Buscar** — buscador universal: 57 rubros, 26 departamentos, entidades públicas y empresas privadas.
+- **🔍 Buscar** — motor de búsqueda: selector en cascada **región → provincia → distrito** sobre los 1 874 distritos del Perú, 57 rubros, 27 fuentes, sector público y privado, ventana de tiempo, exclusiones y búsquedas guardadas.
 - **⚙️ Más** — instalación, seguimiento, fuentes y método.
 
 ## Cómo actualizarlo

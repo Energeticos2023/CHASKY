@@ -197,36 +197,71 @@ nav button .bdg{position:absolute;top:0;right:50%;transform:translateX(20px);
   box-shadow:0 8px 28px rgba(0,0,0,.45)}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 
-/* ══ BUSCADOR UNIVERSAL ══ */
-.ambito{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}
+
+/* ══ MOTOR DE BÚSQUEDA ══ */
+.ambito{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}
 .amb{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 12px;
   cursor:pointer;color:var(--tx2);display:flex;flex-direction:column;align-items:center;gap:4px;
   font-family:inherit;text-align:center}
 .amb.ancho{grid-column:1 / -1;flex-direction:row;justify-content:center;padding:12px}
-.amb.on{border-color:var(--acc);background:linear-gradient(160deg,rgba(245,166,35,.12),var(--card) 70%);color:var(--tx)}
+.amb.on{border-color:var(--acc);background:linear-gradient(160deg,rgba(245,166,35,.13),var(--card) 70%);color:var(--tx)}
 .amb .ai{font-size:24px;line-height:1}
 .amb .an{font-size:13.5px;font-weight:700}
 .amb.on .an{color:var(--acc2)}
 .amb .ad{font-size:10.5px;color:var(--tx3);line-height:1.3}
 
+.geo{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:14px 15px;margin-bottom:12px}
+.geot{font:800 10px inherit;letter-spacing:1px;text-transform:uppercase;color:var(--acc2);margin-bottom:11px}
+.geor{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:480px){.geor{grid-template-columns:1fr 1fr 1fr}}
+.gc{display:flex;flex-direction:column;gap:5px}
+.gc label{font:700 9.5px inherit;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3)}
+.gc select{background:var(--card2);border:1px solid var(--line);color:var(--tx);border-radius:11px;
+  padding:12px 11px;font:600 13px inherit;cursor:pointer;width:100%}
+.gc select:disabled{opacity:.4;cursor:not-allowed}
+.gc select:focus{outline:none;border-color:var(--acc)}
+.georuta{font-size:11.5px;color:var(--tx3);margin-top:11px;padding-top:10px;border-top:1px solid var(--line)}
+.georuta b{color:var(--acc2)}
+
 .bcaja{display:flex;gap:8px;flex-wrap:wrap}
 .bcaja input{flex:1 1 100%;background:var(--card);border:1px solid var(--line);color:var(--tx);
-  border-radius:13px;padding:15px 16px;font:400 15px inherit}
+  border-radius:13px;padding:16px;font:400 15px inherit}
 .bcaja input:focus{outline:none;border-color:var(--acc)}
-.bcaja select{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);color:var(--tx2);
-  border-radius:13px;padding:13px 14px;font:600 13px inherit;cursor:pointer}
-.bir{flex:1;min-width:120px;border:none;border-radius:13px;cursor:pointer;
+.bir{flex:1;border:none;border-radius:13px;cursor:pointer;
   background:linear-gradient(140deg,var(--acc),var(--acc3));color:#1a1108;
-  padding:13px;font:800 15px inherit;box-shadow:0 5px 16px rgba(245,166,35,.22)}
+  padding:15px;font:800 15.5px inherit;box-shadow:0 5px 16px rgba(245,166,35,.22)}
 .bir:active{transform:scale(.98)}
-.bhint{font-size:11.5px;color:var(--tx3);margin:9px 0 4px;text-align:center}
 
-.rescab{background:var(--card);border:1px solid rgba(245,166,35,.3);border-radius:14px;
-  padding:14px 16px;margin:18px 0 12px}
-.rq{font-size:14px;color:var(--tx2)}
-.rq b{color:var(--acc2)}
-.rz{font-size:11.5px;color:var(--tx3);margin-top:4px}
-.rescab .all{margin-top:12px;padding:14px;font-size:14.5px}
+.avz{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-top:10px}
+.avl{font:700 9.5px inherit;letter-spacing:.6px;text-transform:uppercase;color:var(--tx3);margin-bottom:8px}
+.avc{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
+.vt{background:var(--card2);border:1px solid var(--line);color:var(--tx2);padding:7px 13px;
+  border-radius:18px;font:600 12px inherit;cursor:pointer}
+.vt.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
+.avr{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.chk{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--tx2);cursor:pointer;flex:none}
+.bx{width:19px;height:19px;border-radius:6px;border:1px solid var(--line);background:var(--card2);
+  display:flex;align-items:center;justify-content:center;font-size:12px;color:#1a1108;font-weight:800}
+.bx.on{background:var(--acc);border-color:var(--acc)}
+.exc{flex:1;min-width:160px;background:var(--card2);border:1px solid var(--line);color:var(--tx);
+  border-radius:10px;padding:10px 12px;font:400 12.5px inherit}
+.exc:focus{outline:none;border-color:var(--acc)}
+
+.rescab{background:var(--card);border:1px solid rgba(245,166,35,.32);border-radius:15px;
+  padding:15px 16px;margin:18px 0 12px}
+.rq{font-size:16px;font-weight:700;color:var(--acc2);line-height:1.3}
+.rz{font-size:12px;color:var(--tx2);margin-top:5px}
+.racc{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.racc .all{margin:0;flex:1 1 190px;padding:14px;font-size:14.5px}
+.racc .bt2{flex:1 1 130px;text-align:center;padding:14px 12px}
+
+.guard{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:6px}
+.gd{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:9px 12px;
+  cursor:pointer;font-size:12.5px;font-weight:600;color:var(--tx);display:flex;align-items:center;gap:8px}
+.gd:active{border-color:var(--acc)}
+.gd em{font-style:normal;font-size:10.5px;color:var(--tx3);font-weight:400}
+.gd b{color:var(--tx3);font-size:13px;padding:0 3px}
+.gd b:hover{color:var(--hot)}
 
 .rubros{margin-top:4px}
 .rgrupo{margin-bottom:15px}
@@ -236,5 +271,4 @@ nav button .bdg{position:absolute;top:0;right:50%;transform:translateX(20px);
   border-radius:19px;font:600 12.5px inherit;cursor:pointer;line-height:1.2}
 .rb.on{background:var(--acc);border-color:var(--acc);color:#1a1108}
 .rb:active{transform:scale(.96)}
-.t .mn{font-size:9.5px;color:var(--acc2);margin-top:5px;font-weight:700;
-  text-transform:uppercase;letter-spacing:.4px}
+.t .mn{font-size:9.5px;color:var(--acc2);margin-top:5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
